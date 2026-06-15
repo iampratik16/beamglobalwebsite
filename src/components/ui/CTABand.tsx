@@ -78,15 +78,25 @@ export function CTABand({
   );
 }
 
-/** Sleek CTA: label + circular arrow that fills and slides on hover. */
+/**
+ * Sleek CTA: on hover the white arrow-circle expands to fill the whole pill,
+ * the label flips to ink, the pill lifts slightly and the arrow slide-swaps.
+ */
 function CTAButton({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="group inline-flex items-center gap-4 rounded-full border border-paper/25 py-2 pl-7 pr-2 transition-colors duration-300 hover:border-paper/60"
+      className="group relative inline-flex items-center gap-4 overflow-hidden rounded-full border border-paper/30 py-2 pl-7 pr-2 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-paper hover:shadow-[0_16px_40px_-16px_rgba(0,0,0,0.5)]"
     >
-      <span className="text-[1.05rem] font-semibold text-paper">{label}</span>
-      <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-paper">
+      {/* expanding fill, originating from the arrow circle */}
+      <span
+        aria-hidden
+        className="absolute right-2 top-1/2 h-12 w-12 -translate-y-1/2 rounded-full bg-paper transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[16]"
+      />
+      <span className="relative z-10 text-[1.05rem] font-semibold text-paper transition-colors duration-300 group-hover:text-ink">
+        {label}
+      </span>
+      <span className="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-paper">
         <ArrowRight className="h-5 w-5 text-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-8" />
         <ArrowRight className="absolute h-5 w-5 -translate-x-8 text-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0" />
       </span>
