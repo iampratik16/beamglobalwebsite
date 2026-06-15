@@ -117,6 +117,7 @@ export default function HomePage() {
                   title={post.title}
                   excerpt={post.excerpt}
                   seed={post.slug}
+                  image={post.image}
                   elevated
                 />
               ))}

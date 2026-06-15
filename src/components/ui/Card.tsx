@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "./icons";
 import { PlaceholderMedia } from "./PlaceholderMedia";
@@ -9,6 +10,7 @@ export function Card({
   eyebrow,
   meta,
   seed,
+  image,
   withMedia = true,
   elevated = false,
   className = "",
@@ -19,6 +21,7 @@ export function Card({
   eyebrow?: string;
   meta?: string;
   seed?: string;
+  image?: string;
   withMedia?: boolean;
   elevated?: boolean;
   className?: string;
@@ -32,8 +35,31 @@ export function Card({
       className={`group flex h-full flex-col ${shell} ${className}`}
     >
       {withMedia && (
-        <div className={`card-media overflow-hidden ${elevated ? "rounded-t-2xl" : ""}`}>
-          <PlaceholderMedia seed={seed ?? title} label={eyebrow} />
+        <div
+          className={`card-media relative overflow-hidden ${
+            elevated ? "rounded-t-2xl" : ""
+          } ${image ? "aspect-[4/3]" : ""}`}
+        >
+          {image ? (
+            <>
+              <Image
+                src={image}
+                alt={title}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover"
+              />
+              {/* scrim for label legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent" />
+              {eyebrow && (
+                <span className="absolute bottom-4 left-4 z-[3] font-display text-sm font-semibold uppercase tracking-wider text-paper/90">
+                  {eyebrow}
+                </span>
+              )}
+            </>
+          ) : (
+            <PlaceholderMedia seed={seed ?? title} label={eyebrow} />
+          )}
         </div>
       )}
       <div className="flex flex-1 flex-col gap-3 p-6 md:p-7">
@@ -41,7 +67,7 @@ export function Card({
           <span className="text-eyebrow text-accent">{eyebrow}</span>
         )}
         {meta && <span className="text-xs uppercase tracking-wider text-muted">{meta}</span>}
-        <h3 className="font-display text-xl font-bold leading-snug tracking-tight text-ink">
+        <h3 className="font-display text-xl font-bold leading-snug tracking-tight text-ink transition-colors duration-300 group-hover:text-accent">
           {title}
         </h3>
         {excerpt && (

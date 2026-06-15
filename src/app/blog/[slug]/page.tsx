@@ -152,6 +152,7 @@ export default async function BlogPostPage({
                   title={p.title}
                   excerpt={p.excerpt}
                   seed={p.slug}
+                  image={p.image}
                   elevated
                 />
               ))}

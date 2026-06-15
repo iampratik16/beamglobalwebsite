@@ -37,6 +37,7 @@ export default function InsightsPage() {
                   title={post.title}
                   excerpt={post.excerpt}
                   seed={post.slug}
+                  image={post.image}
                   elevated
                 />
               ))}
