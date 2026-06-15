@@ -63,6 +63,7 @@ export function Header() {
   }, []);
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b border-hairline bg-paper/95 backdrop-blur transition-shadow duration-300 ${
         scrolled ? "shadow-[0_8px_24px_-16px_rgba(0,0,0,0.3)]" : ""
@@ -208,17 +209,19 @@ export function Header() {
           </div>
         </div>
       )}
-
-      {/* Mobile drawer */}
-      {mobileOpen && <MobileDrawer onClose={() => setMobileOpen(false)} />}
     </header>
+
+    {/* Mobile drawer — rendered OUTSIDE the backdrop-blur header so its
+        fixed positioning covers the full viewport, not just the header box. */}
+    {mobileOpen && <MobileDrawer onClose={() => setMobileOpen(false)} />}
+    </>
   );
 }
 
 function MobileDrawer({ onClose }: { onClose: () => void }) {
   const [servicesExpanded, setServicesExpanded] = useState(true);
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-ink text-paper lg:hidden">
+    <div className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-ink text-paper lg:hidden">
       <div className="container-page flex h-[72px] items-center justify-between">
         <Link href="/" aria-label="Beam Global Services, home" onClick={onClose}>
           <Image src={logoWhite} alt="Beam Global Services" className="h-8 w-auto" />
