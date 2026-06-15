@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { primaryNav, servicesMenu } from "@/content/site";
-import { ChevronDown, Close, Menu } from "@/components/ui/icons";
+import { primaryNav, servicesMenu, servicesFeatured } from "@/content/site";
+import { ArrowRight, ChevronDown, Close, Menu } from "@/components/ui/icons";
 import logoDark from "../../../public/brand/beam-logo.png";
 import logoWhite from "../../../public/brand/beam-logo-white.png";
 
@@ -140,38 +140,64 @@ export function Header() {
           onMouseEnter={openMega}
           onMouseLeave={scheduleClose}
         >
-          <div className="container-page grid grid-cols-3 gap-10 py-10">
-            {servicesMenu.map((group) => (
-              <div key={group.label}>
-                <Link
-                  href={group.href}
-                  className="text-eyebrow mb-4 block text-accent hover:text-accent-ink"
-                >
-                  {group.label}
-                </Link>
-                <ul className="space-y-1">
-                  {group.items.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="block py-1.5 text-[0.95rem] text-text transition-colors hover:text-accent"
-                      >
-                        {item.label}
+          <div className="container-page py-10">
+            {/* header row */}
+            <div className="mb-8 flex items-center justify-between border-b border-hairline pb-5">
+              <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
+                Services
+              </h2>
+              <Link
+                href="/services"
+                className="group inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-ink"
+              >
+                See all services
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-[1fr_1fr_1fr_0.9fr] gap-8">
+              {servicesMenu.map((group) => (
+                <div key={group.label}>
+                  <p className="text-eyebrow mb-3 px-3 text-accent">{group.label}</p>
+                  <ul>
+                    {group.items.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className="block rounded-sm px-3 py-2.5 text-[0.95rem] font-medium text-text transition-colors duration-150 hover:bg-accent hover:text-paper"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+
+              {/* Featured column */}
+              <div className="border-l border-hairline pl-8">
+                <p className="text-eyebrow mb-4 text-muted">Featured</p>
+                <ul className="space-y-4">
+                  {servicesFeatured.map((f) => (
+                    <li key={f.href}>
+                      <Link href={f.href} className="group flex items-center gap-3">
+                        <span className="relative h-12 w-16 shrink-0 overflow-hidden rounded">
+                          <Image
+                            src={f.image}
+                            alt=""
+                            fill
+                            sizes="64px"
+                            className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+                          />
+                        </span>
+                        <span className="text-[0.95rem] font-medium leading-snug text-ink transition-colors group-hover:text-accent">
+                          {f.label}
+                        </span>
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
-          <div className="border-t border-hairline bg-paper-alt">
-            <div className="container-page flex items-center justify-between py-4">
-              <p className="text-sm text-muted">
-                Helping clients maximise ROI on their GRC investments.
-              </p>
-              <Link href="/services" className="text-sm font-semibold text-accent hover:text-accent-ink">
-                View all services →
-              </Link>
             </div>
           </div>
         </div>

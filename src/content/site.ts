@@ -78,6 +78,25 @@ export const servicesMenu: MegaMenuGroup[] = [
   },
 ];
 
+/** Featured services shown with thumbnails in the mega-menu (PwC pattern). */
+export const servicesFeatured: { label: string; href: string; image: string }[] = [
+  {
+    label: "Transformation Sector",
+    href: "/services/transformation-sector",
+    image: "/images/pillars/transformation.png",
+  },
+  {
+    label: "SafePaaS GRC Implementation",
+    href: "/services/safepaas-grc-implementation",
+    image: "/images/subhero.png",
+  },
+  {
+    label: "IPO Readiness",
+    href: "/services/ipo-readiness",
+    image: "/images/blog/growth.png",
+  },
+];
+
 export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
     title: "Services",
