@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
-import { homeHero, culturePillars } from "@/content/home";
+import { homeHero } from "@/content/home";
 
 /**
  * Homepage hero — layered, editorial. Rotating headline (the existing slider
@@ -61,24 +61,13 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"
       />
-      {/* texture + colour wash */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-        }}
-      />
       <div
         aria-hidden
         className="pointer-events-none absolute -left-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-accent/20 blur-[140px]"
       />
 
-      <Container className="relative grid grid-cols-1 items-center gap-14 pb-20 pt-36 md:pb-28 md:pt-44 lg:grid-cols-[1.3fr_0.7fr]">
-        {/* Left — headline */}
-        <div>
+      <Container className="relative pb-20 pt-36 md:pb-28 md:pt-44">
+        <div className="max-w-3xl">
           <Eyebrow tone="paper" className="mb-6">
             {eyebrow}
           </Eyebrow>
@@ -126,28 +115,6 @@ export function Hero() {
                 }`}
               />
             ))}
-          </div>
-        </div>
-
-        {/* Right — glass pillar panel + floating chips */}
-        <div className="relative hidden lg:block">
-          <div className="glass-dark rounded-2xl p-7 shadow-float">
-            <p className="text-eyebrow text-gold">What we stand for</p>
-            <ul className="mt-5 divide-y divide-white/10">
-              {culturePillars.map((pillar, i) => (
-                <li key={pillar.name} className="flex gap-4 py-4">
-                  <span className="font-serif text-2xl leading-none text-gold">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <p className="font-display font-bold tracking-tight text-paper">
-                      {pillar.name}
-                    </p>
-                    <p className="mt-0.5 text-sm text-paper/60">{pillar.tagline}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </Container>
