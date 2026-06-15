@@ -19,7 +19,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Contact Us"
-        lead={site.description}
+        lead="Tell us your goals, our team will help you find the right path."
         image="/images/heroes/contact.png"
         imageAlt="Get in touch with Beam Global Services"
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}

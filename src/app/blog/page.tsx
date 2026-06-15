@@ -21,7 +21,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Blogs"
         title="Ideas, analysis and field notes"
-        lead="Beam Global Services helps clients get the most out of their GRC investments. Here's our thinking on governance, growth and the journey in between."
+        lead="Our thinking on governance, growth and the journey in between."
         image="/images/heroes/blog.png"
         imageAlt="Beam Global Services blog"
         crumbs={[{ label: "Home", href: "/" }, { label: "Blogs" }]}

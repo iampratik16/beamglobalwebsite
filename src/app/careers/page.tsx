@@ -21,7 +21,7 @@ export default function CareersPage() {
       <PageHero
         eyebrow={careers.hero.eyebrow}
         title={careers.hero.heading}
-        lead={careers.hero.lead}
+        lead="Join a team of specialists who care about doing things properly."
         image="/images/heroes/careers.png"
         imageAlt="Careers at Beam Global Services"
         crumbs={[{ label: "Home", href: "/" }, { label: "Careers" }]}

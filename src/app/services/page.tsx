@@ -28,7 +28,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Empowering Businesses with Expert Consulting and Digital Solutions."
-        lead="We deliver expert consulting, digital solutions, and IT governance to drive business transformation. From GRC and strategic advisory to entrepreneurship support, covering startup growth, incubator guidance, and IPO readiness, we empower organisations with innovation, strategy, and seamless execution."
+        lead="Expert consulting, digital solutions and IT governance that drive measurable results."
         image="/images/heroes/services.png"
         imageAlt="Beam Global Services capabilities"
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}

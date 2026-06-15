@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { ArrowRight, Sparkle } from "@/components/ui/icons";
+import { ArrowRight } from "@/components/ui/icons";
 import { blogPostsByDate } from "@/content/blog";
 import { positioning } from "@/content/home";
 
@@ -80,17 +80,6 @@ export function EditorialFeature() {
               <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-muted">
                 Beam Global Services
               </p>
-            </div>
-
-            {/* Decorative floating glass chip */}
-            <div
-              aria-hidden
-              className="glass floaty shadow-float absolute -right-3 -top-6 hidden items-center gap-2.5 rounded-full px-4 py-2.5 md:flex"
-            >
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent text-paper">
-                <Sparkle className="h-3.5 w-3.5" />
-              </span>
-              <span className="text-sm font-semibold text-ink">Maximising GRC value</span>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow={about.hero.eyebrow}
         title={about.hero.heading}
-        lead={about.hero.lead}
+        lead="Helping organisations get the most from their Governance, Risk & Compliance investments."
         image="/images/heroes/about.png"
         imageAlt="Beam Global Services team"
         crumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}

@@ -21,7 +21,7 @@ export default function InsightsPage() {
       <PageHero
         eyebrow={insightsIntro.eyebrow}
         title={insightsIntro.heading}
-        lead={insightsIntro.lead}
+        lead="Ideas and analysis on governance, risk, compliance and growth that endures."
         image="/images/heroes/insights.png"
         imageAlt="Beam Global Services insights"
         crumbs={[{ label: "Home", href: "/" }, { label: "Insights Hub" }]}
