@@ -63,13 +63,13 @@ export function EditorialFeature() {
                   alt="Beam Global Services — insights and thinking"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
             </article>
 
-            {/* Floating INSIGHT glass card with oversized serif motif */}
-            <div className="glass shadow-float absolute -bottom-10 -left-4 hidden w-60 rounded-2xl p-6 sm:block">
+            {/* Floating INSIGHT card with oversized serif motif */}
+            <div className="glass-solid shadow-float absolute -bottom-10 -left-4 z-20 hidden w-60 rounded-2xl p-6 sm:block">
               <p className="text-eyebrow text-accent">Insight</p>
               <p className="mt-1 font-serif text-[3.75rem] font-semibold leading-none tracking-tight text-accent">
                 ROI

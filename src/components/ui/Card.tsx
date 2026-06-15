@@ -25,11 +25,11 @@ export function Card({
 }) {
   const shell = elevated
     ? "rounded-2xl bg-paper shadow-soft lift overflow-hidden"
-    : "border border-hairline bg-paper hover:border-ink/30";
+    : "overflow-hidden border border-hairline bg-paper transition-all duration-[450ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-transparent hover:shadow-soft";
   return (
     <Link
       href={href}
-      className={`group flex h-full flex-col transition-colors duration-300 ${shell} ${className}`}
+      className={`group flex h-full flex-col ${shell} ${className}`}
     >
       {withMedia && (
         <div className={`card-media overflow-hidden ${elevated ? "rounded-t-2xl" : ""}`}>

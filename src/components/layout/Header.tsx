@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { primaryNav, servicesMenu } from "@/content/site";
 import { ChevronDown, Close, Menu } from "@/components/ui/icons";
-import logoDark from "../../../public/brand/beam-logo-dark.png";
+import logoDark from "../../../public/brand/beam-logo.png";
 import logoWhite from "../../../public/brand/beam-logo-white.png";
 
 export function Header() {
