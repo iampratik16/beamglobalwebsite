@@ -37,7 +37,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative flex items-center overflow-hidden bg-ink text-paper md:min-h-[90vh]">
+    <section className="relative mt-[73px] flex items-center overflow-hidden bg-ink text-paper md:min-h-[calc(100vh-73px)]">
       {/* Background video */}
       <video
         ref={videoRef}
@@ -66,7 +66,7 @@ export function Hero() {
         className="pointer-events-none absolute -left-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-accent/20 blur-[140px]"
       />
 
-      <Container className="relative pb-20 pt-36 md:pb-28 md:pt-44">
+      <Container className="relative py-20 md:py-24">
         <div className="max-w-3xl">
           <Eyebrow tone="paper" className="mb-6">
             {eyebrow}
