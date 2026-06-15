@@ -23,7 +23,6 @@ export const blogPosts: BlogPost[] = [
     title: "The Growth Loop: How Customer Success Fuels Sustainable Scale",
     date: "2025-04-15",
     category: "Growth",
-    image: "/images/blog/growth.png",
     excerpt:
       "How sustained investment in customer success compounds into durable, repeatable growth.",
     body: [
@@ -50,7 +49,6 @@ export const blogPosts: BlogPost[] = [
     title: "What Makes Your Customers Say Yes to Your Product or Service?",
     date: "2025-04-15",
     category: "Growth",
-    image: "/images/blog/growth.png",
     excerpt:
       "The signals, trust and value that move prospects from interest to commitment.",
     body: [
@@ -78,7 +76,6 @@ export const blogPosts: BlogPost[] = [
     title: "5 Cyber Security Startups to Watch Out For",
     date: "2025-04-15",
     category: "Cyber Security",
-    image: "/images/blog/cyber.png",
     excerpt:
       "A look at emerging cyber security companies shaping how organisations defend themselves.",
     body: [
@@ -109,7 +106,6 @@ export const blogPosts: BlogPost[] = [
     title: "Venture Debt: The Rising Star in Startup Financing Amid India's Liquidity Crunch",
     date: "2025-04-15",
     category: "Startup Finance",
-    image: "/images/blog/venturedebt.png",
     excerpt:
       "Why venture debt is gaining ground as a financing option for startups navigating a tighter liquidity environment.",
     body: [
@@ -161,6 +157,11 @@ export const blogPosts: BlogPost[] = [
     body: [],
   },
 ];
+
+// Every post has a matching slug-named image under /public/images/blog/.
+blogPosts.forEach((p) => {
+  p.image = `/images/blog/${p.slug}.png`;
+});
 
 export const blogSlugs = blogPosts.map((p) => p.slug);
 

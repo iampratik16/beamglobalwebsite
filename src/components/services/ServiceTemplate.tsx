@@ -24,6 +24,8 @@ export function ServiceTemplate({ service }: { service: Service }) {
         eyebrow={pillar.label}
         title={service.headline}
         lead={service.lead}
+        image={`/images/services/hero/${service.slug}.png`}
+        imageAlt={service.title}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Services", href: "/services" },

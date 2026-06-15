@@ -29,6 +29,8 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Empowering Businesses with Expert Consulting and Digital Solutions."
         lead="We deliver expert consulting, digital solutions, and IT governance to drive business transformation. From GRC and strategic advisory to entrepreneurship support—covering startup growth, incubator guidance, and IPO readiness—we empower organisations with innovation, strategy, and seamless execution."
+        image="/images/heroes/services.png"
+        imageAlt="Beam Global Services capabilities"
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
@@ -56,6 +58,8 @@ export default function ServicesPage() {
                     title={s.title}
                     excerpt={s.summary}
                     seed={s.slug}
+                    image={`/images/services/${s.slug}.png`}
+                    elevated
                   />
                 ))}
               </CardGrid>

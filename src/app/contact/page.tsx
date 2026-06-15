@@ -20,6 +20,8 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Contact Us"
         lead={site.description}
+        image="/images/heroes/contact.png"
+        imageAlt="Get in touch with Beam Global Services"
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 
