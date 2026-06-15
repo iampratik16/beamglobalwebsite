@@ -221,17 +221,17 @@ export function Header() {
 function MobileDrawer({ onClose }: { onClose: () => void }) {
   const [servicesExpanded, setServicesExpanded] = useState(false);
   return (
-    <div className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-ink text-paper lg:hidden">
-      <div className="container-page flex h-[72px] items-center justify-between">
+    <div className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-paper text-ink lg:hidden">
+      <div className="container-page flex h-[88px] items-center justify-between border-b border-hairline">
         <Link href="/" aria-label="Beam Global Services, home" onClick={onClose}>
-          <Image src={logoWhite} alt="Beam Global Services" className="h-8 w-auto" />
+          <Image src={logoDark} alt="Beam Global Services" className="h-9 w-auto" />
         </Link>
-        <button type="button" aria-label="Close menu" onClick={onClose} className="text-paper">
+        <button type="button" aria-label="Close menu" onClick={onClose} className="text-ink">
           <Close className="h-7 w-7" />
         </button>
       </div>
       <nav aria-label="Mobile" className="container-page flex-1 overflow-y-auto py-6">
-        <div className="border-b border-hairline-dark py-3">
+        <div className="border-b border-hairline py-3">
           <button
             type="button"
             className="flex w-full items-center justify-between font-display text-xl font-bold"
@@ -247,14 +247,14 @@ function MobileDrawer({ onClose }: { onClose: () => void }) {
             <div className="mt-3 space-y-5 pb-2">
               {servicesMenu.map((group) => (
                 <div key={group.label}>
-                  <p className="text-eyebrow mb-2 text-gold">{group.label}</p>
+                  <p className="text-eyebrow mb-2 text-accent">{group.label}</p>
                   <ul className="space-y-1">
                     {group.items.map((item) => (
                       <li key={item.href}>
                         <Link
                           href={item.href}
                           onClick={onClose}
-                          className="block py-1.5 text-paper/80 hover:text-paper"
+                          className="block py-1.5 text-muted hover:text-ink"
                         >
                           {item.label}
                         </Link>
@@ -273,7 +273,7 @@ function MobileDrawer({ onClose }: { onClose: () => void }) {
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className="block border-b border-hairline-dark py-4 font-display text-xl font-bold"
+              className="block border-b border-hairline py-4 font-display text-xl font-bold"
             >
               {link.label}
             </Link>
@@ -281,7 +281,7 @@ function MobileDrawer({ onClose }: { onClose: () => void }) {
         <Link
           href="/careers"
           onClick={onClose}
-          className="block border-b border-hairline-dark py-4 font-display text-xl font-bold"
+          className="block border-b border-hairline py-4 font-display text-xl font-bold"
         >
           Careers
         </Link>
