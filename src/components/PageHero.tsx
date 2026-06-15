@@ -31,10 +31,6 @@ export function PageHero({
         aria-hidden
         className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-gold/10 blur-[120px]"
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-24 top-1/2 h-[24rem] w-[24rem] -translate-y-1/2 rounded-full border border-paper/10"
-      />
       <Container className="relative pb-16 pt-32 md:pb-20 md:pt-40">
         {crumbs && (
           <div className="mb-8 [&_*]:!text-paper/60 [&_a:hover]:!text-paper [&_[aria-current]]:!text-paper">
