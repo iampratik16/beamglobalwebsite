@@ -42,3 +42,7 @@ next-env.d.ts
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# nanobanana MCP runtime artifacts (keep generated images, ignore catalog/temp)
+public/images/generated/images.db
+public/images/generated/temp_images/
