@@ -1,0 +1,94 @@
+import Link from "next/link";
+import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { ArrowRight, Sparkle } from "@/components/ui/icons";
+import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
+import { blogPostsByDate } from "@/content/blog";
+import { positioning } from "@/content/home";
+
+/**
+ * Layered editorial section inspired by the PwC homepage composition:
+ * a large serif statement on a warm tinted ground, an overlapping
+ * "Featured thinking" card, a floating glass "Insight" card with an
+ * oversized serif motif, and a small floating glass chip.
+ *
+ * All content is real Beam copy — no fabricated statistics. The decorative
+ * chip is aria-hidden (it is not an interactive control).
+ */
+export function EditorialFeature() {
+  const featured = blogPostsByDate[0];
+
+  return (
+    <section className="bg-warm-mesh relative">
+      <Container className="section-y">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Left — big serif statement */}
+          <div className="max-w-xl">
+            <Eyebrow>The opportunity</Eyebrow>
+            <p className="text-display-serif mt-6 text-ink">
+              Your GRC platforms are a major investment.{" "}
+              <span className="text-accent">Are you getting the full return?</span>
+            </p>
+            <p className="mt-6 text-lead">{positioning.body}</p>
+            <Link
+              href="/services"
+              className="group mt-8 inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
+            >
+              See how we help
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+
+          {/* Right — layered cards */}
+          <div className="relative">
+            {/* Featured thinking card */}
+            <article className="lift overflow-hidden rounded-2xl bg-paper shadow-soft">
+              <div className="px-7 pt-7">
+                <p className="text-eyebrow text-accent">Featured thinking</p>
+                <h3 className="mt-3 font-display text-2xl font-bold leading-tight tracking-tight text-ink">
+                  {featured.title}
+                </h3>
+                <p className="mt-3 text-muted">{featured.excerpt}</p>
+                <Link
+                  href={`/blog/${featured.slug}`}
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-ink"
+                >
+                  Read the article
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="card-media group mt-6 overflow-hidden">
+                <PlaceholderMedia seed={featured.slug} tone="slate" aspect="aspect-[16/8]" />
+              </div>
+            </article>
+
+            {/* Floating INSIGHT glass card with oversized serif motif */}
+            <div className="glass shadow-float absolute -bottom-10 -left-4 hidden w-60 rounded-2xl p-6 sm:block">
+              <p className="text-eyebrow text-accent">Insight</p>
+              <p className="mt-1 font-serif text-[3.75rem] font-semibold leading-none tracking-tight text-accent">
+                ROI
+              </p>
+              <p className="mt-2 font-serif text-[1.05rem] italic leading-snug text-ink">
+                Everything we do is measured against the return on your GRC investment.
+              </p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-muted">
+                Beam Global Services
+              </p>
+            </div>
+
+            {/* Decorative floating glass chip */}
+            <div
+              aria-hidden
+              className="glass floaty shadow-float absolute -right-3 -top-6 hidden items-center gap-2.5 rounded-full px-4 py-2.5 md:flex"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-accent text-paper">
+                <Sparkle className="h-3.5 w-3.5" />
+              </span>
+              <span className="text-sm font-semibold text-ink">Maximising GRC value</span>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}

@@ -1,65 +1,144 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Hero } from "@/components/home/Hero";
+import { EditorialFeature } from "@/components/home/EditorialFeature";
+import { Container } from "@/components/ui/Container";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PillarFeature } from "@/components/ui/PillarFeature";
+import { Card } from "@/components/ui/Card";
+import { CardGrid } from "@/components/ui/CardGrid";
+import { CTABand } from "@/components/ui/CTABand";
+import { Reveal } from "@/components/ui/Reveal";
+import { ArrowRight } from "@/components/ui/icons";
+import { culturePillars } from "@/content/home";
+import { pillars, servicesByPillar } from "@/content/services";
+import { blogPostsByDate } from "@/content/blog";
 
-export default function Home() {
+export default function HomePage() {
+  const latest = blogPostsByDate.slice(0, 3);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      <Hero />
+
+      {/* Editorial feature — layered statement + featured thinking + insight */}
+      <EditorialFeature />
+
+      {/* Culture pillars */}
+      <section className="section-y bg-paper-alt">
+        <Container>
+          <Reveal>
+            <SectionHeader
+              eyebrow="Our culture"
+              title="What we stand for"
+              lead="Three principles shape how we work with every client and every challenge."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </Reveal>
+          <Reveal className="mt-12">
+            <PillarFeature pillars={culturePillars} />
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Services overview */}
+      <section className="section-y bg-paper">
+        <Container>
+          <Reveal>
+            <SectionHeader
+              eyebrow="What we do"
+              title="Expertise across the GRC and growth journey"
+              lead="From product selection and implementation to governance, transformation and the entrepreneurial path from startup to IPO."
+            />
+          </Reveal>
+
+          <div className="mt-14 space-y-px bg-hairline">
+            {pillars.map((pillar) => (
+              <Reveal key={pillar.id} className="bg-paper">
+                <div className="grid grid-cols-1 gap-6 py-8 lg:grid-cols-[0.8fr_1.6fr] lg:gap-12 lg:py-10">
+                  <div>
+                    <Eyebrow>{pillar.eyebrow}</Eyebrow>
+                    <h3 className="text-h3 mt-3 text-ink">{pillar.label}</h3>
+                    <p className="mt-3 max-w-md text-muted">{pillar.intro}</p>
+                  </div>
+                  <ul className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2">
+                    {servicesByPillar(pillar.id).map((s) => (
+                      <li key={s.slug}>
+                        <Link
+                          href={`/services/${s.slug}`}
+                          className="group flex items-center justify-between gap-3 border-b border-hairline py-3.5 text-ink transition-colors hover:text-accent"
+                        >
+                          <span className="font-medium">{s.title}</span>
+                          <ArrowRight className="h-4 w-4 shrink-0 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
+            >
+              See all services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
+      {/* Insights */}
+      <section className="section-y bg-paper-alt">
+        <Container>
+          <Reveal className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeader
+              eyebrow="Insights Hub"
+              title="What's new"
+              lead="Perspectives on governance, growth and the road ahead."
+            />
+            <Link
+              href="/insights"
+              className="inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
+            >
+              All insights
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+          <Reveal className="mt-12">
+            <CardGrid>
+              {latest.map((post) => (
+                <Card
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  eyebrow={post.category}
+                  title={post.title}
+                  excerpt={post.excerpt}
+                  seed={post.slug}
+                  elevated
+                />
+              ))}
+            </CardGrid>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Careers + Contact CTAs */}
+      <CTABand
+        eyebrow="Careers"
+        heading="Elevate Your Career, Embrace Your Future."
+        body="Join a team that believes in excellence and helps clients get the most from their GRC investments."
+        primary={{ label: "Explore careers", href: "/careers" }}
+      />
+      <CTABand
+        tone="accent"
+        eyebrow="Let's talk"
+        heading="Looking for a First-Class GRC & Business Consultant?"
+        body="Tell us about your goals — our team will help you maximise the return on your GRC investment."
+        primary={{ label: "Contact us", href: "/contact" }}
+      />
+    </>
   );
 }
