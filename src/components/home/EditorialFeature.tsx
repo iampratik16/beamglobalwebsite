@@ -1,8 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ArrowRight, Sparkle } from "@/components/ui/icons";
-import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
 import { blogPostsByDate } from "@/content/blog";
 import { positioning } from "@/content/home";
 
@@ -57,8 +57,14 @@ export function EditorialFeature() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-              <div className="card-media group mt-6 overflow-hidden">
-                <PlaceholderMedia seed={featured.slug} tone="slate" aspect="aspect-[16/8]" />
+              <div className="card-media group relative mt-6 aspect-[16/8] overflow-hidden">
+                <Image
+                  src="/images/subhero.png"
+                  alt="Beam Global Services — insights and thinking"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                />
               </div>
             </article>
 

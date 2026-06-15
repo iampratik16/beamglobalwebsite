@@ -1,8 +1,10 @@
+import Image from "next/image";
 import { PlaceholderMedia } from "./PlaceholderMedia";
 
 export type Pillar = {
   name: string;
   tagline: string;
+  image?: string;
 };
 
 /** Three-up culture pillars: image + label + one-line. */
@@ -11,12 +13,22 @@ export function PillarFeature({ pillars }: { pillars: Pillar[] }) {
     <div className="grid grid-cols-1 gap-px bg-hairline md:grid-cols-3">
       {pillars.map((pillar, i) => (
         <article key={pillar.name} className="group bg-paper">
-          <div className="card-media overflow-hidden">
-            <PlaceholderMedia
-              seed={pillar.name}
-              tone={i === 1 ? "crimson" : i === 0 ? "ink" : "slate"}
-              aspect="aspect-[5/4]"
-            />
+          <div className="card-media relative aspect-[5/4] overflow-hidden">
+            {pillar.image ? (
+              <Image
+                src={pillar.image}
+                alt={pillar.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+              />
+            ) : (
+              <PlaceholderMedia
+                seed={pillar.name}
+                tone={i === 1 ? "crimson" : i === 0 ? "ink" : "slate"}
+                aspect="aspect-[5/4]"
+              />
+            )}
           </div>
           <div className="p-7 lg:p-8">
             <p className="mb-1 font-display text-sm font-semibold uppercase tracking-wider text-accent">

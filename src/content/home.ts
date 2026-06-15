@@ -22,11 +22,24 @@ export const positioning = {
 export type CulturePillar = {
   name: string;
   tagline: string;
+  image?: string;
 };
 
 /** The three culture pillars on the live homepage. */
 export const culturePillars: CulturePillar[] = [
-  { name: "Transformation", tagline: "Leading tomorrow's sustainability promise." },
-  { name: "Sustainability", tagline: "Transforming the now to build the new." },
-  { name: "Integrity & Trust", tagline: "Safeguarding the future with trust-based offerings." },
+  {
+    name: "Transformation",
+    tagline: "Leading tomorrow's sustainability promise.",
+    image: "/images/pillars/transformation.png",
+  },
+  {
+    name: "Sustainability",
+    tagline: "Transforming the now to build the new.",
+    image: "/images/pillars/sustainability.png",
+  },
+  {
+    name: "Integrity & Trust",
+    tagline: "Safeguarding the future with trust-based offerings.",
+    image: "/images/pillars/integrity.png",
+  },
 ];
