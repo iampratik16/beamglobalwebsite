@@ -56,6 +56,42 @@ export function Sparkle(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function VolumeOn(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      {...props}
+    >
+      <path d="M11 5 6 9H2v6h4l5 4V5z" />
+      <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 6a9 9 0 0 1 0 12" />
+    </svg>
+  );
+}
+
+export function VolumeOff(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      {...props}
+    >
+      <path d="M11 5 6 9H2v6h4l5 4V5z" />
+      <path d="m17 9 6 6M23 9l-6 6" />
+    </svg>
+  );
+}
+
 export function Menu(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

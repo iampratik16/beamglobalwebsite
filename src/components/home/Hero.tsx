@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
+import { VolumeOn, VolumeOff } from "@/components/ui/icons";
 import { homeHero } from "@/content/home";
 
 /**
@@ -15,7 +16,18 @@ import { homeHero } from "@/content/home";
 export function Hero() {
   const { eyebrow, headlines, lead, primaryCta, secondaryCta } = homeHero;
   const [index, setIndex] = useState(0);
+  const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const toggleSound = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    const next = !muted;
+    video.muted = next;
+    // Unmuting is a user gesture — (re)start playback so sound plays.
+    if (!next) void video.play().catch(() => {});
+    setMuted(next);
+  };
 
   useEffect(() => {
     if (headlines.length <= 1) return;
@@ -118,6 +130,22 @@ export function Hero() {
           </div>
         </div>
       </Container>
+
+      {/* Sound toggle */}
+      <button
+        type="button"
+        onClick={toggleSound}
+        aria-label={muted ? "Unmute hero video" : "Mute hero video"}
+        aria-pressed={!muted}
+        className="glass-dark absolute right-5 top-5 z-30 flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-ink/70 md:right-8 md:top-8"
+      >
+        {muted ? (
+          <VolumeOff className="h-4 w-4" />
+        ) : (
+          <VolumeOn className="h-4 w-4" />
+        )}
+        <span className="hidden sm:inline">{muted ? "Sound off" : "Sound on"}</span>
+      </button>
     </section>
   );
 }
