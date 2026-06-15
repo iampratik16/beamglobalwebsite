@@ -32,6 +32,22 @@ export function ChevronDown(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function ChevronRight(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="square"
+      aria-hidden
+      {...props}
+    >
+      <path d="m9 6 6 6-6 6" />
+    </svg>
+  );
+}
+
 export function Close(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

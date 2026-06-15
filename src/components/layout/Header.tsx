@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { primaryNav, servicesMenu, servicesFeatured } from "@/content/site";
-import { ArrowRight, ChevronDown, Close, Menu } from "@/components/ui/icons";
+import { ArrowRight, ChevronDown, ChevronRight, Close, Menu } from "@/components/ui/icons";
 import logoDark from "../../../public/brand/beam-logo.png";
 import logoWhite from "../../../public/brand/beam-logo-white.png";
 
@@ -155,18 +155,24 @@ export function Header() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-[1fr_1fr_1fr_0.9fr] gap-8">
+            <div className="grid grid-cols-[1fr_1fr_1fr_0.9fr] gap-x-10 gap-y-2">
               {servicesMenu.map((group) => (
                 <div key={group.label}>
-                  <p className="text-eyebrow mb-3 px-3 text-accent">{group.label}</p>
-                  <ul>
+                  <Link
+                    href={group.href}
+                    className="text-eyebrow mb-4 inline-block px-4 text-accent transition-colors hover:text-accent-ink"
+                  >
+                    {group.label}
+                  </Link>
+                  <ul className="space-y-1">
                     {group.items.map((item) => (
                       <li key={item.href}>
                         <Link
                           href={item.href}
-                          className="block rounded-sm px-3 py-2.5 text-[0.95rem] font-medium text-text transition-colors duration-150 hover:bg-accent hover:text-paper"
+                          className="group/item flex items-center justify-between gap-4 rounded-sm px-4 py-3 text-[1.0625rem] font-medium text-ink transition-colors duration-150 hover:bg-accent hover:text-paper"
                         >
-                          {item.label}
+                          <span>{item.label}</span>
+                          <ChevronRight className="h-4 w-4 shrink-0 text-muted transition-colors group-hover/item:text-paper" />
                         </Link>
                       </li>
                     ))}
