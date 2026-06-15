@@ -7,7 +7,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { primaryNav, servicesMenu, servicesFeatured } from "@/content/site";
 import { ArrowRight, ChevronDown, ChevronRight, Close, Menu } from "@/components/ui/icons";
 import logoDark from "../../../public/brand/beam-logo.png";
-import logoWhite from "../../../public/brand/beam-logo-white.png";
+import logoWhite from "../../../public/brand/beam-logo-light.png";
 
 export function Header() {
   const pathname = usePathname();
