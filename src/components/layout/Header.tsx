@@ -50,8 +50,8 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const solid = scrolled || megaOpen;
-  const onLight = solid; // dark text/logo on light header
+  // Header is always solid (white) — including over the hero video.
+  const onLight = true;
 
   const openMega = useCallback(() => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -64,10 +64,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        solid
-          ? "border-b border-hairline bg-paper/95 backdrop-blur"
-          : "border-b border-transparent bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b border-hairline bg-paper/95 backdrop-blur transition-shadow duration-300 ${
+        scrolled ? "shadow-[0_8px_24px_-16px_rgba(0,0,0,0.3)]" : ""
       }`}
     >
       <div className="container-page flex h-[var(--header-h,72px)] items-center justify-between gap-6 py-3">
