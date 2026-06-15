@@ -305,6 +305,26 @@ body {
     var(--color-paper-alt);
 }
 
+/* Tab panel enter animation */
+@keyframes tabIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.tab-in {
+  animation: tabIn 0.45s var(--ease-out-soft);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tab-in {
+    animation: none;
+  }
+}
+
 /* Subtle float animation for decorative glass chips */
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }

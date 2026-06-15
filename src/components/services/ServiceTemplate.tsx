@@ -3,7 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { CTABand } from "@/components/ui/CTABand";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { FillCard } from "@/components/ui/FillCard";
+import { CapabilityTabs } from "@/components/services/CapabilityTabs";
 import { ArrowRight } from "@/components/ui/icons";
 import Link from "next/link";
 import { pillars, servicesByPillar, type Service } from "@/content/services";
@@ -56,25 +56,9 @@ export function ServiceTemplate({ service }: { service: Service }) {
               Capabilities across the engagement
             </h2>
           </Reveal>
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {service.capabilities.map((cap, i) => {
-              const featured = i === 0;
-              return (
-                <Reveal
-                  key={cap.title}
-                  delay={(i % 3) * 60}
-                  className={`h-full ${featured ? "sm:col-span-2" : ""}`}
-                >
-                  <FillCard
-                    index={i + 1}
-                    title={cap.title}
-                    body={cap.description}
-                    featured={featured}
-                  />
-                </Reveal>
-              );
-            })}
-          </div>
+          <Reveal>
+            <CapabilityTabs capabilities={service.capabilities} />
+          </Reveal>
         </Container>
       </section>
 
