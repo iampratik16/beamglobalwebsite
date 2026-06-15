@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
@@ -15,6 +15,7 @@ import { homeHero, culturePillars } from "@/content/home";
 export function Hero() {
   const { eyebrow, headlines, lead, primaryCta, secondaryCta } = homeHero;
   const [index, setIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     if (headlines.length <= 1) return;
@@ -26,12 +27,44 @@ export function Hero() {
     return () => clearInterval(id);
   }, [headlines.length]);
 
+  // Pause the background video for users who prefer reduced motion.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      video.pause();
+    }
+  }, []);
+
   return (
     <section className="relative flex items-center overflow-hidden bg-ink text-paper md:min-h-[90vh]">
+      {/* Background video */}
+      <video
+        ref={videoRef}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source src="/video/hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* Legibility + brand overlays (left/bottom darker for text) */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/35"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"
+      />
       {/* texture + colour wash */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
@@ -40,11 +73,7 @@ export function Hero() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-accent/30 blur-[140px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-32 bottom-0 h-[30rem] w-[30rem] rounded-full bg-gold/20 blur-[130px]"
+        className="pointer-events-none absolute -left-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-accent/20 blur-[140px]"
       />
 
       <Container className="relative grid grid-cols-1 items-center gap-14 pb-20 pt-36 md:pb-28 md:pt-44 lg:grid-cols-[1.3fr_0.7fr]">
