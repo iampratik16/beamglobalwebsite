@@ -22,19 +22,18 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-ink text-paper">
-      {/* subtle editorial backdrop */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
+      {/* soft editorial glows */}
       <div
         aria-hidden
         className="pointer-events-none absolute -right-32 top-0 h-[28rem] w-[28rem] rounded-full bg-accent/25 blur-[120px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-gold/10 blur-[120px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-1/2 h-[24rem] w-[24rem] -translate-y-1/2 rounded-full border border-paper/10"
       />
       <Container className="relative pb-16 pt-32 md:pb-20 md:pt-40">
         {crumbs && (

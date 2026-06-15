@@ -1,10 +1,11 @@
-import { Button } from "./Button";
+import Link from "next/link";
 import { Container } from "./Container";
+import { ArrowRight } from "./icons";
 
 /**
  * Full-width call-to-action band. Default ink background with paper text;
- * `tone="accent"` for a crimson band used sparingly. Layered with a subtle
- * grid texture and a soft colour glow for editorial depth.
+ * `tone="accent"` for a crimson band used sparingly. Layered with soft colour
+ * glows and a large decorative ring — no grid texture.
  */
 export function CTABand({
   eyebrow,
@@ -24,45 +25,71 @@ export function CTABand({
   const bg = tone === "accent" ? "bg-accent" : "bg-ink";
   return (
     <section className={`relative overflow-hidden ${bg}`}>
-      {/* texture */}
+      {/* soft glows */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
-      />
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full blur-[120px] ${
-          tone === "accent" ? "bg-gold/25" : "bg-accent/30"
+        className={`pointer-events-none absolute -right-20 -top-32 h-[30rem] w-[30rem] rounded-full blur-[130px] ${
+          tone === "accent" ? "bg-gold/25" : "bg-accent/35"
         }`}
       />
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full blur-[120px] ${
+          tone === "accent" ? "bg-ink/40" : "bg-gold/10"
+        }`}
+      />
+      {/* decorative outlined rings */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 rounded-full border border-paper/10"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-10 top-1/2 h-[16rem] w-[16rem] -translate-y-1/2 rounded-full border border-paper/10"
+      />
+
       <Container className="section-y relative">
-        <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            {eyebrow && <p className="text-eyebrow mb-4 text-gold">{eyebrow}</p>}
+            {eyebrow && (
+              <p className="text-eyebrow mb-5 inline-flex items-center gap-2.5 text-gold">
+                <span aria-hidden className="inline-block h-px w-8 bg-gold" />
+                {eyebrow}
+              </p>
+            )}
             <h2 className="text-h2 text-paper">{heading}</h2>
-            {body && <p className="mt-5 text-lead text-paper/70">{body}</p>}
+            {body && <p className="mt-5 max-w-xl text-lead text-paper/70">{body}</p>}
           </div>
-          <div className="flex flex-shrink-0 flex-wrap gap-4">
-            <Button href={primary.href} variant="onDark">
-              {primary.label}
-            </Button>
+
+          <div className="flex flex-shrink-0 flex-col gap-4 sm:flex-row sm:items-center">
+            <CTAButton href={primary.href} label={primary.label} />
             {secondary && (
-              <Button
+              <Link
                 href={secondary.href}
-                withArrow={false}
-                className="border border-paper/30 bg-transparent text-paper hover:bg-paper hover:text-ink"
+                className="link-underline self-center text-paper/80 transition-colors hover:text-paper"
               >
                 {secondary.label}
-              </Button>
+              </Link>
             )}
           </div>
         </div>
       </Container>
     </section>
+  );
+}
+
+/** Sleek CTA: label + circular arrow that fills and slides on hover. */
+function CTAButton({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      className="group inline-flex items-center gap-4 rounded-full border border-paper/25 py-2 pl-7 pr-2 transition-colors duration-300 hover:border-paper/60"
+    >
+      <span className="text-[1.05rem] font-semibold text-paper">{label}</span>
+      <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-paper">
+        <ArrowRight className="h-5 w-5 text-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-8" />
+        <ArrowRight className="absolute h-5 w-5 -translate-x-8 text-ink transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0" />
+      </span>
+    </Link>
   );
 }
