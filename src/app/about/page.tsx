@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { PlaceholderMedia } from "@/components/ui/PlaceholderMedia";
+import { FillCard } from "@/components/ui/FillCard";
 import { CTABand } from "@/components/ui/CTABand";
 import { pageMetadata } from "@/lib/seo";
 import { about } from "@/content/about";
@@ -72,13 +73,9 @@ export default function AboutPage() {
             <h2 className="text-h2 mt-4 text-ink">{about.coreValues.title}</h2>
             <p className="mt-6 text-lead">{about.coreValues.body}</p>
           </Reveal>
-          <Reveal className="mt-14 grid grid-cols-1 gap-px border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {about.coreValues.pillars.map((value, i) => (
-              <div key={value.label} className="flex flex-col gap-3 bg-paper p-7">
-                <span className="font-serif text-2xl text-accent">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="font-display text-lg font-bold tracking-tight text-ink">{value.label}</h3>
-                <p className="text-sm leading-relaxed text-muted">{value.text}</p>
-              </div>
+              <FillCard key={value.label} index={i + 1} title={value.label} body={value.text} />
             ))}
           </Reveal>
         </Container>

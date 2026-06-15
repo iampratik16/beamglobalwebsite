@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "nanobanana": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "nanobanana-mcp-server@latest"
+      ],
+      "env": {
+        "NANOBANANA_AUTH_METHOD": "vertex_ai",
+        "GCP_PROJECT_ID": "radlabs-497004",
+        "GCP_REGION": "global",
+        "NANOBANANA_MODEL": "pro",
+        "IMAGE_OUTPUT_DIR": "./public/images/generated"
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { CTABand } from "@/components/ui/CTABand";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { FillCard } from "@/components/ui/FillCard";
 import { ArrowRight } from "@/components/ui/icons";
 import Link from "next/link";
 import { pillars, servicesByPillar, type Service } from "@/content/services";
@@ -55,25 +56,24 @@ export function ServiceTemplate({ service }: { service: Service }) {
               Capabilities across the engagement
             </h2>
           </Reveal>
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {service.capabilities.map((cap, i) => (
-              <Reveal
-                key={cap.title}
-                delay={(i % 3) * 60}
-                className="group flex flex-col gap-3 rounded-2xl border border-hairline bg-paper p-7 transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-soft lg:p-8"
-              >
-                <span className="font-serif text-2xl leading-none text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span aria-hidden className="h-0.5 w-8 bg-gold transition-all duration-300 group-hover:w-14" />
-                <h3 className="font-display text-lg font-bold leading-snug tracking-tight text-ink">
-                  {cap.title}
-                </h3>
-                <p className="text-[0.95rem] leading-relaxed text-muted">
-                  {cap.description}
-                </p>
-              </Reveal>
-            ))}
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {service.capabilities.map((cap, i) => {
+              const featured = i === 0;
+              return (
+                <Reveal
+                  key={cap.title}
+                  delay={(i % 3) * 60}
+                  className={`h-full ${featured ? "sm:col-span-2" : ""}`}
+                >
+                  <FillCard
+                    index={i + 1}
+                    title={cap.title}
+                    body={cap.description}
+                    featured={featured}
+                  />
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>
