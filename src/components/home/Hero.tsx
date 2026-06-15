@@ -49,7 +49,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative mt-[73px] flex items-center overflow-hidden bg-ink text-paper md:min-h-[calc(100vh-73px)]">
+    <section className="relative mt-[89px] flex items-center overflow-hidden bg-ink text-paper md:min-h-[calc(100vh-89px)]">
       {/* Background video */}
       <video
         ref={videoRef}

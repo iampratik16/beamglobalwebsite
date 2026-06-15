@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -30,11 +31,20 @@ export default function AboutPage() {
       <section className="section-y bg-paper">
         <Container>
           <Reveal className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-            <div>
+            <div className="flex flex-col">
               <Eyebrow>Who we are</Eyebrow>
               <h2 className="text-h2 mt-4 text-ink">{about.whoWeAre.title}</h2>
+              <div className="group relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/teamww.png"
+                  alt="The Beam Global Services team"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                />
+              </div>
             </div>
-            <div className="space-y-5 text-[1.075rem] leading-relaxed text-text">
+            <div className="space-y-5 text-[1.075rem] leading-relaxed text-text lg:pt-2">
               {about.whoWeAre.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}

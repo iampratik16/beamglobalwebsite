@@ -68,14 +68,14 @@ export function Header() {
         scrolled ? "shadow-[0_8px_24px_-16px_rgba(0,0,0,0.3)]" : ""
       }`}
     >
-      <div className="container-page flex h-[var(--header-h,72px)] items-center justify-between gap-6 py-3">
+      <div className="container-page flex h-[var(--header-h,88px)] items-center justify-between gap-6 py-3">
         {/* Logo */}
         <Link href="/" aria-label="Beam Global Services — home" className="flex shrink-0 items-center">
           <Image
             src={onLight ? logoDark : logoWhite}
             alt="Beam Global Services"
             priority
-            className="h-8 w-auto md:h-9"
+            className="h-9 w-auto md:h-11"
           />
         </Link>
 
