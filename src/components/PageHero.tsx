@@ -5,9 +5,13 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 
 /**
- * Shared dark hero for interior pages. With an optional `image`, the hero
- * shows a darkened full-bleed background photo (consistent with the home
- * hero video); without one it keeps the clean ink + soft-glow treatment.
+ * Shared hero for interior pages — a clean white band with dark editorial
+ * type, sitting flush beneath the solid white header (consistent site-wide).
+ *
+ * When `image` is supplied the hero becomes an editorial banner layout —
+ * copy on top, then a full-width cinematic banner photograph below, with a
+ * restrained crimson brand accent (the Beam answer to PwC's signature
+ * geometric overlay). Without it, the hero keeps its text-only treatment.
  */
 export function PageHero({
   eyebrow,
@@ -26,55 +30,63 @@ export function PageHero({
   imageAlt?: string;
   children?: ReactNode;
 }) {
-  return (
-    <section className="relative overflow-hidden bg-ink text-paper">
-      {image ? (
-        <>
-          <Image
-            src={image}
-            alt={imageAlt ?? ""}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          {/* legibility overlays (left + bottom darker) */}
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/45"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"
-          />
-        </>
-      ) : (
-        <>
-          {/* soft editorial glows */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-32 top-0 h-[28rem] w-[28rem] rounded-full bg-accent/25 blur-[120px]"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-gold/10 blur-[120px]"
-          />
-        </>
+  const copy = (
+    <>
+      {crumbs && (
+        <div className="mb-8">
+          <Breadcrumbs items={crumbs} />
+        </div>
       )}
-      <Container className="relative pb-16 pt-32 md:pb-20 md:pt-40">
-        {crumbs && (
-          <div className="mb-8 [&_*]:!text-paper/60 [&_a:hover]:!text-paper [&_[aria-current]]:!text-paper">
-            <Breadcrumbs items={crumbs} />
+      {eyebrow && <Eyebrow className="mb-5">{eyebrow}</Eyebrow>}
+      <h1 className="text-hero max-w-4xl text-ink">{title}</h1>
+      {lead &&
+        (image ? (
+          <p className="mt-5 max-w-5xl text-lg leading-relaxed text-muted">{lead}</p>
+        ) : (
+          <p className="mt-6 max-w-2xl text-lead text-muted">{lead}</p>
+        ))}
+      {children}
+    </>
+  );
+
+  return (
+    <section className="relative overflow-hidden bg-paper text-ink">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 top-0 h-[28rem] w-[28rem] rounded-full bg-accent/10 blur-[120px]"
+      />
+      <Container className="relative pb-16 pt-28 md:pb-20 md:pt-32">
+        {image ? (
+          <div>
+            {copy}
+            <figure className="relative mt-10 md:mt-14">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-float ring-1 ring-hairline sm:aspect-[2/1] lg:aspect-[12/5]">
+                <Image
+                  src={image}
+                  alt={imageAlt ?? title}
+                  fill
+                  priority
+                  sizes="(max-width: 1320px) 100vw, 1320px"
+                  className="object-cover"
+                />
+                {/* gentle inner darkening at the foot of the banner */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
+                {/* Beam crimson brand accent — a restrained angled bar bottom-left */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute bottom-0 left-0 h-[28%] w-[46%] bg-accent/90"
+                  style={{ clipPath: "polygon(0 38%, 100% 0, 100% 100%, 0 100%)" }}
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute bottom-0 left-0 h-1 w-[46%] bg-gold"
+                />
+              </div>
+            </figure>
           </div>
+        ) : (
+          copy
         )}
-        {eyebrow && (
-          <Eyebrow tone="paper" className="mb-5">
-            {eyebrow}
-          </Eyebrow>
-        )}
-        <h1 className="text-hero max-w-4xl text-paper">{title}</h1>
-        {lead && <p className="mt-6 max-w-2xl text-lead text-paper/70">{lead}</p>}
-        {children}
       </Container>
     </section>
   );

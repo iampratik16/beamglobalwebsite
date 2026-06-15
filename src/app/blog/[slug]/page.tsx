@@ -71,13 +71,15 @@ export default async function BlogPostPage({
       <PageHero
         eyebrow={post.category}
         title={post.title}
+        image={post.image}
+        imageAlt={post.title}
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Blogs", href: "/blog" },
           { label: post.title },
         ]}
       >
-        <p className="mt-6 text-sm uppercase tracking-wider text-paper/60">
+        <p className="mt-6 text-sm uppercase tracking-wider text-muted">
           {formatDate(post.date)}
         </p>
       </PageHero>

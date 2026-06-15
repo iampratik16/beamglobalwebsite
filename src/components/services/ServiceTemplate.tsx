@@ -23,7 +23,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
       <PageHero
         eyebrow={pillar.label}
         title={service.headline}
-        lead={service.lead}
+        lead={service.summary}
         image={`/images/services/hero/${service.slug}.png`}
         imageAlt={service.title}
         crumbs={[
