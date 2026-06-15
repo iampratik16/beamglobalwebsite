@@ -1,6 +1,6 @@
 /**
  * Placeholder legal copy. These are NEUTRAL templates, clearly marked for
- * legal review — not fabricated policy. Replace before launch with reviewed
+ * legal review, not fabricated policy. Replace before launch with reviewed
  * Privacy, Cookie and Terms content.
  */
 
@@ -21,7 +21,7 @@ export const legalDocs: Record<string, LegalDoc> = {
     intro:
       "This Privacy Policy explains how Beam Global Services handles personal information collected through this website.",
     sections: [
-      { heading: "Information we collect", body: "We collect the information you provide through our contact form — such as your name, email address, company and message — solely to respond to your enquiry." },
+      { heading: "Information we collect", body: "We collect the information you provide through our contact form, such as your name, email address, company and message, solely to respond to your enquiry." },
       { heading: "How we use information", body: "We use the information you provide to respond to enquiries and to provide the services you request. We do not sell your personal information." },
       { heading: "Data retention", body: "We retain enquiry information only for as long as necessary to respond and to meet our legal and operational obligations." },
       { heading: "Your rights", body: "You may request access to, correction of, or deletion of your personal information by contacting us. We will respond in line with applicable data-protection law." },

@@ -1,18 +1,18 @@
 /**
  * Careers content. Uses Beam's own "Elevate Your Career" line (from the live
  * homepage CTA). New microcopy is British English and aligned to Beam's real
- * core values — no fabricated roles, perks or statistics.
+ * core values, no fabricated roles, perks or statistics.
  */
 
 export const careers = {
   hero: {
     eyebrow: "Careers",
     heading: "Elevate Your Career, Embrace Your Future.",
-    lead: "Beam Global Services is a collection of people who believe in excellence. We look for those who are exceptional at what they do — and who bring integrity, curiosity and collaboration to how they do it.",
+    lead: "Beam Global Services is a collection of people who believe in excellence. We look for those who are exceptional at what they do, and who bring integrity, curiosity and collaboration to how they do it.",
   },
   intro: {
     title: "Work that matters, with people who care",
-    body: "We help organisations get the most from their Governance, Risk & Compliance investments. That means solving real problems for real clients — and growing your expertise alongside specialists who care about doing things properly.",
+    body: "We help organisations get the most from their Governance, Risk & Compliance investments. That means solving real problems for real clients, and growing your expertise alongside specialists who care about doing things properly.",
   },
   values: [
     {
@@ -29,7 +29,7 @@ export const careers = {
     },
     {
       label: "Collaborate openly",
-      text: "We achieve more together — through open communication and shared expertise.",
+      text: "We achieve more together, through open communication and shared expertise.",
     },
   ],
   cta: {

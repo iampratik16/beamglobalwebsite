@@ -2,7 +2,7 @@
  * Service taxonomy + content for all 13 service detail pages.
  * Copy is preserved verbatim from the live Beam Global Services site.
  * One typed array drives the dynamic route /services/[slug] and the
- * services index — no per-page duplication.
+ * services index, no per-page duplication.
  */
 
 export type PillarId = "digital" | "it-governance" | "entrepreneurship";
@@ -40,7 +40,7 @@ export const pillars: Pillar[] = [
     label: "Consulting · Digital Service",
     eyebrow: "Digital Service",
     intro:
-      "Custom software, GRC platform selection and end-to-end implementation — built to integrate cleanly and strengthen control across your enterprise systems.",
+      "Custom software, GRC platform selection and end-to-end implementation, built to integrate cleanly and strengthen control across your enterprise systems.",
   },
   {
     id: "it-governance",
@@ -54,7 +54,7 @@ export const pillars: Pillar[] = [
     label: "Entrepreneurship",
     eyebrow: "Entrepreneurship",
     intro:
-      "From first idea to public listing — financial, strategic and transactional expertise that helps founders and scale-ups grow with confidence.",
+      "From first idea to public listing, financial, strategic and transactional expertise that helps founders and scale-ups grow with confidence.",
   },
 ];
 
@@ -69,13 +69,13 @@ export const services: Service[] = [
     summary:
       "Custom software, system integration and modern engineering that connects cleanly with your existing platforms.",
     capabilities: [
-      { title: "Custom Software Development", description: "We design and develop software tailored to your business needs—whether it's enterprise platforms, internal tools, mobile apps, or customer-facing solutions." },
-      { title: "System Integration Services", description: "We enable smooth data and functionality exchange between different systems—ERP, CRM, cloud platforms, or legacy databases." },
+      { title: "Custom Software Development", description: "We design and develop software tailored to your business needs, whether it's enterprise platforms, internal tools, mobile apps, or customer-facing solutions." },
+      { title: "System Integration Services", description: "We enable smooth data and functionality exchange between different systems, ERP, CRM, cloud platforms, or legacy databases." },
       { title: "API Development & Management", description: "We build secure, well-documented APIs that enable software components and external systems to interact effortlessly." },
-      { title: "Cloud-Native & SaaS Development", description: "We help you build or migrate to cloud-based architectures—leveraging platforms like Azure, AWS, and GCP." },
+      { title: "Cloud-Native & SaaS Development", description: "We help you build or migrate to cloud-based architectures, leveraging platforms like Azure, AWS, and GCP." },
       { title: "Legacy System Modernization", description: "We upgrade or reengineer legacy applications using modern technologies while preserving core business logic." },
       { title: "Database Design & Integration", description: "Our team designs robust database architectures and implements integrations that ensure data integrity, scalability, and security." },
-      { title: "DevOps & CI/CD Implementation", description: "We implement modern DevOps practices—including Continuous Integration and Continuous Delivery pipelines." },
+      { title: "DevOps & CI/CD Implementation", description: "We implement modern DevOps practices, including Continuous Integration and Continuous Delivery pipelines." },
       { title: "Enterprise Application Integration (EAI)", description: "We connect multiple enterprise systems into one cohesive environment." },
       { title: "Middleware & Message Queuing Solutions", description: "We implement middleware platforms (like Kafka, RabbitMQ, MuleSoft, etc.)." },
       { title: "Microservices Architecture", description: "We design and deploy scalable applications using microservices." },
@@ -92,7 +92,7 @@ export const services: Service[] = [
     pillar: "digital",
     title: "GRC Product Selection",
     headline: "Smarter GRC Starts with the Right Choice.",
-    lead: "Choosing the right GRC solution is critical to building a secure, compliant, and resilient organization. We help you evaluate, compare, and select the best-fit product for your unique governance, risk, and compliance needs—ensuring seamless alignment with your business goals, regulatory requirements, and technology environment.",
+    lead: "Choosing the right GRC solution is critical to building a secure, compliant, and resilient organization. We help you evaluate, compare, and select the best-fit product for your unique governance, risk, and compliance needs, ensuring seamless alignment with your business goals, regulatory requirements, and technology environment.",
     summary:
       "Independent evaluation and selection of the best-fit GRC platform for your risk, compliance and technology needs.",
     capabilities: [
@@ -112,9 +112,9 @@ export const services: Service[] = [
     pillar: "digital",
     title: "SafePaaS GRC Implementation",
     headline: "Automate Control. Simplify Compliance. Empower Governance.",
-    lead: "Our SafePaaS GRC implementation delivers a unified, cloud-based solution to help organizations manage risk, enforce controls, and streamline compliance across enterprise systems. From access governance to real-time monitoring and audit automation, we configure SafePaaS to align with your processes, reduce risk exposure, and strengthen internal controls—empowering smarter, safer business decisions.",
+    lead: "Our SafePaaS GRC implementation delivers a unified, cloud-based solution to help organizations manage risk, enforce controls, and streamline compliance across enterprise systems. From access governance to real-time monitoring and audit automation, we configure SafePaaS to align with your processes, reduce risk exposure, and strengthen internal controls, empowering smarter, safer business decisions.",
     summary:
-      "Unified, cloud-based SafePaaS GRC — access governance, risk, compliance and process controls configured to your processes.",
+      "Unified, cloud-based SafePaaS GRC, access governance, risk, compliance and process controls configured to your processes.",
     capabilities: [
       { title: "Access Governance", description: "Automate user provisioning, enforce SoD, and manage privileged access across enterprise systems like Oracle, SAP, and Microsoft." },
       { title: "Risk Management", description: "Map enterprise risks to controls, streamline assessments, and drive remediation with full audit traceability." },
@@ -150,7 +150,7 @@ export const services: Service[] = [
     headline: "We implement Oracle RMC to help you manage risk, enforce controls, and simplify compliance.",
     lead: "We provide end-to-end implementation of Oracle Risk Management Cloud (RMC), enabling your organization to strengthen internal controls, monitor risk, and meet compliance goals. Our approach helps automate audit processes, reduce manual work, and give you real-time visibility into risk and control performance across your business systems.",
     summary:
-      "End-to-end Oracle Risk Management Cloud implementation — automated controls, monitoring and audit readiness.",
+      "End-to-end Oracle Risk Management Cloud implementation, automated controls, monitoring and audit readiness.",
     capabilities: [
       { title: "Business Requirement Analysis", description: "Understanding your current control environment and compliance needs to configure Oracle RMC appropriately." },
       { title: "Module Implementation & Configuration", description: "Implementing Advanced Access Controls (AAC), Advanced Financial Controls (AFC), and Financial Reporting Compliance (FRC) modules." },
@@ -161,7 +161,7 @@ export const services: Service[] = [
       { title: "Integration with Oracle ERP", description: "Seamless integration with finance, procurement, and HR modules." },
       { title: "Knowledge Transfer & Support", description: "Training, documentation, and ongoing team support." },
     ],
-    cta: { heading: "Oracle RMC, Deployed for Results – Let's Get Started", button: "Contact us" },
+    cta: { heading: "Oracle RMC, Deployed for Results, Let's Get Started", button: "Contact us" },
   },
 
   // ── IT Governance ──────────────────────────────────────────────
@@ -169,15 +169,15 @@ export const services: Service[] = [
     slug: "strategic-consulting",
     pillar: "it-governance",
     title: "Strategic Consulting",
-    headline: "We turn vision into strategy—and strategy into results.",
+    headline: "We turn vision into strategy, and strategy into results.",
     lead: "Our strategic consulting services help organizations make confident, future-focused decisions. We work closely with your leadership to define clear goals, evaluate challenges, and build actionable strategies that drive growth, improve performance, and prepare your business for what's next.",
     summary:
       "Future-focused strategy, digital transformation planning and leadership advisory that drives measurable growth.",
     capabilities: [
       { title: "Business Strategy Development", description: "We help you define or refine your organization's long-term strategy and align your business model with changing market demands and customer expectations." },
-      { title: "Digital Transformation Planning", description: "We guide you through digital initiatives that align with your strategic goals—modernizing legacy systems, adopting cloud solutions, or introducing new digital services." },
-      { title: "Operational Improvement Strategy", description: "We assess your current operations, pinpoint inefficiencies, and provide a roadmap for process improvement—increasing productivity, lowering costs, and building scalability." },
-      { title: "Technology Alignment & Road mapping", description: "We ensure that your technology investments support your business goals and help you choose the right tools—and use them the right way." },
+      { title: "Digital Transformation Planning", description: "We guide you through digital initiatives that align with your strategic goals, modernizing legacy systems, adopting cloud solutions, or introducing new digital services." },
+      { title: "Operational Improvement Strategy", description: "We assess your current operations, pinpoint inefficiencies, and provide a roadmap for process improvement, increasing productivity, lowering costs, and building scalability." },
+      { title: "Technology Alignment & Road mapping", description: "We ensure that your technology investments support your business goals and help you choose the right tools, and use them the right way." },
       { title: "Risk & Compliance Strategy", description: "We help you build a proactive approach to governance, risk management, and compliance to position your business to stay compliant and resilient." },
       { title: "Change Management Strategy", description: "We provide strategies for managing organizational change, engaging stakeholders, and ensuring successful adoption of new processes, technologies, and ways of working." },
       { title: "Growth & Expansion Strategy", description: "We develop growth strategies that are data-driven, financially sound, and tailored to your competitive landscape." },
@@ -189,27 +189,27 @@ export const services: Service[] = [
     slug: "government-public-sector",
     pillar: "it-governance",
     title: "Government & Public Sector",
-    headline: "Building Public Institutions That Deliver—With Trust and Accountability.",
+    headline: "Building Public Institutions That Deliver, With Trust and Accountability.",
     lead: "We help government agencies and public institutions modernise services, strengthen governance, and deliver better outcomes for citizens. From digital transformation to compliance and cybersecurity, we bring strategy, structure, and support to the public sector's most important priorities.",
     summary:
       "Strategy, digital modernisation and governance for government agencies and public institutions.",
     capabilities: [
       { title: "Strategic Planning & Policy Support", description: "We work with public sector leaders to define clear priorities, set achievable goals, and build policies that are citizen-focused and results-driven. Our strategies align with long-term vision while staying grounded in current realities." },
-      { title: "Digital Government & IT Modernization", description: "We help agencies move from legacy systems to modern platforms—enabling better data use, faster service delivery, and enhanced user experience for both staff and the public. This includes cloud migration, platform integration, and system redesign." },
+      { title: "Digital Government & IT Modernization", description: "We help agencies move from legacy systems to modern platforms, enabling better data use, faster service delivery, and enhanced user experience for both staff and the public. This includes cloud migration, platform integration, and system redesign." },
       { title: "Governance, Risk & Compliance (GRC)", description: "Public institutions must meet growing demands for accountability. We implement frameworks that improve internal controls, manage risk, and ensure compliance with government standards and regulatory requirements." },
       { title: "Financial Management & Budget Optimization", description: "We provide tools and strategies to improve public financial planning, streamline reporting, and enhance transparency. Our work supports better decision-making around budgeting, resource allocation, and long-term sustainability." },
       { title: "Performance Monitoring & Reporting", description: "We help agencies establish KPIs, track outcomes, and report on impact. From operational dashboards to public accountability reports, we ensure leadership has the data they need to make informed decisions and build public trust." },
       { title: "Cybersecurity & Data Privacy", description: "We design and implement security strategies that protect sensitive government data, reduce cyber threats, and align with national and regional data privacy laws." },
       { title: "Public Engagement & Service Experience", description: "Modern public service means meeting people where they are. We improve the citizen experience with user-friendly digital services, better communication channels, and accessible platforms that increase public satisfaction and trust." },
-      { title: "Capacity Building & Training", description: "We strengthen internal capabilities with tailored training, change management, and process improvement initiatives—ensuring agencies can sustain results and adapt to future needs independently." },
+      { title: "Capacity Building & Training", description: "We strengthen internal capabilities with tailored training, change management, and process improvement initiatives, ensuring agencies can sustain results and adapt to future needs independently." },
     ],
-    cta: { heading: "Deliver Better Public Outcomes – Start Your Journey Today!", button: "Contact us" },
+    cta: { heading: "Deliver Better Public Outcomes, Start Your Journey Today!", button: "Contact us" },
   },
   {
     slug: "transformation-sector",
     pillar: "it-governance",
     title: "Transformation Sector",
-    headline: "We Drive Change That Lasts—Across People, Processes, and Technology.",
+    headline: "We Drive Change That Lasts, Across People, Processes, and Technology.",
     lead: "Our transformation services help organizations reimagine how they work, deliver, and grow. Whether it's digital, operational, or cultural transformation, we bring strategy, structure, and support to help you lead change with confidence and clarity.",
     summary:
       "Digital, operational and cultural transformation delivered with strategy, structure and lasting support.",
@@ -243,12 +243,12 @@ export const services: Service[] = [
     slug: "startup",
     pillar: "entrepreneurship",
     title: "Startup",
-    headline: "From Idea to Exit—We Empower Startups to Grow with Confidence.",
+    headline: "From Idea to Exit, We Empower Startups to Grow with Confidence.",
     lead: "We help startups navigate complex financial, regulatory, and strategic landscapes with tailored services spanning investment banking, valuations, due diligence, data analytics, fundraising, and M&A support. From day one to exit, our offerings are designed to deliver value at every stage of the startup lifecycle.",
     summary:
-      "Financial, regulatory and strategic expertise for founders—from first raise to exit.",
+      "Financial, regulatory and strategic expertise for founders, from first raise to exit.",
     capabilities: [
-      { title: "Investment Banking", description: "Support startups with Capital Formation and Investment Banking (CFIB) services—from raising early-stage capital to preparing for IPOs." },
+      { title: "Investment Banking", description: "Support startups with Capital Formation and Investment Banking (CFIB) services, from raising early-stage capital to preparing for IPOs." },
       { title: "Financial Diligence", description: "Conduct detailed financial due diligence to assess deal readiness, identify risks, and provide clarity to investors and acquirers." },
       { title: "Valuation Services", description: "Help startups understand and justify their worth during funding rounds, equity distribution, or strategic exits." },
       { title: "Tax Advisory for Startups", description: "Navigate startup-specific tax challenges, R&D credits, international expansion, and compliance." },
@@ -257,28 +257,28 @@ export const services: Service[] = [
       { title: "Fundraising Support", description: "Assist with investor targeting, pitch deck development, financial modeling, and capital strategies." },
       { title: "Strategy & Execution", description: "Co-develop business and operational strategies supporting scalable growth." },
     ],
-    cta: { heading: "Fuel Your Startup's Journey with Strategic Expertise—Let's Talk.", button: "Contact us" },
+    cta: { heading: "Fuel Your Startup's Journey with Strategic Expertise, Let's Talk.", button: "Contact us" },
   },
   {
     slug: "scaleup-advisory",
     pillar: "entrepreneurship",
     title: "Scaleup Advisory",
     headline: "Accelerate Growth. Scale Smarter. Succeed Sustainably.",
-    lead: "We guide startups and scale-ups through the critical next phase of their journey—from product-market fit to market leadership. Our tailored advisory services focus on scalable growth, operational efficiency, funding, governance, and technology transformation to unlock long-term value.",
+    lead: "We guide startups and scale-ups through the critical next phase of their journey, from product-market fit to market leadership. Our tailored advisory services focus on scalable growth, operational efficiency, funding, governance, and technology transformation to unlock long-term value.",
     summary:
-      "Advisory for the next phase of growth—from product-market fit to market leadership.",
+      "Advisory for the next phase of growth, from product-market fit to market leadership.",
     capabilities: [
-      { title: "Scale Strategy & Roadmap", description: "We design customized scale-up strategies that align with your business model, growth ambition, and market opportunities—prioritizing execution readiness and scalability." },
+      { title: "Scale Strategy & Roadmap", description: "We design customized scale-up strategies that align with your business model, growth ambition, and market opportunities, prioritizing execution readiness and scalability." },
       { title: "Revenue Growth Acceleration", description: "Through go-to-market refinement, pricing optimization, and customer journey transformation, we help drive consistent revenue expansion." },
       { title: "Market Expansion Planning", description: "We assess new market opportunities, localization needs, and international growth strategies to help you expand with clarity and control." },
-      { title: "Organizational Design", description: "Our experts help evolve your org structure to support scale—defining roles, governance models, and agile processes that drive performance and accountability." },
+      { title: "Organizational Design", description: "Our experts help evolve your org structure to support scale, defining roles, governance models, and agile processes that drive performance and accountability." },
       { title: "Operational Scaling", description: "We optimize operations, streamline processes, and introduce automation where needed to support higher volumes with lower cost and risk." },
-      { title: "Fundraising for Growth", description: "Beyond initial seed rounds, we prepare you for Series A and beyond—supporting investor readiness, term sheet negotiation, and strategic alignment with capital partners." },
+      { title: "Fundraising for Growth", description: "Beyond initial seed rounds, we prepare you for Series A and beyond, supporting investor readiness, term sheet negotiation, and strategic alignment with capital partners." },
       { title: "Risk & Governance Maturity", description: "Strengthen your governance posture with scalable policies, risk management frameworks, and board-level insights that attract institutional interest." },
       { title: "Financial Controls & KPI Modeling", description: "Implement robust financial processes and dashboards to manage burn rate, unit economics, and growth metrics with discipline." },
       { title: "Leadership & Culture Scaling", description: "We support leadership evolution with coaching, succession planning, and culture frameworks that retain startup energy while enabling structured growth." },
       { title: "Digital & Tech Enablement", description: "We assess and implement the right tech stack, architecture upgrades, and platforms (including AI, cloud, and data systems) for future-ready operations." },
-      { title: "Exit Readiness & Strategic Positioning", description: "Whether through M&A or IPO, we help prepare your business to attract suitors, investors, or public market confidence—ensuring you scale with optionality." },
+      { title: "Exit Readiness & Strategic Positioning", description: "Whether through M&A or IPO, we help prepare your business to attract suitors, investors, or public market confidence, ensuring you scale with optionality." },
     ],
     cta: { heading: "Ready to Scale? Let's Build the Next Chapter of Your Success Together", button: "Contact us" },
   },
@@ -287,15 +287,15 @@ export const services: Service[] = [
     pillar: "entrepreneurship",
     title: "Incubator & Accelerators Advisory",
     headline: "Empowering Innovation, Enabling Value",
-    lead: "We partner with incubators, accelerators, and advisory firms to deliver high-impact financial and strategic services that fuel innovation and growth. Our integrated approach—spanning diligence, valuation, tax structuring, fundraising support, and deal strategy—ensures each opportunity is assessed with precision and positioned for maximum value creation.",
+    lead: "We partner with incubators, accelerators, and advisory firms to deliver high-impact financial and strategic services that fuel innovation and growth. Our integrated approach, spanning diligence, valuation, tax structuring, fundraising support, and deal strategy, ensures each opportunity is assessed with precision and positioned for maximum value creation.",
     summary:
       "High-impact financial and strategic services for incubators, accelerators and advisory firms.",
     capabilities: [
-      { title: "Financial Due Diligence", description: "We support startups with Capital Formation and Investment Banking (CFIB) services—from raising early-stage capital to preparing for IPOs." },
+      { title: "Financial Due Diligence", description: "We support startups with Capital Formation and Investment Banking (CFIB) services, from raising early-stage capital to preparing for IPOs." },
       { title: "Business Valuation", description: "We offer defensible and market-aligned valuations tailored to early-stage, growth-stage, and mature businesses." },
       { title: "M&A and Transaction Tax Advisory", description: "Our tax specialists provide deep expertise in structuring deals for optimal tax efficiency." },
       { title: "Fundraise Support", description: "We assist with capital raise strategy, investor targeting, pitch material preparation, and deal negotiation." },
-      { title: "Regulatory and Compliance Advisory", description: "We turn startup data into decision-driving insights—covering customer behavior, financial KPIs, product performance, and operational trends." },
+      { title: "Regulatory and Compliance Advisory", description: "We turn startup data into decision-driving insights, covering customer behavior, financial KPIs, product performance, and operational trends." },
       { title: "Data Analytics and Financial Modeling", description: "We build data-driven insights and robust financial models to support strategic planning, valuation, and investor presentations." },
       { title: "Strategic Advisory & Go-to-Market Planning", description: "Supporting portfolio companies in business model refinement and operational structuring." },
       { title: "Deals Strategy & Execution", description: "We craft bespoke deal strategies that align with client objectives." },
@@ -309,7 +309,7 @@ export const services: Service[] = [
     headline: "Preparing You for a Flawless Market Debut.",
     lead: "Our IPO readiness services are designed to help companies navigate the complex journey to becoming publicly listed. From regulatory compliance to investor positioning, we ensure every aspect of your business is prepared to meet the demands of the capital markets with confidence and clarity.",
     summary:
-      "End-to-end IPO preparation—from gap assessment and controls to investor story and regulatory filings.",
+      "End-to-end IPO preparation, from gap assessment and controls to investor story and regulatory filings.",
     capabilities: [
       { title: "IPO Gap Assessment", description: "We perform a thorough evaluation of your current financial, operational, and governance structures to identify readiness gaps and develop a roadmap for remediation." },
       { title: "Financial Reporting & Controls", description: "We help align your reporting standards with market expectations (e.g., IFRS, Ind AS, or US GAAP), strengthen internal controls, and ensure audit readiness." },

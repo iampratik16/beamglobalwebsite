@@ -27,9 +27,9 @@ export async function submitContact(
     message: String(formData.get("message") ?? ""),
   };
 
-  // Honeypot — silently succeed for bots.
+  // Honeypot, silently succeed for bots.
   if (String(formData.get("website") ?? "")) {
-    return { status: "success", message: "Thank you — we'll be in touch shortly." };
+    return { status: "success", message: "Thank you, we'll be in touch shortly." };
   }
 
   const parsed = ContactSchema.safeParse(raw);
@@ -63,6 +63,6 @@ export async function submitContact(
 
   return {
     status: "success",
-    message: "Thank you — your message has been received. We'll be in touch shortly.",
+    message: "Thank you, your message has been received. We'll be in touch shortly.",
   };
 }

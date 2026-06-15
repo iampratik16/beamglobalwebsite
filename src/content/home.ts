@@ -1,4 +1,4 @@
-/** Homepage content — hero rotation, positioning, culture pillars. */
+/** Homepage content, hero rotation, positioning, culture pillars. */
 
 export const homeHero = {
   eyebrow: "Governance · Risk · Compliance",
@@ -8,7 +8,7 @@ export const homeHero = {
     "Developing People, Delivering Results",
     "Revolutionising Your Financial Journey with Beam Global Services",
   ],
-  lead: "We help organisations get the most out of their investments in Governance, Risk & Compliance — taking care of every application support need and providing expert guidance on maximising ROI.",
+  lead: "We help organisations get the most out of their investments in Governance, Risk & Compliance, taking care of every application support need and providing expert guidance on maximising ROI.",
   primaryCta: { label: "Explore our services", href: "/services" },
   secondaryCta: { label: "Talk to us", href: "/contact" },
 };

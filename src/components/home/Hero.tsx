@@ -8,10 +8,10 @@ import { VolumeOn, VolumeOff } from "@/components/ui/icons";
 import { homeHero } from "@/content/home";
 
 /**
- * Homepage hero — layered, editorial. Rotating headline (the existing slider
+ * Homepage hero, layered, editorial. Rotating headline (the existing slider
  * lines) on the left; a dark-glass pillar panel with floating glass chips on
  * the right. Rotation runs only after mount (useEffect) so SSR renders the
- * first headline deterministically — no hydration mismatch.
+ * first headline deterministically, no hydration mismatch.
  */
 export function Hero() {
   const { eyebrow, headlines, lead, primaryCta, secondaryCta } = homeHero;
@@ -24,7 +24,7 @@ export function Hero() {
     if (!video) return;
     const next = !muted;
     video.muted = next;
-    // Unmuting is a user gesture — (re)start playback so sound plays.
+    // Unmuting is a user gesture, (re)start playback so sound plays.
     if (!next) void video.play().catch(() => {});
     setMuted(next);
   };

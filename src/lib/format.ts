@@ -5,7 +5,7 @@ const MONTHS = [
 
 /**
  * Format an ISO date (YYYY-MM-DD) as "15 April 2025" without constructing a
- * Date object — fully deterministic, SSR-safe, no timezone drift.
+ * Date object, fully deterministic, SSR-safe, no timezone drift.
  */
 export function formatDate(iso: string): string {
   const [year, month, day] = iso.split("-").map((n) => parseInt(n, 10));

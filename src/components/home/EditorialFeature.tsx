@@ -12,7 +12,7 @@ import { positioning } from "@/content/home";
  * "Featured thinking" card, a floating glass "Insight" card with an
  * oversized serif motif, and a small floating glass chip.
  *
- * All content is real Beam copy — no fabricated statistics. The decorative
+ * All content is real Beam copy, no fabricated statistics. The decorative
  * chip is aria-hidden (it is not an interactive control).
  */
 export function EditorialFeature() {
@@ -22,7 +22,7 @@ export function EditorialFeature() {
     <section className="bg-warm-mesh relative">
       <Container className="section-y">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left — big serif statement */}
+          {/* Left, big serif statement */}
           <div className="max-w-xl">
             <Eyebrow>The opportunity</Eyebrow>
             <p className="text-display-serif mt-6 text-ink">
@@ -39,7 +39,7 @@ export function EditorialFeature() {
             </Link>
           </div>
 
-          {/* Right — layered cards */}
+          {/* Right, layered cards */}
           <div className="relative">
             {/* Featured thinking card */}
             <article className="lift overflow-hidden rounded-2xl bg-paper shadow-soft">
@@ -60,7 +60,7 @@ export function EditorialFeature() {
               <div className="card-media group relative mt-6 aspect-[16/8] overflow-hidden">
                 <Image
                   src="/images/subhero.png"
-                  alt="Beam Global Services — insights and thinking"
+                  alt="Beam Global Services, insights and thinking"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

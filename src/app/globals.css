@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Beam Global Services — Design System (Tailwind v4, CSS-first)
+   Beam Global Services, Design System (Tailwind v4, CSS-first)
    Editorial restraint: ink on paper, one confident crimson accent
    (extracted from the Beam logo wordmark), gold used sparingly.
    ============================================================ */
@@ -18,10 +18,10 @@
   --color-hairline: #e4e1dc; /* 1px dividers / borders on light */
   --color-hairline-dark: #2a2f37; /* dividers on ink */
 
-  --color-accent: #9b1c1c; /* Beam crimson — primary accent (AAA on white) */
+  --color-accent: #9b1c1c; /* Beam crimson, primary accent (AAA on white) */
   --color-accent-ink: #7c1616; /* darker crimson for hover/active */
   --color-accent-soft: #f3e6e6; /* faint crimson wash for fills */
-  --color-gold: #c2872b; /* secondary accent — the logo emblem gold */
+  --color-gold: #c2872b; /* secondary accent, the logo emblem gold */
   --color-gold-ink: #8a5a12; /* AA-safe gold for text on light */
 
   /* Typography -------------------------------------------- */
@@ -246,7 +246,7 @@ body {
   letter-spacing: -0.03em;
 }
 
-/* Glassmorphism — light (over imagery/light) and dark (over ink) */
+/* Glassmorphism, light (over imagery/light) and dark (over ink) */
 .glass {
   background: color-mix(in srgb, var(--color-paper) 70%, transparent);
   backdrop-filter: blur(18px) saturate(150%);
@@ -259,7 +259,7 @@ body {
   -webkit-backdrop-filter: blur(20px) saturate(140%);
   border: 1px solid color-mix(in srgb, #ffffff 14%, transparent);
 }
-/* Mostly-solid frosted card — sits forward, minimal see-through */
+/* Mostly-solid frosted card, sits forward, minimal see-through */
 .glass-solid {
   background: color-mix(in srgb, var(--color-paper) 94%, transparent);
   backdrop-filter: blur(16px) saturate(140%);

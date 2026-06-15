@@ -49,7 +49,7 @@ export function ContactForm() {
         <textarea id="message" name="message" rows={5} defaultValue={v?.message} className={`${fieldBase} resize-y`} required />
       </Field>
 
-      {/* Honeypot — hidden from users */}
+      {/* Honeypot, hidden from users */}
       <div aria-hidden className="absolute left-[-9999px]" tabIndex={-1}>
         <label>
           Website

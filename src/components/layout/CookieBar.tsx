@@ -7,7 +7,7 @@ import { Close } from "@/components/ui/icons";
 const STORAGE_KEY = "beam-cookie-consent";
 
 /**
- * GDPR-style cookie notice. Dismissible. No tracking is wired — this only
+ * GDPR-style cookie notice. Dismissible. No tracking is wired, this only
  * records the dismissal in localStorage (read in useEffect, never at render,
  * to avoid hydration mismatches).
  */
@@ -26,7 +26,7 @@ export function CookieBar() {
     try {
       localStorage.setItem(STORAGE_KEY, value);
     } catch {
-      /* storage unavailable — dismiss for this session only */
+      /* storage unavailable, dismiss for this session only */
     }
     setVisible(false);
   };

@@ -1,4 +1,4 @@
-/** About page content — preserved verbatim from the live About Us page. */
+/** About page content, preserved verbatim from the live About Us page. */
 
 export const about = {
   hero: {
@@ -9,7 +9,7 @@ export const about = {
   whoWeAre: {
     title: "Who Are We?",
     paragraphs: [
-      "We help organisations get the most from their Governance, Risk & Compliance (GRC) investments — keeping solutions maintained, optimised and fully integrated, and aligned with industry best practice.",
+      "We help organisations get the most from their Governance, Risk & Compliance (GRC) investments, keeping solutions maintained, optimised and fully integrated, and aligned with industry best practice.",
       "Beyond support, we help unlock the full potential of GRC: improving processes, strengthening risk management and streamlining compliance. A proactive, tailored approach that drives superior ROI.",
     ],
   },
@@ -23,7 +23,7 @@ export const about = {
   },
   coreValues: {
     title: "Core Values",
-    body: "Our core values are the foundation of everything we do — customer-centricity, excellence, integrity and collaboration.",
+    body: "Our core values are the foundation of everything we do, customer-centricity, excellence, integrity and collaboration.",
     // Distilled value labels for a clean four-up display (drawn from the paragraph above).
     pillars: [
       { label: "Customer-Centricity", text: "Solutions tailored to the unique needs and goals of each client." },

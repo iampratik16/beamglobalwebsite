@@ -14,6 +14,14 @@ import { culturePillars } from "@/content/home";
 import { pillars, servicesByPillar } from "@/content/services";
 import { blogPostsByDate } from "@/content/blog";
 
+// Home "What's new" uses the original insight artwork (by post slug).
+const homeInsightImages: Record<string, string> = {
+  "venture-debt-the-rising-star-in-startup-financing-amid-indias-liquidity-crunch":
+    "/images/home/venturedebt.png",
+  "5-cyber-security-startups-to-watch-out-for": "/images/home/cyber.png",
+  "what-makes-your-customers-say-yes-to-your-product-or-service": "/images/home/growth.png",
+};
+
 export default function HomePage() {
   const latest = blogPostsByDate.slice(0, 3);
 
@@ -21,7 +29,7 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Editorial feature — layered statement + featured thinking + insight */}
+      {/* Editorial feature, layered statement + featured thinking + insight */}
       <EditorialFeature />
 
       {/* Culture pillars */}
@@ -117,7 +125,7 @@ export default function HomePage() {
                   title={post.title}
                   excerpt={post.excerpt}
                   seed={post.slug}
-                  image={post.image}
+                  image={homeInsightImages[post.slug] ?? post.image}
                   elevated
                 />
               ))}
@@ -137,7 +145,7 @@ export default function HomePage() {
         tone="accent"
         eyebrow="Let's talk"
         heading="Looking for a First-Class GRC & Business Consultant?"
-        body="Tell us about your goals — our team will help you maximise the return on your GRC investment."
+        body="Tell us about your goals, our team will help you maximise the return on your GRC investment."
         primary={{ label: "Contact us", href: "/contact" }}
       />
     </>

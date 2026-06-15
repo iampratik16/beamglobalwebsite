@@ -1,7 +1,7 @@
 /**
  * Deterministic tonal placeholder media. Renders a premium gradient block
  * (no external image, no hotlinking) seeded from a string so each card is
- * stable across renders — avoids hydration mismatch (no Math.random/Date).
+ * stable across renders, avoids hydration mismatch (no Math.random/Date).
  *
  * TODO: swap for real next/image artwork when brand photography is supplied.
  */

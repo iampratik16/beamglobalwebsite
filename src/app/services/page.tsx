@@ -12,7 +12,7 @@ import { pillars, servicesByPillar } from "@/content/services";
 export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
-    "Expert consulting, digital solutions and IT governance — from GRC product selection and implementation to strategy, transformation and the entrepreneurial journey from startup to IPO.",
+    "Expert consulting, digital solutions and IT governance, from GRC product selection and implementation to strategy, transformation and the entrepreneurial journey from startup to IPO.",
   path: "/services",
 });
 
@@ -28,7 +28,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Empowering Businesses with Expert Consulting and Digital Solutions."
-        lead="We deliver expert consulting, digital solutions, and IT governance to drive business transformation. From GRC and strategic advisory to entrepreneurship support—covering startup growth, incubator guidance, and IPO readiness—we empower organisations with innovation, strategy, and seamless execution."
+        lead="We deliver expert consulting, digital solutions, and IT governance to drive business transformation. From GRC and strategic advisory to entrepreneurship support, covering startup growth, incubator guidance, and IPO readiness, we empower organisations with innovation, strategy, and seamless execution."
         image="/images/heroes/services.png"
         imageAlt="Beam Global Services capabilities"
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
@@ -43,7 +43,7 @@ export default function ServicesPage() {
           <Container>
             <Reveal className="flex flex-wrap items-end justify-between gap-6">
               <div className="max-w-2xl">
-                <Eyebrow>{`0${pi + 1} — ${pillar.eyebrow}`}</Eyebrow>
+                <Eyebrow>{`0${pi + 1}, ${pillar.eyebrow}`}</Eyebrow>
                 <h2 className="text-h2 mt-4 text-ink">{pillar.label}</h2>
                 <p className="mt-5 text-lead">{pillar.intro}</p>
               </div>
@@ -71,7 +71,7 @@ export default function ServicesPage() {
       <CTABand
         tone="accent"
         eyebrow="Not sure where to start?"
-        heading="Tell us your goals — we'll find the right path."
+        heading="Tell us your goals, we'll find the right path."
         primary={{ label: "Contact us", href: "/contact" }}
       />
     </>

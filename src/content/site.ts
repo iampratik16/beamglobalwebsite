@@ -7,7 +7,7 @@
 export const site = {
   name: "Beam Global Services",
   shortName: "Beam Global",
-  // Production/canonical domain — drives metadataBase, sitemap and OG URLs.
+  // Production/canonical domain, drives metadataBase, sitemap and OG URLs.
   url: "https://beamglobalservices.com",
   description:
     "Beam Global Services has the singular goal of helping clients get the most out of their investments in Governance, Risk & Compliance (GRC) products by taking care of all application support needs and providing expert guidance on maximising ROI.",
@@ -93,7 +93,7 @@ export const servicesFeatured: { label: string; href: string; image: string }[] 
   {
     label: "IPO Readiness",
     href: "/services/ipo-readiness",
-    image: "/images/blog/growth.png",
+    image: "/images/services/ipo-readiness.png",
   },
 ];
 

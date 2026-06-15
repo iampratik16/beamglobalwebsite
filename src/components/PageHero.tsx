@@ -5,11 +5,10 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 
 /**
- * Shared hero for interior pages — a clean white band with dark editorial
+ * Shared hero for interior pages, a clean white band with dark editorial
  * type, sitting flush beneath the solid white header (consistent site-wide).
  *
- * When `image` is supplied the hero becomes an editorial banner layout —
- * copy on top, then a full-width cinematic banner photograph below, with a
+ * When `image` is supplied the hero becomes an editorial banner layout, * copy on top, then a full-width cinematic banner photograph below, with a
  * restrained crimson brand accent (the Beam answer to PwC's signature
  * geometric overlay). Without it, the hero keeps its text-only treatment.
  */
@@ -71,7 +70,7 @@ export function PageHero({
                 />
                 {/* gentle inner darkening at the foot of the banner */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
-                {/* Beam crimson brand accent — a restrained angled bar bottom-left */}
+                {/* Beam crimson brand accent, a restrained angled bar bottom-left */}
                 <div
                   aria-hidden
                   className="pointer-events-none absolute bottom-0 left-0 h-[28%] w-[46%] bg-accent/90"

@@ -1,5 +1,5 @@
 /**
- * Insights Hub — a curated, editorial view over the same real Beam articles.
+ * Insights Hub, a curated, editorial view over the same real Beam articles.
  * References blog posts by slug so there is one source of truth for content.
  */
 
@@ -8,7 +8,7 @@ import { blogPosts, type BlogPost } from "./blog";
 export const insightsIntro = {
   eyebrow: "Insights Hub",
   heading: "Perspectives on governance, growth and the road ahead",
-  lead: "Ideas and analysis from Beam Global Services — on Governance, Risk & Compliance, the entrepreneurial journey, and building organisations that endure.",
+  lead: "Ideas and analysis from Beam Global Services, on Governance, Risk & Compliance, the entrepreneurial journey, and building organisations that endure.",
 };
 
 // Featured, more strategic pieces surfaced on the Insights Hub.

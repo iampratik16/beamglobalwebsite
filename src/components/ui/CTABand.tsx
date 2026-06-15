@@ -5,7 +5,7 @@ import { ArrowRight } from "./icons";
 /**
  * Full-width call-to-action band. Default ink background with paper text;
  * `tone="accent"` for a crimson band used sparingly. Layered with soft colour
- * glows and a large decorative ring — no grid texture.
+ * glows and a large decorative ring, no grid texture.
  */
 export function CTABand({
   eyebrow,

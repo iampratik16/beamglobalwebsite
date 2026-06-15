@@ -9,7 +9,7 @@ import Link from "next/link";
 import { pillars, servicesByPillar, type Service } from "@/content/services";
 
 /**
- * Interior service page. Driven entirely by a Service record — one template
+ * Interior service page. Driven entirely by a Service record, one template
  * for all 13 service detail pages.
  */
 export function ServiceTemplate({ service }: { service: Service }) {

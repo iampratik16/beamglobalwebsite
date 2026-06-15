@@ -50,7 +50,7 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Header is always solid (white) — including over the hero video.
+  // Header is always solid (white), including over the hero video.
   const onLight = true;
 
   const openMega = useCallback(() => {
@@ -70,7 +70,7 @@ export function Header() {
     >
       <div className="container-page flex h-[var(--header-h,88px)] items-center justify-between gap-6 py-3">
         {/* Logo */}
-        <Link href="/" aria-label="Beam Global Services — home" className="flex shrink-0 items-center">
+        <Link href="/" aria-label="Beam Global Services, home" className="flex shrink-0 items-center">
           <Image
             src={onLight ? logoDark : logoWhite}
             alt="Beam Global Services"
@@ -220,7 +220,7 @@ function MobileDrawer({ onClose }: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-ink text-paper lg:hidden">
       <div className="container-page flex h-[72px] items-center justify-between">
-        <Link href="/" aria-label="Beam Global Services — home" onClick={onClose}>
+        <Link href="/" aria-label="Beam Global Services, home" onClick={onClose}>
           <Image src={logoWhite} alt="Beam Global Services" className="h-8 w-auto" />
         </Link>
         <button type="button" aria-label="Close menu" onClick={onClose} className="text-paper">
