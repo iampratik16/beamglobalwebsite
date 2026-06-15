@@ -219,7 +219,7 @@ export function Header() {
 }
 
 function MobileDrawer({ onClose }: { onClose: () => void }) {
-  const [servicesExpanded, setServicesExpanded] = useState(true);
+  const [servicesExpanded, setServicesExpanded] = useState(false);
   return (
     <div className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-ink text-paper lg:hidden">
       <div className="container-page flex h-[72px] items-center justify-between">
