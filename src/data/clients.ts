@@ -43,7 +43,7 @@ export const clientSectors: ClientSector[] = [
       { name: "Lloyds Banking Group", logoSrc: "/images/clients/lloyds.png", alt: "Lloyds Banking Group" },
       { name: "Deutsche Bank", logoSrc: "/images/clients/deutsche-bank.png", alt: "Deutsche Bank" },
       { name: "Bank of America", logoSrc: "/images/clients/bank-of-america-v2.png", alt: "Bank of America" },
-      { name: "ANZ", logoSrc: "/images/clients/anz-v2.png", alt: "ANZ" },
+      { name: "ANZ", logoSrc: "/images/clients/anz-v3.png", alt: "ANZ" },
       { name: "Aviva", logoSrc: "/images/clients/aviva.webp", alt: "Aviva" },
     ],
   },
