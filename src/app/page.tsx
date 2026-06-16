@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Hero } from "@/components/home/Hero";
+import { ClientLogos } from "@/components/home/ClientLogos";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -27,6 +28,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+
+      {/* Clients / track record — social proof after the hero claim */}
+      <ClientLogos />
 
       {/* Culture pillars */}
       <section className="section-y bg-paper-alt">
