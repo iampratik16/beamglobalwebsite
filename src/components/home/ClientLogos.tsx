@@ -34,8 +34,8 @@ export function ClientLogos() {
               <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
                 {group.clients.map((client) => (
                   <li key={client.name}>
-                    <div className="group flex h-28 items-center justify-center rounded-xl border border-hairline bg-paper px-6 shadow-soft transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-transparent hover:shadow-float motion-reduce:transition-none lg:h-32">
-                      <div className="relative h-12 w-full lg:h-14">
+                    <div className="group flex h-32 items-center justify-center rounded-xl border border-hairline bg-paper p-5 shadow-soft transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-transparent hover:shadow-float motion-reduce:transition-none lg:h-36 lg:p-6">
+                      <div className="relative h-full w-full">
                         <Image
                           src={client.logoSrc}
                           alt={client.alt}
