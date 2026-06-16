@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Hero } from "@/components/home/Hero";
-import { EditorialFeature } from "@/components/home/EditorialFeature";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -28,9 +27,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-
-      {/* Editorial feature, layered statement + featured thinking + insight */}
-      <EditorialFeature />
 
       {/* Culture pillars */}
       <section className="section-y bg-paper-alt">
@@ -60,7 +56,9 @@ export default function HomePage() {
           </Reveal>
 
           <div className="mt-14 space-y-px bg-hairline">
-            {pillars.map((pillar) => (
+            {pillars
+              .filter((pillar) => pillar.id !== "entrepreneurship")
+              .map((pillar) => (
               <Reveal key={pillar.id} className="bg-paper">
                 <div className="grid grid-cols-1 gap-6 py-8 lg:grid-cols-[0.8fr_1.6fr] lg:gap-12 lg:py-10">
                   <div>
