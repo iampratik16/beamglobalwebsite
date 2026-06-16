@@ -42,8 +42,8 @@ export const clientSectors: ClientSector[] = [
       { name: "Barclays", logoSrc: "/images/clients/barclays.png", alt: "Barclays" },
       { name: "Lloyds Banking Group", logoSrc: "/images/clients/lloyds.png", alt: "Lloyds Banking Group" },
       { name: "Deutsche Bank", logoSrc: "/images/clients/deutsche-bank.png", alt: "Deutsche Bank" },
-      { name: "Bank of America", logoSrc: "/images/clients/bank-of-america.png", alt: "Bank of America" },
-      { name: "ANZ", logoSrc: "/images/clients/anz.png", alt: "ANZ" },
+      { name: "Bank of America", logoSrc: "/images/clients/bank-of-america-v2.png", alt: "Bank of America" },
+      { name: "ANZ", logoSrc: "/images/clients/anz-v2.png", alt: "ANZ" },
       { name: "Aviva", logoSrc: "/images/clients/aviva.webp", alt: "Aviva" },
     ],
   },
@@ -51,14 +51,14 @@ export const clientSectors: ClientSector[] = [
     sector: "Public Sector",
     clients: [
       { name: "Department for Work & Pensions", logoSrc: "/images/clients/dwp.png", alt: "Department for Work & Pensions" },
-      { name: "Defra", logoSrc: "/images/clients/defra.png", alt: "Defra" },
-      { name: "Royal Botanic Gardens Kew", logoSrc: "/images/clients/kew.png", alt: "Royal Botanic Gardens, Kew" },
+      { name: "Defra", logoSrc: "/images/clients/defra-v2.png", alt: "Defra" },
+      { name: "Royal Botanic Gardens Kew", logoSrc: "/images/clients/kew-v2.png", alt: "Royal Botanic Gardens, Kew" },
     ],
   },
   {
     sector: "Industry & Energy",
     clients: [
-      { name: "BP", logoSrc: "/images/clients/bp.png", alt: "BP" },
+      { name: "BP", logoSrc: "/images/clients/bp-v2.png", alt: "BP" },
       { name: "JLL", logoSrc: "/images/clients/jll.png", alt: "JLL" },
       { name: "Tigo", logoSrc: "/images/clients/tigo.png", alt: "Tigo" },
       { name: "Virgin Media", logoSrc: "/images/clients/virgin-media.png", alt: "Virgin Media" },
