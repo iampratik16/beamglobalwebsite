@@ -9,15 +9,15 @@ import {
 } from "@/data/clients";
 
 /**
- * Sector-grouped client / track-record logo wall. Restrained, editorial,
- * monochrome-by-default (greyscale + reduced opacity), colourising on hover.
- * Header copy switches on RELATIONSHIP ("track-record" | "direct").
+ * Sector-grouped client / track-record logo wall. Full-colour logos on
+ * uniform white cards, evenly distributed, with a lift-on-hover. Header copy
+ * switches on RELATIONSHIP ("track-record" | "direct").
  */
 export function ClientLogos() {
   const header = clientsHeader[RELATIONSHIP];
 
   return (
-    <section className="section-y bg-paper">
+    <section className="section-y bg-paper-alt">
       <Container>
         <Reveal>
           <SectionHeader
@@ -27,28 +27,27 @@ export function ClientLogos() {
           />
         </Reveal>
 
-        <div className="mt-14 space-y-12 lg:mt-16 lg:space-y-14">
+        <div className="mt-14 space-y-12 lg:mt-16">
           {clientSectors.map((group) => (
             <Reveal key={group.sector}>
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.6fr_2.4fr] lg:gap-12">
-                <p className="text-eyebrow pt-1 text-muted">{group.sector}</p>
-                <ul className="flex flex-wrap items-center gap-x-10 gap-y-8 sm:gap-x-12">
-                  {group.clients.map((client) => (
-                    <li
-                      key={client.name}
-                      className="group relative h-9 w-28 shrink-0 sm:h-10 sm:w-32"
-                    >
-                      <Image
-                        src={client.logoSrc}
-                        alt={client.alt}
-                        fill
-                        sizes="128px"
-                        className="object-contain object-left opacity-60 grayscale transition duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-100 group-hover:grayscale-0 motion-reduce:transition-none"
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="text-eyebrow mb-5 text-accent">{group.sector}</p>
+              <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+                {group.clients.map((client) => (
+                  <li key={client.name}>
+                    <div className="group flex h-28 items-center justify-center rounded-xl border border-hairline bg-paper px-6 shadow-soft transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-transparent hover:shadow-float motion-reduce:transition-none lg:h-32">
+                      <div className="relative h-12 w-full lg:h-14">
+                        <Image
+                          src={client.logoSrc}
+                          alt={client.alt}
+                          fill
+                          sizes="(max-width: 640px) 42vw, (max-width: 1024px) 28vw, 280px"
+                          className="object-contain transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 motion-reduce:transition-none"
+                        />
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           ))}
         </div>

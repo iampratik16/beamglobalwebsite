@@ -39,9 +39,9 @@ export const clientSectors: ClientSector[] = [
   {
     sector: "Financial Services",
     clients: [
-      { name: "Barclays", logoSrc: "/images/clients/barclays.webp", alt: "Barclays" },
+      { name: "Barclays", logoSrc: "/images/clients/barclays.png", alt: "Barclays" },
       { name: "Lloyds Banking Group", logoSrc: "/images/clients/lloyds.png", alt: "Lloyds Banking Group" },
-      { name: "Deutsche Bank", logoSrc: "/images/clients/deutsche-bank.webp", alt: "Deutsche Bank" },
+      { name: "Deutsche Bank", logoSrc: "/images/clients/deutsche-bank.png", alt: "Deutsche Bank" },
       { name: "Bank of America", logoSrc: "/images/clients/bank-of-america.png", alt: "Bank of America" },
       { name: "ANZ", logoSrc: "/images/clients/anz.png", alt: "ANZ" },
       { name: "Aviva", logoSrc: "/images/clients/aviva.webp", alt: "Aviva" },
@@ -59,7 +59,7 @@ export const clientSectors: ClientSector[] = [
     sector: "Industry & Energy",
     clients: [
       { name: "BP", logoSrc: "/images/clients/bp.png", alt: "BP" },
-      { name: "JLL", logoSrc: "/images/clients/jll.webp", alt: "JLL" },
+      { name: "JLL", logoSrc: "/images/clients/jll.png", alt: "JLL" },
       { name: "Tigo", logoSrc: "/images/clients/tigo.png", alt: "Tigo" },
       { name: "Virgin Media", logoSrc: "/images/clients/virgin-media.png", alt: "Virgin Media" },
     ],
