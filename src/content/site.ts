@@ -69,11 +69,11 @@ export const servicesMenu: MegaMenuGroup[] = [
   },
   {
     label: "Managed Services",
-    href: "/services/managed-services",
+    href: "/services#managed-services",
     items: [
-      { label: "Application Managed Services", href: "/services/managed-services" },
-      { label: "Controls Execution Services", href: "/services/managed-services" },
-      { label: "GRC Strategy Services", href: "/services/managed-services" },
+      { label: "Application Managed Services", href: "/services/application-managed-services" },
+      { label: "Controls Execution Services", href: "/services/controls-execution-services" },
+      { label: "GRC Strategy Services", href: "/services/grc-strategy-services" },
     ],
   },
 ];
