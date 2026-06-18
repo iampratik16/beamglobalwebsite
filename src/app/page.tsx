@@ -136,8 +136,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Careers + Contact CTAs */}
+      {/* Careers + Contact CTAs. The Careers band stays flat so the two
+          stacked CTAs don't repeat the same backdrop; the crimson Contact
+          band below carries the image. */}
       <CTABand
+        image={null}
         eyebrow="Careers"
         heading="Elevate Your Career, Embrace Your Future."
         body="Join a team that believes in excellence and helps clients get the most from their GRC investments."
