@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { Button } from "./Button";
 
-/** Shared photographic backdrop used behind every CTA band, site-wide. */
-const DEFAULT_CTA_IMAGE = "/images/cta/cta-bg.png";
+/** Shared backdrop used behind every CTA band, site-wide. */
+const DEFAULT_CTA_IMAGE = "/images/cta/cta-bg-light.png";
 
 /**
  * Full-width call-to-action band. A brand-colour wash (ink or accent) sits over
