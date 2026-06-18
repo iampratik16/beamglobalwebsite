@@ -242,6 +242,7 @@ export const services: Service[] = [
   {
     slug: "application-managed-services",
     pillar: "managed-services",
+    heroImage: "/images/services/hero/application-managed-services-datacenter.png",
     title: "Application Managed Services",
     headline: "Day-to-Day Support That Keeps Your GRC Running.",
     lead: "We run and support your GRC applications day to day, acting as your administrators, resolving issues, and liaising with vendors so your systems stay healthy and your team stays focused on the business. You choose the level of cover that suits you, from essential support to fully proactive management.",
@@ -277,6 +278,7 @@ export const services: Service[] = [
   {
     slug: "grc-strategy-services",
     pillar: "managed-services",
+    heroImage: "/images/services/hero/grc-strategy-services-roadmap.png",
     title: "GRC Strategy Services",
     headline: "A Clear Roadmap for Risk and Compliance.",
     lead: "We help you step back and shape the bigger picture: setting a practical GRC strategy, planning how to close the gaps, and finding the places where automation can save time and reduce risk. You get a prioritised roadmap that turns compliance from a burden into an advantage.",
