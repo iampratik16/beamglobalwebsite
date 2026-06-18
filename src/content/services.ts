@@ -25,6 +25,8 @@ export type Service = {
   cta: { heading: string; button: string };
   /** Short SEO/summary line for cards and metadata descriptions. */
   summary: string;
+  /** Optional hero image override; defaults to /images/services/hero/<slug>.png. */
+  heroImage?: string;
 };
 
 export type Pillar = {
@@ -240,6 +242,7 @@ export const services: Service[] = [
   {
     slug: "managed-services",
     pillar: "managed-services",
+    heroImage: "/images/services/hero/managed-services-team.png",
     title: "Managed Services",
     headline: "GRC, Run and Strengthened, Every Day.",
     lead: "Our Managed Services take care of the day-to-day running of your Governance, Risk & Compliance programme \u2014 supporting your applications, executing your controls, and shaping your GRC strategy. We act as an extension of your team, keeping operations moving so you can stay focused on the business.",
