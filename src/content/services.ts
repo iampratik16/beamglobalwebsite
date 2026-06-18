@@ -5,7 +5,7 @@
  * services index, no per-page duplication.
  */
 
-export type PillarId = "digital" | "it-governance";
+export type PillarId = "digital" | "it-governance" | "managed-services";
 
 export type Capability = {
   title: string;
@@ -48,6 +48,13 @@ export const pillars: Pillar[] = [
     eyebrow: "IT Governance",
     intro:
       "Strategy, governance and transformation advisory that turns vision into measurable, future-focused results across private and public institutions.",
+  },
+  {
+    id: "managed-services",
+    label: "Managed Services",
+    eyebrow: "Managed Services",
+    intro:
+      "We run, support and strengthen your GRC programme day to day — from application support and controls execution to GRC strategy — so your teams stay focused on the business.",
   },
 ];
 
@@ -229,6 +236,24 @@ export const services: Service[] = [
       { title: "Cross-Industry Benchmarking", description: "We bring best practices from across sectors to spark innovation and measure progress." },
     ],
     cta: { heading: "Empower Transformation That Drives Real Results", button: "Contact us" },
+  },
+  {
+    slug: "managed-services",
+    pillar: "managed-services",
+    title: "Managed Services",
+    headline: "GRC, Run and Strengthened, Every Day.",
+    lead: "Our Managed Services take care of the day-to-day running of your Governance, Risk & Compliance programme \u2014 supporting your applications, executing your controls, and shaping your GRC strategy. We act as an extension of your team, keeping operations moving so you can stay focused on the business.",
+    summary:
+      "End-to-end managed services for your GRC programme \u2014 application support, controls execution and GRC strategy.",
+    capabilities: [
+      { title: "Application Managed Services", description: "Day-to-day support and administration of your GRC applications, including vendor liaison for bugs and incidents, raising and tracking support tickets, and managing critical issues through to resolution." },
+      { title: "Tiered Support Packages", description: "Bronze, Silver and Gold packages that scale from day-to-day application support and administrator services up to monthly vendor reviews, release-note analysis, and quarterly patch and control reviews." },
+      { title: "Controls Execution Services", description: "We execute and document your controls end to end: agree a controls timetable, run control activities, provide evidence to control owners, document IPE and control documentation, and support internal and external auditor interactions." },
+      { title: "Evidence & Audit Support", description: "Clear, well-documented control evidence and hands-on support during internal and external audits, so reviews run smoothly and findings are easier to close." },
+      { title: "GRC Strategy Services", description: "Practical GRC and remediation strategy that turns your risk and compliance goals into a clear, prioritised roadmap." },
+      { title: "Automation Opportunities", description: "We identify where manual controls and processes can be automated to reduce effort, cost and the risk of error across your GRC programme." },
+    ],
+    cta: { heading: "Let Us Run Your GRC, So You Can Run the Business", button: "Contact us" },
   },
 ];
 

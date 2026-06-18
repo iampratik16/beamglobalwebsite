@@ -170,8 +170,13 @@ export function Header() {
             {/* PwC-style: link columns on the left, a divided Featured column
                 with large landscape thumbnails on the right. */}
             <div className="flex gap-12">
-              {/* Service link groups — columns */}
-              <div className="grid flex-1 grid-cols-2 gap-x-10 gap-y-2">
+              {/* Service link groups — one column per group */}
+              <div
+                className="grid flex-1 gap-x-8 gap-y-2"
+                style={{
+                  gridTemplateColumns: `repeat(${servicesMenu.length}, minmax(0, 1fr))`,
+                }}
+              >
                 {servicesMenu.map((group) => (
                   <div key={group.label}>
                     <Link

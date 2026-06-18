@@ -19,6 +19,7 @@ export const metadata: Metadata = pageMetadata({
 const anchors: Record<string, string> = {
   digital: "digital",
   "it-governance": "it-governance",
+  "managed-services": "managed-services",
 };
 
 export default function ServicesPage() {

@@ -67,6 +67,15 @@ export const servicesMenu: MegaMenuGroup[] = [
       { label: "Transformation Sector", href: "/services/transformation-sector" },
     ],
   },
+  {
+    label: "Managed Services",
+    href: "/services/managed-services",
+    items: [
+      { label: "Application Managed Services", href: "/services/managed-services" },
+      { label: "Controls Execution Services", href: "/services/managed-services" },
+      { label: "GRC Strategy Services", href: "/services/managed-services" },
+    ],
+  },
 ];
 
 /** Featured services shown with thumbnails in the mega-menu (PwC pattern). */
