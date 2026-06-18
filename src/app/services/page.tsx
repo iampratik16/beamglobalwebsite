@@ -12,14 +12,13 @@ import { pillars, servicesByPillar } from "@/content/services";
 export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
-    "Expert consulting, digital solutions and IT governance, from GRC product selection and implementation to strategy, transformation and the entrepreneurial journey from startup to IPO.",
+    "Expert consulting, digital solutions and IT governance, from GRC product selection and implementation to strategy and transformation across your enterprise.",
   path: "/services",
 });
 
 const anchors: Record<string, string> = {
   digital: "digital",
   "it-governance": "it-governance",
-  entrepreneurship: "entrepreneurship",
 };
 
 export default function ServicesPage() {

@@ -31,7 +31,7 @@ export function CTABand({
               <p className="text-eyebrow mb-5 text-gold">{eyebrow}</p>
             )}
             <h2 className="text-h2 text-paper">{heading}</h2>
-            {body && <p className="mt-5 max-w-xl text-lead text-paper/70">{body}</p>}
+            {body && <p className="mt-5 max-w-xl text-lead text-paper/90">{body}</p>}
           </div>
 
           <div className="flex flex-shrink-0 flex-col gap-4 sm:flex-row sm:items-center">

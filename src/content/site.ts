@@ -31,18 +31,20 @@ export type MegaMenuGroup = {
   items: NavLink[];
 };
 
-/** Primary top-level navigation. */
+/**
+ * Primary top-level navigation. Contact is intentionally omitted here — the
+ * "Get in touch" button (which links to /contact) serves that purpose.
+ */
 export const primaryNav: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Insights Hub", href: "/insights" },
-  { label: "Blogs", href: "/blog" },
+  { label: "Case Studies", href: "/blog" },
   { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 /**
  * Mega-menu structure for "Services", mirroring the live taxonomy:
- * Consulting / Digital Service · IT Governance · Entrepreneurship.
+ * Consulting / Digital Service · IT Governance.
  */
 export const servicesMenu: MegaMenuGroup[] = [
   {
@@ -65,17 +67,6 @@ export const servicesMenu: MegaMenuGroup[] = [
       { label: "Transformation Sector", href: "/services/transformation-sector" },
     ],
   },
-  {
-    label: "Entrepreneurship",
-    href: "/services#entrepreneurship",
-    items: [
-      { label: "Startup", href: "/services/startup" },
-      { label: "Scaleup Advisory", href: "/services/scaleup-advisory" },
-      { label: "Incubator & Accelerators Advisory", href: "/services/incubator-accelerators-advisory" },
-      { label: "IPO Readiness", href: "/services/ipo-readiness" },
-      { label: "Finance Transformation", href: "/services/finance-transformation" },
-    ],
-  },
 ];
 
 /** Featured services shown with thumbnails in the mega-menu (PwC pattern). */
@@ -91,9 +82,9 @@ export const servicesFeatured: { label: string; href: string; image: string }[] 
     image: "/images/subhero.png",
   },
   {
-    label: "IPO Readiness",
-    href: "/services/ipo-readiness",
-    image: "/images/services/ipo-readiness.png",
+    label: "Strategic Consulting",
+    href: "/services/strategic-consulting",
+    image: "/images/services/strategic-consulting.png",
   },
 ];
 
@@ -106,7 +97,7 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
       { label: "SafePaaS GRC Implementation", href: "/services/safepaas-grc-implementation" },
       { label: "Oracle RMC Implementation", href: "/services/oracle-rmc-implementation" },
       { label: "Strategic Consulting", href: "/services/strategic-consulting" },
-      { label: "IPO Readiness", href: "/services/ipo-readiness" },
+      { label: "Transformation Sector", href: "/services/transformation-sector" },
     ],
   },
   {
@@ -114,7 +105,7 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Insights Hub", href: "/insights" },
-      { label: "Blogs", href: "/blog" },
+      { label: "Case Studies", href: "/blog" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],

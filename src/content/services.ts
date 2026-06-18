@@ -5,7 +5,7 @@
  * services index, no per-page duplication.
  */
 
-export type PillarId = "digital" | "it-governance" | "entrepreneurship";
+export type PillarId = "digital" | "it-governance";
 
 export type Capability = {
   title: string;
@@ -48,13 +48,6 @@ export const pillars: Pillar[] = [
     eyebrow: "IT Governance",
     intro:
       "Strategy, governance and transformation advisory that turns vision into measurable, future-focused results across private and public institutions.",
-  },
-  {
-    id: "entrepreneurship",
-    label: "Entrepreneurship",
-    eyebrow: "Entrepreneurship",
-    intro:
-      "From first idea to public listing, financial, strategic and transactional expertise that helps founders and scale-ups grow with confidence.",
   },
 ];
 
@@ -236,111 +229,6 @@ export const services: Service[] = [
       { title: "Cross-Industry Benchmarking", description: "We bring best practices from across sectors to spark innovation and measure progress." },
     ],
     cta: { heading: "Empower Transformation That Drives Real Results", button: "Contact us" },
-  },
-
-  // ── Entrepreneurship ───────────────────────────────────────────
-  {
-    slug: "startup",
-    pillar: "entrepreneurship",
-    title: "Startup",
-    headline: "From Idea to Exit, We Empower Startups to Grow with Confidence.",
-    lead: "We help startups navigate complex financial, regulatory, and strategic landscapes with tailored services spanning investment banking, valuations, due diligence, data analytics, fundraising, and M&A support. From day one to exit, our offerings are designed to deliver value at every stage of the startup lifecycle.",
-    summary:
-      "Financial, regulatory and strategic expertise for founders, from first raise to exit.",
-    capabilities: [
-      { title: "Investment Banking", description: "Support startups with Capital Formation and Investment Banking (CFIB) services, from raising early-stage capital to preparing for IPOs." },
-      { title: "Financial Diligence", description: "Conduct detailed financial due diligence to assess deal readiness, identify risks, and provide clarity to investors and acquirers." },
-      { title: "Valuation Services", description: "Help startups understand and justify their worth during funding rounds, equity distribution, or strategic exits." },
-      { title: "Tax Advisory for Startups", description: "Navigate startup-specific tax challenges, R&D credits, international expansion, and compliance." },
-      { title: "Data Analytics & Insights", description: "Turn startup data into decision-driving insights covering customer behavior and financial KPIs." },
-      { title: "Regulatory & Compliance Support", description: "From GDPR and SOC2 to financial compliance, implement controls meeting global standards." },
-      { title: "Fundraising Support", description: "Assist with investor targeting, pitch deck development, financial modeling, and capital strategies." },
-      { title: "Strategy & Execution", description: "Co-develop business and operational strategies supporting scalable growth." },
-    ],
-    cta: { heading: "Fuel Your Startup's Journey with Strategic Expertise, Let's Talk.", button: "Contact us" },
-  },
-  {
-    slug: "scaleup-advisory",
-    pillar: "entrepreneurship",
-    title: "Scaleup Advisory",
-    headline: "Accelerate Growth. Scale Smarter. Succeed Sustainably.",
-    lead: "We guide startups and scale-ups through the critical next phase of their journey, from product-market fit to market leadership. Our tailored advisory services focus on scalable growth, operational efficiency, funding, governance, and technology transformation to unlock long-term value.",
-    summary:
-      "Advisory for the next phase of growth, from product-market fit to market leadership.",
-    capabilities: [
-      { title: "Scale Strategy & Roadmap", description: "We design customized scale-up strategies that align with your business model, growth ambition, and market opportunities, prioritizing execution readiness and scalability." },
-      { title: "Revenue Growth Acceleration", description: "Through go-to-market refinement, pricing optimization, and customer journey transformation, we help drive consistent revenue expansion." },
-      { title: "Market Expansion Planning", description: "We assess new market opportunities, localization needs, and international growth strategies to help you expand with clarity and control." },
-      { title: "Organizational Design", description: "Our experts help evolve your org structure to support scale, defining roles, governance models, and agile processes that drive performance and accountability." },
-      { title: "Operational Scaling", description: "We optimize operations, streamline processes, and introduce automation where needed to support higher volumes with lower cost and risk." },
-      { title: "Fundraising for Growth", description: "Beyond initial seed rounds, we prepare you for Series A and beyond, supporting investor readiness, term sheet negotiation, and strategic alignment with capital partners." },
-      { title: "Risk & Governance Maturity", description: "Strengthen your governance posture with scalable policies, risk management frameworks, and board-level insights that attract institutional interest." },
-      { title: "Financial Controls & KPI Modeling", description: "Implement robust financial processes and dashboards to manage burn rate, unit economics, and growth metrics with discipline." },
-      { title: "Leadership & Culture Scaling", description: "We support leadership evolution with coaching, succession planning, and culture frameworks that retain startup energy while enabling structured growth." },
-      { title: "Digital & Tech Enablement", description: "We assess and implement the right tech stack, architecture upgrades, and platforms (including AI, cloud, and data systems) for future-ready operations." },
-      { title: "Exit Readiness & Strategic Positioning", description: "Whether through M&A or IPO, we help prepare your business to attract suitors, investors, or public market confidence, ensuring you scale with optionality." },
-    ],
-    cta: { heading: "Ready to Scale? Let's Build the Next Chapter of Your Success Together", button: "Contact us" },
-  },
-  {
-    slug: "incubator-accelerators-advisory",
-    pillar: "entrepreneurship",
-    title: "Incubator & Accelerators Advisory",
-    headline: "Empowering Innovation, Enabling Value",
-    lead: "We partner with incubators, accelerators, and advisory firms to deliver high-impact financial and strategic services that fuel innovation and growth. Our integrated approach, spanning diligence, valuation, tax structuring, fundraising support, and deal strategy, ensures each opportunity is assessed with precision and positioned for maximum value creation.",
-    summary:
-      "High-impact financial and strategic services for incubators, accelerators and advisory firms.",
-    capabilities: [
-      { title: "Financial Due Diligence", description: "We support startups with Capital Formation and Investment Banking (CFIB) services, from raising early-stage capital to preparing for IPOs." },
-      { title: "Business Valuation", description: "We offer defensible and market-aligned valuations tailored to early-stage, growth-stage, and mature businesses." },
-      { title: "M&A and Transaction Tax Advisory", description: "Our tax specialists provide deep expertise in structuring deals for optimal tax efficiency." },
-      { title: "Fundraise Support", description: "We assist with capital raise strategy, investor targeting, pitch material preparation, and deal negotiation." },
-      { title: "Regulatory and Compliance Advisory", description: "We turn startup data into decision-driving insights, covering customer behavior, financial KPIs, product performance, and operational trends." },
-      { title: "Data Analytics and Financial Modeling", description: "We build data-driven insights and robust financial models to support strategic planning, valuation, and investor presentations." },
-      { title: "Strategic Advisory & Go-to-Market Planning", description: "Supporting portfolio companies in business model refinement and operational structuring." },
-      { title: "Deals Strategy & Execution", description: "We craft bespoke deal strategies that align with client objectives." },
-    ],
-    cta: { heading: "Empowering Your Next Move", button: "Contact us" },
-  },
-  {
-    slug: "ipo-readiness",
-    pillar: "entrepreneurship",
-    title: "IPO Readiness",
-    headline: "Preparing You for a Flawless Market Debut.",
-    lead: "Our IPO readiness services are designed to help companies navigate the complex journey to becoming publicly listed. From regulatory compliance to investor positioning, we ensure every aspect of your business is prepared to meet the demands of the capital markets with confidence and clarity.",
-    summary:
-      "End-to-end IPO preparation, from gap assessment and controls to investor story and regulatory filings.",
-    capabilities: [
-      { title: "IPO Gap Assessment", description: "We perform a thorough evaluation of your current financial, operational, and governance structures to identify readiness gaps and develop a roadmap for remediation." },
-      { title: "Financial Reporting & Controls", description: "We help align your reporting standards with market expectations (e.g., IFRS, Ind AS, or US GAAP), strengthen internal controls, and ensure audit readiness." },
-      { title: "Governance & Compliance Structuring", description: "Our team assists in building or enhancing governance frameworks, including board composition, committees, and corporate policies in line with listing regulations." },
-      { title: "Business & Equity Valuation", description: "We deliver detailed, defensible valuations that support pricing decisions, investor communication, and regulatory disclosures." },
-      { title: "Tax Advisory & Structuring", description: "We evaluate and optimize your group structure, ownership, and transactions from a tax efficiency and compliance standpoint ahead of the IPO." },
-      { title: "Investor Story & Market Positioning", description: "We work with you to craft a compelling equity story that resonates with institutional investors, analysts, and other market stakeholders." },
-      { title: "Regulatory Filing Support", description: "Our experts support the preparation of offer documents, draft red herring prospectus (DRHP), and other regulatory filings to ensure accuracy and compliance." },
-      { title: "Coordination with External Advisors", description: "We collaborate seamlessly with legal counsels, auditors, underwriters, and exchanges to drive alignment and execution across all stakeholders involved in the IPO process." },
-    ],
-    cta: { heading: "Let's Navigate Your IPO Together", button: "Contact us" },
-  },
-  {
-    slug: "finance-transformation",
-    pillar: "entrepreneurship",
-    title: "Finance Transformation",
-    headline: "Redefine Finance. Unlock Value. Drive the Future.",
-    lead: "Reimagining financial processes through technology and strategy to drive efficiency, agility, and business value.",
-    summary:
-      "Reimagining the finance function through automation, analytics and integrated systems.",
-    capabilities: [
-      { title: "Process Automation & Digitization", description: "Implementing RPA (Robotic Process Automation), AI, and cloud-based platforms to reduce manual efforts and enhance accuracy." },
-      { title: "Data-Driven Decision Making", description: "Leveraging advanced analytics and real-time dashboards to support strategic financial planning and forecasting." },
-      { title: "Integrated Financial Systems", description: "Creating seamless connections between ERP systems, accounting software, and business tools for improved data flow and transparency." },
-      { title: "Agile Financial Planning", description: "Shifting from static budgeting models to rolling forecasts and scenario planning for better adaptability in a dynamic market." },
-      { title: "Talent and Skill Development", description: "Upskilling finance teams in areas like analytics, technology, and strategic thinking to meet evolving business demands." },
-      { title: "Regulatory Compliance & Risk Management", description: "Enhancing governance, risk controls, and compliance through digital solutions and standardized reporting frameworks." },
-      { title: "Cost Optimization", description: "Identifying opportunities for cost reduction and operational efficiency without compromising business value." },
-      { title: "Customer-Centric Finance Models", description: "Aligning finance functions to better serve internal and external customers with faster service, transparency, and responsiveness." },
-    ],
-    cta: { heading: "Ready to Transform Your Finance Function?", button: "Contact us" },
   },
 ];
 

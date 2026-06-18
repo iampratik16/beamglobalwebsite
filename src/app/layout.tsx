@@ -42,8 +42,6 @@ export const metadata: Metadata = {
     "Oracle RMC",
     "SoD remediation",
     "IT governance",
-    "IPO readiness",
-    "finance transformation",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
