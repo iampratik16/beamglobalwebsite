@@ -35,13 +35,13 @@ export default function AboutPage() {
             <div className="flex flex-col">
               <Eyebrow>Who we are</Eyebrow>
               <h2 className="text-h2 mt-4 text-ink">{about.whoWeAre.title}</h2>
-              <div className="group relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl">
+              <div className="relative mt-8 aspect-[4/3] overflow-hidden border border-hairline">
                 <Image
                   src="/images/teamww.png"
                   alt="The Beam Global Services team"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -61,13 +61,13 @@ export default function AboutPage() {
             {[about.vision, about.mission].map((block, i) => (
               <Reveal key={block.title} delay={i * 80} className="bg-paper-alt">
                 <div className="flex h-full flex-col gap-6 p-8 lg:p-12">
-                  <div className="group relative aspect-[16/7] overflow-hidden rounded-2xl">
+                  <div className="relative aspect-[16/7] overflow-hidden border border-hairline">
                     <Image
                       src={i === 0 ? "/images/about/vision.png" : "/images/about/mission.png"}
                       alt={block.title}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                      className="object-cover"
                     />
                   </div>
                   <h3 className="text-h3 text-ink">{block.title}</h3>

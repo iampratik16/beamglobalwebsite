@@ -8,10 +8,9 @@ import { VolumeOn, VolumeOff } from "@/components/ui/icons";
 import { homeHero } from "@/content/home";
 
 /**
- * Homepage hero, layered, editorial. Rotating headline (the existing slider
- * lines) on the left; a dark-glass pillar panel with floating glass chips on
- * the right. Rotation runs only after mount (useEffect) so SSR renders the
- * first headline deterministically, no hydration mismatch.
+ * Homepage hero — full-bleed video with a simple ink overlay, rotating
+ * headline on the left. Rotation runs only after mount so SSR renders the
+ * first headline deterministically.
  */
 export function Hero() {
   const { eyebrow, headlines, lead, primaryCta, secondaryCta } = homeHero;
@@ -24,7 +23,6 @@ export function Hero() {
     if (!video) return;
     const next = !muted;
     video.muted = next;
-    // Unmuting is a user gesture, (re)start playback so sound plays.
     if (!next) void video.play().catch(() => {});
     setMuted(next);
   };
@@ -39,7 +37,6 @@ export function Hero() {
     return () => clearInterval(id);
   }, [headlines.length]);
 
-  // Pause the background video for users who prefer reduced motion.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -50,10 +47,9 @@ export function Hero() {
 
   return (
     <section className="relative mt-[89px] flex items-center overflow-hidden bg-ink text-paper md:min-h-[calc(100vh-89px)]">
-      {/* Background video */}
       <video
         ref={videoRef}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-90"
         autoPlay
         muted
         loop
@@ -64,18 +60,9 @@ export function Hero() {
         <source src="/video/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Legibility + brand overlays (left/bottom darker for text) */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/35"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-accent/20 blur-[140px]"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/20"
       />
 
       <Container className="relative py-20 md:py-24">
@@ -90,10 +77,9 @@ export function Hero() {
               {headlines.map((line, i) => (
                 <span
                   key={line}
-                  className="col-start-1 row-start-1 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  className="col-start-1 row-start-1 transition-opacity duration-500"
                   style={{
                     opacity: i === index ? 1 : 0,
-                    transform: i === index ? "translateY(0)" : "translateY(14px)",
                     pointerEvents: i === index ? "auto" : "none",
                   }}
                 >
@@ -117,27 +103,15 @@ export function Hero() {
               {secondaryCta.label}
             </Button>
           </div>
-
-          <div className="mt-12 flex gap-2" aria-hidden>
-            {headlines.map((line, i) => (
-              <span
-                key={line}
-                className={`h-1 w-8 transition-colors duration-500 ${
-                  i === index ? "bg-gold" : "bg-paper/25"
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </Container>
 
-      {/* Sound toggle */}
       <button
         type="button"
         onClick={toggleSound}
         aria-label={muted ? "Unmute hero video" : "Mute hero video"}
         aria-pressed={!muted}
-        className="glass-dark absolute right-5 top-5 z-30 flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-ink/70 md:right-8 md:top-8"
+        className="absolute right-5 top-5 z-30 flex items-center gap-2 border border-paper/25 bg-ink/80 px-3 py-2 text-sm font-medium text-paper transition-colors hover:border-paper/50 md:right-8 md:top-8"
       >
         {muted ? (
           <VolumeOff className="h-4 w-4" />

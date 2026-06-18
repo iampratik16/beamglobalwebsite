@@ -13,7 +13,7 @@ export function PillarFeature({ pillars }: { pillars: Pillar[] }) {
     <div className="grid grid-cols-1 gap-px bg-hairline md:grid-cols-3">
       {pillars.map((pillar, i) => (
         <article key={pillar.name} className="group bg-paper">
-          <div className="card-media relative aspect-[5/4] overflow-hidden">
+          <div className="relative aspect-[5/4] overflow-hidden border-b border-hairline">
             {pillar.image ? (
               <Image
                 src={pillar.image}

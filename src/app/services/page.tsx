@@ -59,7 +59,6 @@ export default function ServicesPage() {
                     excerpt={s.summary}
                     seed={s.slug}
                     image={`/images/services/${s.slug}.png`}
-                    elevated
                   />
                 ))}
               </CardGrid>

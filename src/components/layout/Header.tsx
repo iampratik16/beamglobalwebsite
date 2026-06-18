@@ -65,8 +65,8 @@ export function Header() {
   return (
     <>
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-hairline bg-paper/95 backdrop-blur transition-shadow duration-300 ${
-        scrolled ? "shadow-[0_8px_24px_-16px_rgba(0,0,0,0.3)]" : ""
+      className={`fixed inset-x-0 top-0 z-50 border-b border-hairline bg-paper transition-colors duration-200 ${
+        scrolled ? "border-ink/10" : ""
       }`}
     >
       <div className="container-page flex h-[var(--header-h,88px)] items-center justify-between gap-6 py-3">
@@ -137,7 +137,7 @@ export function Header() {
       {/* Mega-menu panel */}
       {megaOpen && (
         <div
-          className="absolute inset-x-0 top-full hidden border-b border-hairline bg-paper shadow-[0_24px_48px_-24px_rgba(0,0,0,0.25)] lg:block"
+          className="absolute inset-x-0 top-full hidden border-b border-hairline bg-paper lg:block"
           onMouseEnter={openMega}
           onMouseLeave={scheduleClose}
         >
@@ -194,7 +194,7 @@ export function Header() {
                             alt=""
                             fill
                             sizes="64px"
-                            className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
+                            className="object-cover"
                           />
                         </span>
                         <span className="text-[0.95rem] font-medium leading-snug text-ink transition-colors group-hover:text-accent">

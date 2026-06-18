@@ -75,7 +75,7 @@ export function CapabilityTabs({ capabilities }: { capabilities: Capability[] })
               {c.title}
               <span
                 aria-hidden
-                className={`absolute inset-x-0 -bottom-px h-[3px] rounded-full transition-all duration-300 ${
+                className={`absolute inset-x-0 -bottom-px h-px transition-colors duration-200 ${
                   selected ? "bg-accent" : "bg-transparent"
                 }`}
               />
@@ -89,25 +89,18 @@ export function CapabilityTabs({ capabilities }: { capabilities: Capability[] })
         role="tabpanel"
         aria-labelledby={`cap-tab-${active}`}
         key={active}
-        className="tab-in mt-12 grid gap-8 lg:grid-cols-[1.4fr_0.6fr]"
+        className="tab-in mt-12"
       >
-        <div>
-          <span aria-hidden className="mb-6 block h-0.5 w-10 bg-gold" />
-          <h3 className="text-h3 text-ink">{cap.title}</h3>
-          <p className="mt-5 max-w-2xl text-lead">{cap.description}</p>
-          <Link
-            href="/contact"
-            className="group mt-8 inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
-          >
-            Talk to our team
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-        <div aria-hidden className="hidden items-start justify-end lg:flex">
-          <span className="font-serif text-[9rem] font-semibold leading-none text-ink/[0.06]">
-            {String(active + 1).padStart(2, "0")}
-          </span>
-        </div>
+        <span aria-hidden className="mb-6 block h-px w-10 bg-gold" />
+        <h3 className="text-h3 text-ink">{cap.title}</h3>
+        <p className="mt-5 max-w-2xl text-lead">{cap.description}</p>
+        <Link
+          href="/contact"
+          className="group mt-8 inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
+        >
+          Talk to our team
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+        </Link>
       </div>
     </div>
   );
