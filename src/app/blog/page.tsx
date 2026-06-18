@@ -40,7 +40,6 @@ export default function BlogPage() {
                   excerpt={post.excerpt}
                   seed={post.slug}
                   image={post.image}
-                  elevated
                 />
               ))}
             </CardGrid>

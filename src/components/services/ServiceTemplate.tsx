@@ -34,7 +34,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
       />
 
       {/* Editorial intro */}
-      <section className="bg-warm-mesh">
+      <section className="border-b border-hairline bg-paper-alt">
         <Container className="section-y">
           <Reveal className="grid grid-cols-1 gap-8 lg:grid-cols-[0.5fr_0.5fr] lg:gap-16">
             <div>

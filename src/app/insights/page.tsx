@@ -40,7 +40,6 @@ export default function InsightsPage() {
                   excerpt={post.excerpt}
                   seed={post.slug}
                   image={post.image}
-                  elevated
                 />
               ))}
             </CardGrid>

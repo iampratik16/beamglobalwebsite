@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { Hero } from "@/components/home/Hero";
 import { EditorialFeature } from "@/components/home/EditorialFeature";
+import { Leadership } from "@/components/home/Leadership";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { PillarFeature } from "@/components/ui/PillarFeature";
 import { Card } from "@/components/ui/Card";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { CTABand } from "@/components/ui/CTABand";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowRight } from "@/components/ui/icons";
-import { culturePillars } from "@/content/home";
 import { pillars, servicesByPillar } from "@/content/services";
 import { blogPostsByDate } from "@/content/blog";
 
@@ -29,21 +28,21 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Editorial feature, layered statement + featured thinking + insight */}
+      {/* Editorial statement + featured article */}
       <EditorialFeature />
 
-      {/* Culture pillars */}
-      <section className="section-y bg-paper-alt">
+      {/* Leadership */}
+      <section id="leadership" className="section-y scroll-mt-24 bg-paper-alt">
         <Container>
           <Reveal>
             <SectionHeader
-              eyebrow="Our culture"
-              title="What we stand for"
-              lead="Three principles shape how we work with every client and every challenge."
+              eyebrow="Our team"
+              title="Leadership"
+              lead="Meet the founders and leaders behind Beam Global Services."
             />
           </Reveal>
           <Reveal className="mt-12">
-            <PillarFeature pillars={culturePillars} />
+            <Leadership />
           </Reveal>
         </Container>
       </section>
@@ -126,7 +125,6 @@ export default function HomePage() {
                   excerpt={post.excerpt}
                   seed={post.slug}
                   image={homeInsightImages[post.slug] ?? post.image}
-                  elevated
                 />
               ))}
             </CardGrid>

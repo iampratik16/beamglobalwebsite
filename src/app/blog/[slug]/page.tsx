@@ -155,7 +155,6 @@ export default async function BlogPostPage({
                   excerpt={p.excerpt}
                   seed={p.slug}
                   image={p.image}
-                  elevated
                 />
               ))}
             </CardGrid>

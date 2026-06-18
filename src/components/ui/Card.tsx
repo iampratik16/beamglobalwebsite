@@ -12,7 +12,6 @@ export function Card({
   seed,
   image,
   withMedia = true,
-  elevated = false,
   className = "",
 }: {
   href: string;
@@ -23,22 +22,18 @@ export function Card({
   seed?: string;
   image?: string;
   withMedia?: boolean;
-  elevated?: boolean;
   className?: string;
 }) {
-  const shell = elevated
-    ? "rounded-2xl bg-paper shadow-soft lift overflow-hidden"
-    : "overflow-hidden border border-hairline bg-paper transition-all duration-[450ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-transparent hover:shadow-soft";
   return (
     <Link
       href={href}
-      className={`group flex h-full flex-col ${shell} ${className}`}
+      className={`group flex h-full flex-col overflow-hidden border border-hairline bg-paper transition-colors hover:border-ink/20 ${className}`}
     >
       {withMedia && (
         <div
-          className={`card-media relative overflow-hidden ${
-            elevated ? "rounded-t-2xl" : ""
-          } ${image ? "aspect-[4/3]" : ""}`}
+          className={`relative overflow-hidden border-b border-hairline ${
+            image ? "aspect-[4/3]" : ""
+          }`}
         >
           {image ? (
             <>
@@ -49,10 +44,8 @@ export function Card({
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
-              {/* scrim for label legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/10 to-transparent" />
               {eyebrow && (
-                <span className="absolute bottom-4 left-4 z-[3] font-display text-sm font-semibold uppercase tracking-wider text-paper/90">
+                <span className="absolute bottom-4 left-4 z-[1] font-display text-sm font-semibold uppercase tracking-wider text-paper">
                   {eyebrow}
                 </span>
               )}
@@ -67,7 +60,7 @@ export function Card({
           <span className="text-eyebrow text-accent">{eyebrow}</span>
         )}
         {meta && <span className="text-xs uppercase tracking-wider text-muted">{meta}</span>}
-        <h3 className="font-display text-xl font-bold leading-snug tracking-tight text-ink transition-colors duration-300 group-hover:text-accent">
+        <h3 className="font-display text-xl font-bold leading-snug tracking-tight text-ink transition-colors group-hover:text-accent">
           {title}
         </h3>
         {excerpt && (
@@ -75,7 +68,7 @@ export function Card({
         )}
         <span className="mt-auto inline-flex items-center gap-2 pt-3 text-sm font-semibold text-accent">
           Read more
-          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
         </span>
       </div>
     </Link>
