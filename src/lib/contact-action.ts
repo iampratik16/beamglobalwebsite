@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import { appendContactToSheet } from "./contact-sheet";
 
 const ContactSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name."),
@@ -48,18 +49,51 @@ export async function submitContact(
   }
 
   // ───────────────────────────────────────────────────────────
-  // INTEGRATION POINT: wire a real email provider here.
-  // e.g. Resend / SMTP / a CRM webhook. Credentials are NOT wired.
-  //
-  //   await resend.emails.send({
-  //     from: "website@beamglobalservices.com",
-  //     to: "support@beamglobalservices.com",
-  //     subject: `New enquiry from ${parsed.data.name}`,
-  //     text: parsed.data.message,
-  //   });
-  //
-  // For now we validate and return success. (No data is persisted.)
+  // Persist the enquiry to a Google Sheet (via an Apps Script web app).
+  // Setup: docs/contact-sheet-setup.md. Configured with CONTACT_SHEET_WEBHOOK_URL.
   // ───────────────────────────────────────────────────────────
+  const result = await appendContactToSheet(parsed.data);
+  const isProduction = process.env.NODE_ENV === "production";
+
+  // Honest failure shown to the visitor — never a false "received". Keeps what
+  // they typed so they can retry, and points them to email as a fallback.
+  const failure: ContactState = {
+    status: "error",
+    message:
+      "Sorry, we couldn’t send your message just now. Please email us directly at support@beamglobalservices.com, or try again in a moment.",
+    values: raw,
+  };
+
+  if (!result.ok && result.reason === "request-failed") {
+    // Storage is wired but the write failed (a rare transient network / Apps
+    // Script issue). Log the full enquiry so this lead stays recoverable from
+    // server logs — the one place we deliberately accept PII in logs, because
+    // the alternative is losing a genuine lead. (Ensure your host's log
+    // retention reflects this; see docs/contact-sheet-setup.md.)
+    console.error(
+      "[contact] Google Sheet write failed; enquiry NOT stored — recover from this log:",
+      JSON.stringify(parsed.data),
+    );
+    return failure;
+  }
+
+  if (!result.ok && result.reason === "not-configured") {
+    if (isProduction) {
+      // Storage was never wired in production. Fail loudly rather than silently
+      // drop leads behind a false confirmation. No enquiry data is logged here
+      // (this could fire on every submission); the visitor's email fallback is
+      // the recovery path.
+      console.error(
+        "[contact] CONTACT_SHEET_WEBHOOK_URL / CONTACT_SHEET_SECRET not set in production — storage disabled. See docs/contact-sheet-setup.md.",
+      );
+      return failure;
+    }
+    // Local dev / demo: keep the form usable without storage. No enquiry data
+    // is logged. See docs/contact-sheet-setup.md to enable persistence.
+    console.warn(
+      "[contact] Contact storage not configured (dev) — enquiry not persisted.",
+    );
+  }
 
   return {
     status: "success",
