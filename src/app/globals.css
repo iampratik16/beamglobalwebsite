@@ -120,10 +120,14 @@ body {
   line-height: 1.4;
 }
 
-.text-lead {
-  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-  line-height: 1.55;
-  color: var(--color-muted);
+/* In the components layer so utility colours (e.g. text-paper on dark CTA
+   bands and the hero) can override the default muted colour. */
+@layer components {
+  .text-lead {
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+    line-height: 1.55;
+    color: var(--color-muted);
+  }
 }
 
 /* Layout helpers ----------------------------------------- */

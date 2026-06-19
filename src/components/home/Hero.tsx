@@ -64,6 +64,12 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/55 to-ink/20"
       />
+      {/* Bottom scrim: darkens the lower area so the lead copy + CTAs stay
+          readable over bright video frames. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-ink/90 via-ink/50 to-transparent"
+      />
 
       <Container className="relative py-20 md:py-24">
         <div className="max-w-3xl">
@@ -89,7 +95,9 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-lead text-paper/75">{lead}</p>
+          <p className="mt-8 max-w-xl text-lead text-paper/70 [text-shadow:0_1px_14px_rgba(0,0,0,0.7)]">
+            {lead}
+          </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href={primaryCta.href} variant="onDark">

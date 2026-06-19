@@ -69,9 +69,17 @@ export function Header() {
         scrolled ? "border-ink/10" : ""
       }`}
     >
-      <div className="container-page flex h-[var(--header-h,88px)] items-center justify-between gap-6 py-3">
-        {/* Logo */}
-        <Link href="/" aria-label="Beam Global Services, home" className="flex shrink-0 items-center">
+      {/* PwC-style bar: logo left · nav centred · Get in touch right.
+          grid-cols-[1fr_auto_1fr] keeps the nav optically centred on the page
+          regardless of the logo/button widths. Mobile falls back to a simple
+          logo + hamburger row. */}
+      <div className="container-page flex h-[var(--header-h,88px)] items-center justify-between gap-6 py-3 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+        {/* Logo — left */}
+        <Link
+          href="/"
+          aria-label="Beam Global Services, home"
+          className="flex shrink-0 items-center lg:justify-self-start"
+        >
           <Image
             src={onLight ? logoDark : logoWhite}
             alt="Beam Global Services"
@@ -80,8 +88,8 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+        {/* Desktop nav — centred */}
+        <nav aria-label="Primary" className="hidden items-center justify-center gap-8 lg:flex">
           {/* Services with mega-menu */}
           <div className="relative" onMouseEnter={openMega} onMouseLeave={scheduleClose}>
             <button
@@ -113,25 +121,28 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+        </nav>
 
+        {/* Right cluster — Get in touch (desktop) + mobile toggle */}
+        <div className="flex items-center justify-end gap-4 lg:justify-self-end">
           <Link
             href="/contact"
-            className="bg-accent px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-accent-ink"
+            className="hidden bg-accent px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-accent-ink lg:inline-flex"
           >
             Get in touch
           </Link>
-        </nav>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          className={`lg:hidden ${onLight ? "text-ink" : "text-paper"}`}
-          aria-label="Open menu"
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(true)}
-        >
-          <Menu className="h-7 w-7" />
-        </button>
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            className={`lg:hidden ${onLight ? "text-ink" : "text-paper"}`}
+            aria-label="Open menu"
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen(true)}
+          >
+            <Menu className="h-7 w-7" />
+          </button>
+        </div>
       </div>
 
       {/* Mega-menu panel */}
@@ -156,48 +167,58 @@ export function Header() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-[1fr_1fr_1fr_0.9fr] gap-x-10 gap-y-2">
-              {servicesMenu.map((group) => (
-                <div key={group.label}>
-                  <Link
-                    href={group.href}
-                    className="text-eyebrow mb-4 inline-block px-4 text-accent transition-colors hover:text-accent-ink"
-                  >
-                    {group.label}
-                  </Link>
-                  <ul className="space-y-1">
-                    {group.items.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className="group/item flex items-center justify-between gap-4 rounded-sm px-4 py-3 text-[1.0625rem] font-medium text-ink transition-colors duration-150 hover:bg-accent hover:text-paper"
-                        >
-                          <span>{item.label}</span>
-                          <ChevronRight className="h-4 w-4 shrink-0 text-muted transition-colors group-hover/item:text-paper" />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            {/* PwC-style: link columns on the left, a divided Featured column
+                with large landscape thumbnails on the right. */}
+            <div className="flex gap-12">
+              {/* Service link groups — one column per group */}
+              <div
+                className="grid flex-1 gap-x-8 gap-y-2"
+                style={{
+                  gridTemplateColumns: `repeat(${servicesMenu.length}, minmax(0, 1fr))`,
+                }}
+              >
+                {servicesMenu.map((group) => (
+                  <div key={group.label}>
+                    <Link
+                      href={group.href}
+                      className="text-eyebrow mb-4 inline-block px-4 text-accent transition-colors hover:text-accent-ink"
+                    >
+                      {group.label}
+                    </Link>
+                    <ul className="space-y-1">
+                      {group.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className="group/item flex items-center justify-between gap-4 rounded-sm px-4 py-3 text-[1.0625rem] font-medium text-ink transition-colors duration-150 hover:bg-accent hover:text-paper"
+                          >
+                            <span>{item.label}</span>
+                            <ChevronRight className="h-4 w-4 shrink-0 text-muted transition-colors group-hover/item:text-paper" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
 
-              {/* Featured column */}
-              <div className="border-l border-hairline pl-8">
-                <p className="text-eyebrow mb-4 text-muted">Featured</p>
-                <ul className="space-y-4">
+              {/* Featured — right column, large landscape thumbnails */}
+              <div className="w-[34%] shrink-0 border-l border-hairline pl-10">
+                <p className="text-eyebrow mb-5 text-muted">Featured</p>
+                <ul className="space-y-5">
                   {servicesFeatured.map((f) => (
                     <li key={f.href}>
-                      <Link href={f.href} className="group flex items-center gap-3">
-                        <span className="relative h-12 w-16 shrink-0 overflow-hidden rounded">
+                      <Link href={f.href} className="group flex items-center gap-4">
+                        <span className="relative aspect-[16/10] w-36 shrink-0 overflow-hidden rounded">
                           <Image
                             src={f.image}
                             alt=""
                             fill
-                            sizes="64px"
-                            className="object-cover"
+                            sizes="160px"
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                           />
                         </span>
-                        <span className="text-[0.95rem] font-medium leading-snug text-ink transition-colors group-hover:text-accent">
+                        <span className="text-[1.0625rem] font-medium leading-snug text-ink transition-colors group-hover:text-accent">
                           {f.label}
                         </span>
                       </Link>

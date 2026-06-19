@@ -9,9 +9,9 @@ import { pageMetadata } from "@/lib/seo";
 import { blogPostsByDate } from "@/content/blog";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Blogs",
+  title: "Case Studies",
   description:
-    "Articles and analysis from Beam Global Services on GRC, startups, finance, cyber security and growth.",
+    "Case studies and insights from Beam Global Services on GRC, startups, finance, cyber security and growth.",
   path: "/blog",
 });
 
@@ -19,12 +19,12 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
-        eyebrow="Blogs"
-        title="Ideas, analysis and field notes"
-        lead="Our thinking on governance, growth and the journey in between."
+        eyebrow="Case Studies"
+        title="Client stories and proven outcomes"
+        lead="How we help clients get the most from their GRC investments — across governance, growth and the journey in between."
         image="/images/heroes/blog.png"
-        imageAlt="Beam Global Services blog"
-        crumbs={[{ label: "Home", href: "/" }, { label: "Blogs" }]}
+        imageAlt="Beam Global Services case studies"
+        crumbs={[{ label: "Home", href: "/" }, { label: "Case Studies" }]}
       />
 
       <section className="section-y bg-paper">

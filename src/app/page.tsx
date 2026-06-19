@@ -32,9 +32,6 @@ export default function HomePage() {
       {/* Editorial statement / the opportunity */}
       <EditorialFeature />
 
-      {/* Clients / track record */}
-      <ClientLogos />
-
       {/* Leadership */}
       <section id="leadership" className="section-y scroll-mt-24 bg-paper-alt">
         <Container>
@@ -58,14 +55,12 @@ export default function HomePage() {
             <SectionHeader
               eyebrow="What we do"
               title="Expertise across the GRC and growth journey"
-              lead="From product selection and implementation to governance, transformation and the entrepreneurial path from startup to IPO."
+              lead="From GRC product selection and implementation to strategy, governance and transformation across your enterprise systems."
             />
           </Reveal>
 
           <div className="mt-14 space-y-px bg-hairline">
-            {pillars
-              .filter((pillar) => pillar.id !== "entrepreneurship")
-              .map((pillar) => (
+            {pillars.map((pillar) => (
               <Reveal key={pillar.id} className="bg-paper">
                 <div className="grid grid-cols-1 gap-6 py-8 lg:grid-cols-[0.8fr_1.6fr] lg:gap-12 lg:py-10">
                   <div>
@@ -103,6 +98,9 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* Clients / track record */}
+      <ClientLogos />
+
       {/* Insights */}
       <section className="section-y bg-paper-alt">
         <Container>
@@ -138,8 +136,11 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Careers + Contact CTAs */}
+      {/* Careers + Contact CTAs. The Careers band stays flat so the two
+          stacked CTAs don't repeat the same backdrop; the crimson Contact
+          band below carries the image. */}
       <CTABand
+        image={null}
         eyebrow="Careers"
         heading="Elevate Your Career, Embrace Your Future."
         body="Join a team that believes in excellence and helps clients get the most from their GRC investments."

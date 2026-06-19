@@ -75,7 +75,7 @@ export default async function BlogPostPage({
         imageAlt={post.title}
         crumbs={[
           { label: "Home", href: "/" },
-          { label: "Blogs", href: "/blog" },
+          { label: "Case Studies", href: "/blog" },
           { label: post.title },
         ]}
       >
@@ -134,7 +134,7 @@ export default async function BlogPostPage({
                 className="inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
               >
                 <ArrowRight className="h-4 w-4 rotate-180" />
-                Back to all blogs
+                Back to all case studies
               </Link>
             </div>
           </div>
