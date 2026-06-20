@@ -2,14 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { GrcValueSection } from "@/components/home/GrcValueSection";
 import { ArrowRight } from "@/components/ui/icons";
 import { positioning } from "@/content/home";
 
 /**
- * Editorial "opportunity" section. An intro statement paired with a photo,
- * then the problem we solve (two-column) and a numbered "how we help" grid —
- * arranged to stay readable and balanced rather than a single wall of text.
+ * Editorial "opportunity" section: the positioning statement and photo, the
+ * GRC value section (problem + five strategies — see GrcValueSection), then the
+ * "how we help" numbered list. Copy comes from the content file unchanged.
  */
+
+// Number of opening words to bold per "how we help" point (the action phrase).
+const HELP_LEAD_WORDS = [4, 5, 9];
+
 export function EditorialFeature() {
   return (
     <section className="border-b border-hairline bg-paper-alt">
@@ -42,30 +47,30 @@ export function EditorialFeature() {
           </figure>
         </div>
 
-        {/* What problem are we solving — two-column body */}
-        <div className="mt-16 border-t border-hairline pt-14 lg:mt-20 lg:pt-16">
-          <h3 className="text-h3 max-w-3xl text-ink">{positioning.problemHeading}</h3>
-          <div className="mt-8 grid grid-cols-1 gap-x-12 gap-y-6 md:grid-cols-2">
-            {positioning.problemBody.map((para, i) => (
-              <p key={i} className="leading-relaxed text-muted">
-                {para}
-              </p>
-            ))}
-          </div>
-        </div>
+        {/* What problem are we solving + five strategies */}
+        <GrcValueSection />
 
-        {/* How we help — numbered grid */}
-        <div className="mt-14">
+        {/* How we help — numbered grid; each point leads with a bold phrase */}
+        <div className="mt-16 lg:mt-20">
           <p className="text-lg font-semibold text-ink">{positioning.helpIntro}</p>
-          <ol className="mt-8 grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-3">
-            {positioning.helpPoints.map((point, i) => (
-              <li key={i} className="border-t border-hairline pt-5">
-                <span className="font-serif text-3xl leading-none text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-4 leading-relaxed text-muted">{point}</p>
-              </li>
-            ))}
+          <ol className="mt-10 grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-3">
+            {positioning.helpPoints.map((point, i) => {
+              const words = point.split(" ");
+              const n = HELP_LEAD_WORDS[i] ?? 1;
+              const lead = words.slice(0, n).join(" ");
+              const rest = words.slice(n).join(" ");
+              return (
+                <li key={i} className="border-t-2 border-hairline pt-5">
+                  <span className="font-serif text-3xl leading-none text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="mt-4 leading-relaxed text-muted">
+                    <span className="font-semibold text-ink">{lead}</span>
+                    {rest ? ` ${rest}` : ""}
+                  </p>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </Container>

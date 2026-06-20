@@ -9,8 +9,8 @@ export const about = {
   whoWeAre: {
     title: "Who Are We?",
     paragraphs: [
-      "We help organisations get the most from their Governance, Risk & Compliance (GRC) investments, keeping solutions maintained, optimised and fully integrated, and aligned with industry best practice.",
-      "Beyond support, we help unlock the full potential of GRC: improving processes, strengthening risk management and streamlining compliance. A proactive, tailored approach that drives superior ROI.",
+      "Beam Global Services is committed to helping organisations maximise the value of their investments in Oracle ERP-related Governance, Risk, and Compliance (GRC) products. Our team specialises in designing and implementing security and controls for the Oracle E-Business Suite and Oracle Fusion Cloud ERP systems. We come from a Big Four audit background and have helped clients overcome challenges with IT General Controls like Segregation of Duties, Role Design, User Access Reviews, Privileged Access Management, User Provisioning and Change Management for Oracle ERP systems.",
+      "Whether it is implementing GRC products, advising clients on which GRC product to select, or simply using our depth of expertise to help clients with role design or segregation of duties services, we do our best to provide business outcomes that are sustainable in the long term. With a focus on delivering exceptional application support, the company ensures that clients' GRC solutions are effectively maintained, optimised, and fully integrated into their operational environments.",
     ],
   },
   vision: {

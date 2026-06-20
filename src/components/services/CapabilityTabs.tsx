@@ -48,40 +48,45 @@ export function CapabilityTabs({ capabilities }: { capabilities: Capability[] })
 
   return (
     <div className="mt-12">
-      <div
-        role="tablist"
-        aria-label="Capabilities"
-        className="flex flex-wrap gap-x-8 gap-y-3 border-b border-hairline"
-      >
-        {capabilities.map((c, i) => {
-          const selected = i === active;
-          return (
-            <button
-              key={c.title}
-              role="tab"
-              id={`cap-tab-${i}`}
-              aria-selected={selected}
-              aria-controls="cap-panel"
-              tabIndex={selected ? 0 : -1}
-              ref={(el) => {
-                tabs.current[i] = el;
-              }}
-              onClick={() => setActive(i)}
-              onKeyDown={onKeyDown}
-              className={`relative -mb-px pb-4 text-left text-[0.95rem] font-semibold transition-colors duration-200 ${
-                selected ? "text-ink" : "text-muted hover:text-ink"
-              }`}
-            >
-              {c.title}
-              <span
-                aria-hidden
-                className={`absolute inset-x-0 -bottom-px h-px transition-colors duration-200 ${
-                  selected ? "bg-accent" : "bg-transparent"
+      {/* One scrollable line: long capability lists never stack into rows.
+          The active underline uses an inset shadow (overflow-safe) instead of
+          an overshooting span, and a right-edge fade hints at more tabs. */}
+      <div className="relative">
+        <div
+          role="tablist"
+          aria-label="Capabilities"
+          className="flex gap-x-8 overflow-x-auto border-b border-hairline [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {capabilities.map((c, i) => {
+            const selected = i === active;
+            return (
+              <button
+                key={c.title}
+                role="tab"
+                id={`cap-tab-${i}`}
+                aria-selected={selected}
+                aria-controls="cap-panel"
+                tabIndex={selected ? 0 : -1}
+                ref={(el) => {
+                  tabs.current[i] = el;
+                }}
+                onClick={() => setActive(i)}
+                onKeyDown={onKeyDown}
+                className={`shrink-0 whitespace-nowrap pb-4 text-left text-[0.95rem] font-semibold transition-[color,box-shadow] duration-200 ${
+                  selected
+                    ? "text-ink shadow-[inset_0_-2px_0_0_var(--color-accent)]"
+                    : "text-muted hover:text-ink"
                 }`}
-              />
-            </button>
-          );
-        })}
+              >
+                {c.title}
+              </button>
+            );
+          })}
+        </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-paper to-transparent"
+        />
       </div>
 
       <div

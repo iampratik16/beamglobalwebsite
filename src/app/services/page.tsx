@@ -12,13 +12,12 @@ import { pillars, servicesByPillar } from "@/content/services";
 export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
-    "Expert consulting, digital solutions and IT governance, from GRC product selection and implementation to strategy and transformation across your enterprise.",
+    "Expert consulting and digital solutions for GRC, from product selection and implementation to Oracle access security and fully managed support.",
   path: "/services",
 });
 
 const anchors: Record<string, string> = {
   digital: "digital",
-  "it-governance": "it-governance",
   "managed-services": "managed-services",
 };
 
@@ -28,7 +27,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Empowering Businesses with Expert Consulting and Digital Solutions."
-        lead="Expert consulting, digital solutions and IT governance that drive measurable results."
+        lead="Expert consulting and digital solutions that strengthen control and drive measurable results."
         image="/images/heroes/services.png"
         imageAlt="Beam Global Services capabilities"
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CTABand } from "@/components/ui/CTABand";
 import { Mail, MapPin, Linkedin } from "@/components/ui/icons";
 import { pageMetadata } from "@/lib/seo";
 import { site } from "@/content/site";
@@ -178,20 +179,13 @@ export default async function TeamMemberPage({
         </Container>
       </div>
 
-      {/* Closing name band */}
-      <section className="bg-accent-soft">
-        <Container className="py-16 text-center lg:py-20">
-          <h2 className="font-serif text-3xl font-semibold tracking-tight text-ink md:text-4xl">
-            {member.name}
-          </h2>
-          <div className="mt-6 flex flex-col items-center gap-4">
-            <ContactLink />
-            {member.linkedin && (
-              <LinkedinBadge href={member.linkedin} name={member.name} />
-            )}
-          </div>
-        </Container>
-      </section>
+      <CTABand
+        tone="accent"
+        eyebrow="Let's talk"
+        heading="Looking for a First-Class GRC & Business Consultant?"
+        body="Tell us about your goals, our team will help you maximise the return on your GRC investment."
+        primary={{ label: "Contact us", href: "/contact" }}
+      />
     </>
   );
 }
