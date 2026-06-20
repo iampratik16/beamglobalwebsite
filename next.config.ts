@@ -7,16 +7,13 @@ import type { NextConfig } from "next";
  * WITHOUT trailing slashes (Next.js normalises them).
  */
 
-// Old /service/<slug> → new /services/<slug> (exact slug matches only).
+// Old /service/<slug> → new /services/<slug> (exact slug matches only —
+// must match a live service page in src/content/services.ts).
 const serviceSlugs = [
   "software-development-and-integration",
   "grc-product-selection",
   "safepaas-grc-implementation",
-  "sod-implementation-remediation",
   "oracle-rmc-implementation",
-  "strategic-consulting",
-  "government-public-sector",
-  "transformation-sector",
   "application-managed-services",
   "grc-strategy-services",
 ];
@@ -25,10 +22,15 @@ const serviceSlugs = [
 const renamedServices: { from: string; to: string }[] = [
   { from: "control-execution-services", to: "controls-execution-services" },
   { from: "control-testing-services", to: "controls-execution-services" },
-  { from: "sod-remediation", to: "sod-implementation-remediation" },
+  // SoD was renamed to oracle-sod-remediation in the services refresh; point
+  // both the old WordPress slug and the prior Next slug at the new page.
+  { from: "sod-remediation", to: "oracle-sod-remediation" },
+  { from: "sod-implementation-remediation", to: "oracle-sod-remediation" },
 ];
 
 // Services that no longer exist as standalone pages → /services index.
+// (strategic-consulting / government-public-sector / transformation-sector were
+// the IT Governance pillar, dropped in the services refresh.)
 const droppedServiceSlugs = [
   "startup",
   "scaleup-advisory",
@@ -42,6 +44,9 @@ const droppedServiceSlugs = [
   "erp-control-assurance",
   "sox-implementation",
   "fund-rising-strategy",
+  "strategic-consulting",
+  "government-public-sector",
+  "transformation-sector",
 ];
 
 // Old top-level landing pages → /services index.
