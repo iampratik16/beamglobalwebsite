@@ -57,7 +57,7 @@ export const pillars: Pillar[] = [
     label: "Managed Services",
     eyebrow: "Managed Services",
     intro:
-      "We run, support and strengthen your GRC programme day to day — from application support and controls execution to GRC strategy — so your teams stay focused on the business.",
+      "We run, support and strengthen your GRC programme day to day, from application support and controls execution to GRC strategy, so your teams stay focused on the business.",
   },
 ];
 

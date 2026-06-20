@@ -21,7 +21,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Case Studies"
         title="Client stories and proven outcomes"
-        lead="How we help clients get the most from their GRC investments — across governance, growth and the journey in between."
+        lead="How we help clients get the most from their GRC investments, across governance, growth and the journey in between."
         image="/images/heroes/blog.png"
         imageAlt="Beam Global Services case studies"
         crumbs={[{ label: "Home", href: "/" }, { label: "Case Studies" }]}

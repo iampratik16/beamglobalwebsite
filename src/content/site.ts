@@ -33,7 +33,7 @@ export type MegaMenuGroup = {
 };
 
 /**
- * Primary top-level navigation. Contact is intentionally omitted here — the
+ * Primary top-level navigation. Contact is intentionally omitted here, the
  * "Get in touch" button (which links to /contact) serves that purpose.
  */
 export const primaryNav: NavLink[] = [

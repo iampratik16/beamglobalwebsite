@@ -97,7 +97,7 @@ export function GrcStrategyWheel() {
                   />
                 );
               })}
-              {/* Centre hub — static anchor, drawn on top of the wedge points. */}
+              {/* Centre hub, static anchor, drawn on top of the wedge points. */}
               <circle
                 cx="200"
                 cy="200"

@@ -25,8 +25,8 @@ export type SheetResult =
 
 // Upper bound on how long the visitor's submit is held while we wait for Apps
 // Script (which normally replies in well under a second). Kept comfortably
-// below typical serverless function wall-clock limits so this AbortController —
-// not the platform — is what fires on a hang, preserving the crafted error UX.
+// below typical serverless function wall-clock limits so this AbortController,
+// not the platform, is what fires on a hang, preserving the crafted error UX.
 // If your host's function timeout is low, raise it above this (e.g. a route
 // `maxDuration`); see docs/contact-sheet-setup.md.
 const TIMEOUT_MS = 8_000;
@@ -59,7 +59,7 @@ export async function appendContactToSheet(
         message: record.message,
       }),
       signal: controller.signal,
-      // A submission is a mutation — never serve or store a cached response.
+      // A submission is a mutation, never serve or store a cached response.
       cache: "no-store",
       // Apps Script 302-redirects to googleusercontent.com for the real reply.
       redirect: "follow",
@@ -69,7 +69,7 @@ export async function appendContactToSheet(
 
     // Only an explicit { ok: true } from our Apps Script counts as success.
     // A misconfigured deployment (e.g. one that requires Google sign-in) returns
-    // an HTML login page, so JSON parsing fails — which we correctly treat as a
+    // an HTML login page, so JSON parsing fails, which we correctly treat as a
     // failed write rather than a false positive.
     const data = (await res.json().catch(() => null)) as { ok?: boolean } | null;
     if (!data || data.ok !== true) return { ok: false, reason: "request-failed" };

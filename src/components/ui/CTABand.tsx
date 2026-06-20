@@ -9,7 +9,7 @@ const DEFAULT_CTA_IMAGE = "/images/cta/cta-bg-light.png";
 /**
  * Full-width call-to-action band. A brand-colour wash (ink or accent) sits over
  * a cinematic photo: solid on the left so the copy stays perfectly legible, then
- * fading on the right to reveal the image — the brand colour stays dominant, so
+ * fading on the right to reveal the image, the brand colour stays dominant, so
  * it reads as a Beam section first and a photo second (PwC-style). Pass
  * `image={null}` for a flat-colour band.
  */

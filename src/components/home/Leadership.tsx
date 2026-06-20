@@ -3,7 +3,7 @@ import Link from "next/link";
 import { team } from "@/content/team";
 
 /**
- * Leadership roster — PwC "Network Leadership Team" style: a square headshot on
+ * Leadership roster, PwC "Network Leadership Team" style: a square headshot on
  * the left, the serif underlined name and stacked title on the right. The whole
  * item links to the member's profile page, where the large photo lives.
  */

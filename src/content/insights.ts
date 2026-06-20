@@ -33,7 +33,7 @@ export const grcExplainer = {
   hero: {
     eyebrow: "Insights Hub",
     heading: "What is GRC?",
-    lead: "A plain-English guide to Governance, Risk & Compliance — what the three letters mean, why organisations invest in it, and where it tends to get stuck.",
+    lead: "A plain-English guide to Governance, Risk & Compliance, what the three letters mean, why organisations invest in it, and where it tends to get stuck.",
   },
   intro: [
     "GRC stands for Governance, Risk and Compliance. It describes three connected jobs that every organisation has to do: decide how it will be run, work out what could go wrong, and follow the rules that apply to it. None of these is new on its own. GRC simply means handling them as one coordinated effort rather than as three separate ones run by teams that rarely speak to each other.",
@@ -79,8 +79,8 @@ export const grcChallenges = {
       image: "/images/insights/client-challenges.png",
       imageAlt: "A business leader weighing the cost and value of a GRC investment",
       points: [
-        "ROI on GRC product investment — is the product actually providing business benefits?",
-        "Operational expenditure on dedicated GRC support staff — resource costs and training costs",
+        "ROI on GRC product investment, is the product actually providing business benefits?",
+        "Operational expenditure on dedicated GRC support staff, resource costs and training costs",
         "Ownership of GRC administration: IT vs Finance vs Audit",
       ],
     },

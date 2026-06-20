@@ -55,7 +55,7 @@ export async function submitContact(
   const result = await appendContactToSheet(parsed.data);
   const isProduction = process.env.NODE_ENV === "production";
 
-  // Honest failure shown to the visitor — never a false "received". Keeps what
+  // Honest failure shown to the visitor, never a false "received". Keeps what
   // they typed so they can retry, and points them to email as a fallback.
   const failure: ContactState = {
     status: "error",
@@ -67,11 +67,11 @@ export async function submitContact(
   if (!result.ok && result.reason === "request-failed") {
     // Storage is wired but the write failed (a rare transient network / Apps
     // Script issue). Log the full enquiry so this lead stays recoverable from
-    // server logs — the one place we deliberately accept PII in logs, because
+    // server logs, the one place we deliberately accept PII in logs, because
     // the alternative is losing a genuine lead. (Ensure your host's log
     // retention reflects this; see docs/contact-sheet-setup.md.)
     console.error(
-      "[contact] Google Sheet write failed; enquiry NOT stored — recover from this log:",
+      "[contact] Google Sheet write failed; enquiry NOT stored, recover from this log:",
       JSON.stringify(parsed.data),
     );
     return failure;
@@ -84,14 +84,14 @@ export async function submitContact(
       // (this could fire on every submission); the visitor's email fallback is
       // the recovery path.
       console.error(
-        "[contact] CONTACT_SHEET_WEBHOOK_URL / CONTACT_SHEET_SECRET not set in production — storage disabled. See docs/contact-sheet-setup.md.",
+        "[contact] CONTACT_SHEET_WEBHOOK_URL / CONTACT_SHEET_SECRET not set in production, storage disabled. See docs/contact-sheet-setup.md.",
       );
       return failure;
     }
     // Local dev / demo: keep the form usable without storage. No enquiry data
     // is logged. See docs/contact-sheet-setup.md to enable persistence.
     console.warn(
-      "[contact] Contact storage not configured (dev) — enquiry not persisted.",
+      "[contact] Contact storage not configured (dev), enquiry not persisted.",
     );
   }
 

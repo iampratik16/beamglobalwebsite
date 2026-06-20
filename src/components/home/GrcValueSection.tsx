@@ -28,7 +28,7 @@ const PROBLEM_CARDS: ProblemCard[] = [
   {
     id: "investment",
     title: "The investment",
-    body: "Due to an increase in regulatory requirements over the last 20 years, almost all large and mid-size companies have invested in GRC applications – the term GRC can refer to general applications which help clients document controls and track evidence and can also refer to specialised applications that cater to very specific risks (e.g. ERP security and controls).",
+    body: "Due to an increase in regulatory requirements over the last 20 years, almost all large and mid-size companies have invested in GRC applications, the term GRC can refer to general applications which help clients document controls and track evidence and can also refer to specialised applications that cater to very specific risks (e.g. ERP security and controls).",
   },
   {
     id: "gap",

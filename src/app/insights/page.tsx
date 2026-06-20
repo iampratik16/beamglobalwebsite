@@ -12,7 +12,7 @@ import { grcExplainer, grcChallenges } from "@/content/insights";
 export const metadata: Metadata = pageMetadata({
   title: "What is GRC?",
   description:
-    "A plain-English guide to Governance, Risk & Compliance — what the three letters mean, why organisations invest in it, and where GRC products get stuck.",
+    "A plain-English guide to Governance, Risk & Compliance, what the three letters mean, why organisations invest in it, and where GRC products get stuck.",
   path: "/insights",
 });
 
@@ -28,7 +28,7 @@ export default function InsightsPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Insights Hub" }]}
       />
 
-      {/* What is GRC — plain-English intro */}
+      {/* What is GRC, plain-English intro */}
       <section className="section-y bg-paper">
         <Container>
           <Reveal className="max-w-3xl">
@@ -96,7 +96,7 @@ export default function InsightsPage() {
                     >
                       <span className="font-semibold text-ink">{lead}</span>
                       {tail && (
-                        <span className="leading-relaxed text-muted"> — {tail}</span>
+                        <span className="leading-relaxed text-muted">, {tail}</span>
                       )}
                     </li>
                   );
