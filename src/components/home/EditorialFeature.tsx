@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { StatCallout } from "@/components/ui/StatCallout";
+import { GrcStrategies } from "@/components/home/GrcStrategies";
 import { ArrowRight, ChevronDown } from "@/components/ui/icons";
 import { positioning } from "@/content/home";
 
@@ -102,21 +102,22 @@ export function EditorialFeature() {
           </figure>
         </div>
 
-        {/* What problem are we solving — heading + anchoring stat on the left,
-            scannable, progressively disclosed cards on the right. */}
+        {/* What problem are we solving — heading + progressively disclosed cards */}
         <div className="mt-16 border-t border-hairline pt-14 lg:mt-20 lg:pt-16">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
               <h3 className="text-h3 text-ink">{positioning.problemHeading}</h3>
-              <div className="mt-8">
-                <StatCallout figure="20" label="years of rising regulation" />
-              </div>
             </div>
             <div className="space-y-6">
               {positioning.problemBody.map((para, i) => (
                 <ProblemCard key={i} label={PROBLEM_LABELS[i] ?? ""} body={para} />
               ))}
             </div>
+          </div>
+
+          {/* Five strategies to maximise GRC value (replaces the stat badge) */}
+          <div className="mt-16 border-t border-hairline pt-14 lg:mt-20 lg:pt-16">
+            <GrcStrategies />
           </div>
         </div>
 

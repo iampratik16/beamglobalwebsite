@@ -5,7 +5,7 @@
  * services index, no per-page duplication.
  */
 
-export type PillarId = "digital" | "it-governance" | "managed-services";
+export type PillarId = "digital" | "managed-services";
 
 export type Capability = {
   title: string;
@@ -43,13 +43,6 @@ export const pillars: Pillar[] = [
     eyebrow: "Digital Service",
     intro:
       "Custom software, GRC platform selection and end-to-end implementation, built to integrate cleanly and strengthen control across your enterprise systems.",
-  },
-  {
-    id: "it-governance",
-    label: "IT Governance",
-    eyebrow: "IT Governance",
-    intro:
-      "Strategy, governance and transformation advisory that turns vision into measurable, future-focused results across private and public institutions.",
   },
   {
     id: "managed-services",
@@ -166,78 +159,24 @@ export const services: Service[] = [
     cta: { heading: "Oracle RMC, Deployed for Results, Let's Get Started", button: "Contact us" },
   },
 
-  // ── IT Governance ──────────────────────────────────────────────
+  // ── Oracle Segregation of Duties Remediation ───────────
   {
-    slug: "strategic-consulting",
-    pillar: "it-governance",
-    title: "Strategic Consulting",
-    headline: "We turn vision into strategy, and strategy into results.",
-    lead: "Our strategic consulting services help organizations make confident, future-focused decisions. We work closely with your leadership to define clear goals, evaluate challenges, and build actionable strategies that drive growth, improve performance, and prepare your business for what's next.",
+    slug: "oracle-sod-remediation",
+    pillar: "digital",
+    title: "Oracle Segregation of Duties Remediation",
+    headline: "Clean, Conflict-Free Access Across Your Oracle ERP.",
+    lead: "Remediation services for organisations running Oracle E-Business Suite or Oracle Fusion Cloud ERP. We identify, analyse and resolve conflicting access rights so that no single person can both execute and conceal a fraudulent transaction. By redesigning roles, enforcing the four-eyes principle and putting compensating controls in place, we keep your financial and IT environment secure and audit-ready.",
     summary:
-      "Future-focused strategy, digital transformation planning and leadership advisory that drives measurable growth.",
+      "Advisory and technical remediation that finds and fixes Segregation of Duties conflicts across Oracle E-Business Suite and Oracle Fusion Cloud ERP.",
     capabilities: [
-      { title: "Business Strategy Development", description: "We help you define or refine your organization's long-term strategy and align your business model with changing market demands and customer expectations." },
-      { title: "Digital Transformation Planning", description: "We guide you through digital initiatives that align with your strategic goals, modernizing legacy systems, adopting cloud solutions, or introducing new digital services." },
-      { title: "Operational Improvement Strategy", description: "We assess your current operations, pinpoint inefficiencies, and provide a roadmap for process improvement, increasing productivity, lowering costs, and building scalability." },
-      { title: "Technology Alignment & Road mapping", description: "We ensure that your technology investments support your business goals and help you choose the right tools, and use them the right way." },
-      { title: "Risk & Compliance Strategy", description: "We help you build a proactive approach to governance, risk management, and compliance to position your business to stay compliant and resilient." },
-      { title: "Change Management Strategy", description: "We provide strategies for managing organizational change, engaging stakeholders, and ensuring successful adoption of new processes, technologies, and ways of working." },
-      { title: "Growth & Expansion Strategy", description: "We develop growth strategies that are data-driven, financially sound, and tailored to your competitive landscape." },
-      { title: "Leadership Advisory & Enablement", description: "We support senior leaders with strategic planning sessions, executive alignment workshops, and ongoing advisory services." },
+      { title: "Conflict Analysis", description: "We use automated access governance tools to map every user's permissions against proven SoD rulebooks, surfacing conflicts such as the same person creating an invoice and approving its payment." },
+      { title: "Role Redesign", description: "We restructure your Oracle authorisation model, stripping out excessive privileges and rebuilding clean, role-based access aligned to the principle of least privilege." },
+      { title: "Compensating Controls", description: "Where full role separation is not practical, we put procedural checks and balances in place, including mandatory secondary approvals, automated log monitoring and exception reporting." },
+      { title: "Compliance Reporting", description: "We provide audit-ready documentation that evidences adherence to frameworks such as SOX and GDPR, ready for your internal and external auditors." },
+      { title: "Oracle EBS & Fusion Cloud Expertise", description: "Hands-on experience across both Oracle E-Business Suite and Oracle Fusion Cloud ERP, so the remediation fits the way your platform actually works." },
+      { title: "Sustainable, Monitored Controls", description: "We leave you with a clean access model and the monitoring to keep it that way, rather than a one-off clean-up that quietly drifts back into conflict." },
     ],
-    cta: { heading: "Start Building a Smarter Strategy Today!", button: "Contact us" },
-  },
-  {
-    slug: "government-public-sector",
-    pillar: "it-governance",
-    title: "Government & Public Sector",
-    headline: "Building Public Institutions That Deliver, With Trust and Accountability.",
-    lead: "We help government agencies and public institutions modernise services, strengthen governance, and deliver better outcomes for citizens. From digital transformation to compliance and cybersecurity, we bring strategy, structure, and support to the public sector's most important priorities.",
-    summary:
-      "Strategy, digital modernisation and governance for government agencies and public institutions.",
-    capabilities: [
-      { title: "Strategic Planning & Policy Support", description: "We work with public sector leaders to define clear priorities, set achievable goals, and build policies that are citizen-focused and results-driven. Our strategies align with long-term vision while staying grounded in current realities." },
-      { title: "Digital Government & IT Modernization", description: "We help agencies move from legacy systems to modern platforms, enabling better data use, faster service delivery, and enhanced user experience for both staff and the public. This includes cloud migration, platform integration, and system redesign." },
-      { title: "Governance, Risk & Compliance (GRC)", description: "Public institutions must meet growing demands for accountability. We implement frameworks that improve internal controls, manage risk, and ensure compliance with government standards and regulatory requirements." },
-      { title: "Financial Management & Budget Optimization", description: "We provide tools and strategies to improve public financial planning, streamline reporting, and enhance transparency. Our work supports better decision-making around budgeting, resource allocation, and long-term sustainability." },
-      { title: "Performance Monitoring & Reporting", description: "We help agencies establish KPIs, track outcomes, and report on impact. From operational dashboards to public accountability reports, we ensure leadership has the data they need to make informed decisions and build public trust." },
-      { title: "Cybersecurity & Data Privacy", description: "We design and implement security strategies that protect sensitive government data, reduce cyber threats, and align with national and regional data privacy laws." },
-      { title: "Public Engagement & Service Experience", description: "Modern public service means meeting people where they are. We improve the citizen experience with user-friendly digital services, better communication channels, and accessible platforms that increase public satisfaction and trust." },
-      { title: "Capacity Building & Training", description: "We strengthen internal capabilities with tailored training, change management, and process improvement initiatives, ensuring agencies can sustain results and adapt to future needs independently." },
-    ],
-    cta: { heading: "Deliver Better Public Outcomes, Start Your Journey Today!", button: "Contact us" },
-  },
-  {
-    slug: "transformation-sector",
-    pillar: "it-governance",
-    title: "Transformation Sector",
-    headline: "We Drive Change That Lasts, Across People, Processes, and Technology.",
-    lead: "Our transformation services help organizations reimagine how they work, deliver, and grow. Whether it's digital, operational, or cultural transformation, we bring strategy, structure, and support to help you lead change with confidence and clarity.",
-    summary:
-      "Digital, operational and cultural transformation delivered with strategy, structure and lasting support.",
-    capabilities: [
-      { title: "Enterprise Transformation Strategy", description: "We help define your transformation vision and build a clear roadmap to achieve it." },
-      { title: "Digital Transformation Enablement", description: "We guide you through the adoption of digital tools and technologies that improve agility, performance, and customer experience." },
-      { title: "Operational Improvement Strategy", description: "We help reimagine your business structure, processes, and roles to improve efficiency and reduce complexity." },
-      { title: "People & Culture Transformation", description: "True transformation starts with people. We support cultural alignment, leadership development, and change management." },
-      { title: "Process Optimization & Automation", description: "We analyze your existing workflows to identify inefficiencies, reduce manual tasks, and implement automation." },
-      { title: "Technology Integration & Modernization", description: "We lead the implementation of modern platforms and systems, ensuring your technology stack supports your growth." },
-      { title: "Risk & Compliance in Transformation", description: "We integrate governance and compliance into every step of the transformation process." },
-      { title: "Change Management & Communication", description: "We design structured change programs that guide stakeholders through transitions." },
-      { title: "Innovation Strategy & Future Readiness", description: "We help you identify opportunities to innovate and prepare for future disruption." },
-      { title: "Customer Experience (CX) Transformation", description: "We assess and redesign customer journeys and digital interactions." },
-      { title: "Data-Driven Transformation", description: "We enable intelligent decision-making by unlocking the power of data." },
-      { title: "ESG & Sustainability Integration", description: "We embed sustainability and ESG principles into your transformation journey." },
-      { title: "Agile Operating Models", description: "We help implement agile frameworks that foster speed, flexibility, and continuous improvement." },
-      { title: "Mergers, Acquisitions & Integration Support", description: "We provide strategic and operational support to integrate cultures, systems, and structures post-M&A." },
-      { title: "Cloud Transformation Services", description: "We plan and manage cloud migrations and hybrid solutions that reduce costs and enhance scalability." },
-      { title: "Organizational Resilience & Crisis Readiness", description: "We help you prepare for uncertainty through risk planning and crisis simulation." },
-      { title: "Performance Transformation", description: "We use metrics, dashboards, and continuous improvement models to enhance operational performance." },
-      { title: "Talent Strategy & Workforce Transformation", description: "We align your talent capabilities with your future goals through reskilling and workforce planning." },
-      { title: "Digital Twin & Process Simulation", description: "We use modeling and simulation to test process changes before implementation." },
-      { title: "Cross-Industry Benchmarking", description: "We bring best practices from across sectors to spark innovation and measure progress." },
-    ],
-    cta: { heading: "Empower Transformation That Drives Real Results", button: "Contact us" },
+    cta: { heading: "Lock Down Your Oracle Access, the Right Way", button: "Contact us" },
   },
   {
     slug: "application-managed-services",

@@ -44,7 +44,7 @@ export const primaryNav: NavLink[] = [
 
 /**
  * Mega-menu structure for "Services", mirroring the live taxonomy:
- * Consulting / Digital Service · IT Governance.
+ * Consulting / Digital Service · Managed Services.
  */
 export const servicesMenu: MegaMenuGroup[] = [
   {
@@ -56,15 +56,7 @@ export const servicesMenu: MegaMenuGroup[] = [
       { label: "SafePaaS GRC Implementation", href: "/services/safepaas-grc-implementation" },
       { label: "SoD Implementation & Remediation", href: "/services/sod-implementation-remediation" },
       { label: "Oracle RMC Implementation", href: "/services/oracle-rmc-implementation" },
-    ],
-  },
-  {
-    label: "IT Governance",
-    href: "/services#it-governance",
-    items: [
-      { label: "Strategic Consulting", href: "/services/strategic-consulting" },
-      { label: "Government & Public Sector", href: "/services/government-public-sector" },
-      { label: "Transformation Sector", href: "/services/transformation-sector" },
+      { label: "Oracle Segregation of Duties Remediation", href: "/services/oracle-sod-remediation" },
     ],
   },
   {
@@ -81,9 +73,9 @@ export const servicesMenu: MegaMenuGroup[] = [
 /** Featured services shown with thumbnails in the mega-menu (PwC pattern). */
 export const servicesFeatured: { label: string; href: string; image: string }[] = [
   {
-    label: "Transformation Sector",
-    href: "/services/transformation-sector",
-    image: "/images/pillars/transformation.png",
+    label: "Oracle Segregation of Duties Remediation",
+    href: "/services/oracle-sod-remediation",
+    image: "/images/services/hero/oracle-sod-remediation.png",
   },
   {
     label: "SafePaaS GRC Implementation",
@@ -91,9 +83,9 @@ export const servicesFeatured: { label: string; href: string; image: string }[] 
     image: "/images/subhero.png",
   },
   {
-    label: "Strategic Consulting",
-    href: "/services/strategic-consulting",
-    image: "/images/services/strategic-consulting.png",
+    label: "GRC Product Selection",
+    href: "/services/grc-product-selection",
+    image: "/images/services/grc-product-selection.png",
   },
 ];
 
@@ -105,8 +97,8 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
       { label: "GRC Product Selection", href: "/services/grc-product-selection" },
       { label: "SafePaaS GRC Implementation", href: "/services/safepaas-grc-implementation" },
       { label: "Oracle RMC Implementation", href: "/services/oracle-rmc-implementation" },
-      { label: "Strategic Consulting", href: "/services/strategic-consulting" },
-      { label: "Transformation Sector", href: "/services/transformation-sector" },
+      { label: "Oracle SoD Remediation", href: "/services/oracle-sod-remediation" },
+      { label: "SoD Implementation & Remediation", href: "/services/sod-implementation-remediation" },
     ],
   },
   {
