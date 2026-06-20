@@ -4,6 +4,7 @@ import { CTABand } from "@/components/ui/CTABand";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { CapabilityTabs } from "@/components/services/CapabilityTabs";
+import { PackagesTable } from "@/components/services/PackagesTable";
 import { ArrowRight } from "@/components/ui/icons";
 import Link from "next/link";
 import { pillars, servicesByPillar, type Service } from "@/content/services";
@@ -63,6 +64,25 @@ export function ServiceTemplate({ service }: { service: Service }) {
           </Reveal>
         </Container>
       </section>
+
+      {/* Tiered packages (when defined) */}
+      {service.packages && (
+        <section className="section-y border-t border-hairline bg-paper-alt">
+          <Container>
+            <Reveal>
+              <Eyebrow>Support packages</Eyebrow>
+              <h2 className="text-h3 mt-3 text-ink">Choose your level of cover</h2>
+              <p className="mt-5 max-w-2xl text-lead">
+                Bronze, Silver and Gold packages scale from essential day-to-day
+                support up to fully proactive, fully managed cover.
+              </p>
+            </Reveal>
+            <Reveal className="mt-12">
+              <PackagesTable packages={service.packages} />
+            </Reveal>
+          </Container>
+        </section>
+      )}
 
       {/* Related services */}
       {related.length > 0 && (

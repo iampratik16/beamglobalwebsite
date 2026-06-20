@@ -11,6 +11,18 @@ import { CardGrid } from "@/components/ui/CardGrid";
 import { CTABand } from "@/components/ui/CTABand";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowRight } from "@/components/ui/icons";
+import {
+  BarChart3,
+  Code,
+  Database,
+  Lock,
+  Settings,
+  Shield,
+  ShieldAlert,
+  ShieldCheck,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import { pillars, servicesByPillar } from "@/content/services";
 import { blogPostsByDate } from "@/content/blog";
 
@@ -20,6 +32,19 @@ const homeInsightImages: Record<string, string> = {
     "/images/home/venturedebt.png",
   "5-cyber-security-startups-to-watch-out-for": "/images/home/cyber.png",
   "what-makes-your-customers-say-yes-to-your-product-or-service": "/images/home/growth.png",
+};
+
+// Lucide icon per service slug for the Services overview cards.
+const serviceIcons: Record<string, LucideIcon> = {
+  "grc-product-selection": Shield,
+  "oracle-sod-remediation": ShieldCheck,
+  "oracle-rmc-implementation": Settings,
+  "safepaas-grc-implementation": Lock,
+  "oracle-role-design": Users,
+  "software-development-and-integration": Code,
+  "application-managed-services": Database,
+  "controls-execution-services": ShieldAlert,
+  "grc-strategy-services": BarChart3,
 };
 
 export default function HomePage() {
@@ -48,53 +73,69 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Services overview */}
-      <section className="section-y bg-paper">
+      {/* Services overview — left header + right grid of icon rows */}
+      <section className="section-y border-t border-hairline bg-paper-alt">
         <Container>
-          <Reveal>
-            <SectionHeader
-              eyebrow="What we do"
-              title="Expertise across the GRC and growth journey"
-              lead="From GRC product selection and implementation to strategy, governance and transformation across your enterprise systems."
-            />
-          </Reveal>
-
-          <div className="mt-14 space-y-px bg-hairline">
-            {pillars.map((pillar) => (
-              <Reveal key={pillar.id} className="bg-paper">
-                <div className="grid grid-cols-1 gap-6 py-8 lg:grid-cols-[0.8fr_1.6fr] lg:gap-12 lg:py-10">
-                  <div>
-                    <Eyebrow>{pillar.eyebrow}</Eyebrow>
-                    <h3 className="text-h3 mt-3 text-ink">{pillar.label}</h3>
-                    <p className="mt-3 max-w-md text-muted">{pillar.intro}</p>
-                  </div>
-                  <ul className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2">
-                    {servicesByPillar(pillar.id).map((s) => (
-                      <li key={s.slug}>
-                        <Link
-                          href={`/services/${s.slug}`}
-                          className="group flex items-center justify-between gap-3 border-b border-hairline py-3.5 text-ink transition-colors hover:text-accent"
-                        >
-                          <span className="font-medium">{s.title}</span>
-                          <ArrowRight className="h-4 w-4 shrink-0 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-10">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
+          {pillars.map((pillar, pi) => (
+            <Reveal
+              key={pillar.id}
+              className={`grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16 ${
+                pi > 0
+                  ? "mt-16 border-t border-hairline pt-16 lg:mt-24 lg:pt-24"
+                  : ""
+              }`}
             >
-              See all services
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+              <div className="lg:col-span-5">
+                <Eyebrow>{pillar.eyebrow}</Eyebrow>
+                <h2 className="text-h2 mt-5 text-ink">{pillar.label}</h2>
+                <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
+                  {pillar.intro}
+                </p>
+                {pillar.id === "managed-services" && (
+                  <Link
+                    href="/services"
+                    className="mt-8 hidden items-center gap-2 font-semibold text-accent hover:text-accent-ink lg:inline-flex"
+                  >
+                    See all services
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                )}
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="grid grid-cols-1 gap-x-8 sm:grid-cols-2">
+                  {servicesByPillar(pillar.id).map((s) => {
+                    const Icon = serviceIcons[s.slug] ?? Shield;
+                    return (
+                      <Link
+                        key={s.slug}
+                        href={`/services/${s.slug}`}
+                        className="group flex items-center gap-4 border-b border-hairline px-4 py-6 transition-all duration-300 hover:translate-x-1 hover:bg-paper hover:shadow-[inset_4px_0_0_0_var(--color-accent),0_10px_25px_-5px_rgba(0,0,0,0.05)] motion-reduce:transition-none motion-reduce:hover:translate-x-0"
+                      >
+                        <Icon
+                          aria-hidden
+                          strokeWidth={1.75}
+                          className="h-6 w-6 shrink-0 text-accent"
+                        />
+                        <span className="font-display text-lg font-semibold text-ink">
+                          {s.title}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+                {pillar.id === "managed-services" && (
+                  <Link
+                    href="/services"
+                    className="mt-8 inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink lg:hidden"
+                  >
+                    See all services
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                )}
+              </div>
+            </Reveal>
+          ))}
         </Container>
       </section>
 

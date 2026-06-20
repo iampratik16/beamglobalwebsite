@@ -1,74 +1,19 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { GrcStrategies } from "@/components/home/GrcStrategies";
-import { ArrowRight, ChevronDown } from "@/components/ui/icons";
+import { GrcValueSection } from "@/components/home/GrcValueSection";
+import { ArrowRight } from "@/components/ui/icons";
 import { positioning } from "@/content/home";
 
 /**
- * Editorial "opportunity" section.
- *
- * Same copy as the content file, word for word — nothing is cut or reworded.
- * Progressive disclosure keeps it scannable: each problem paragraph leads with
- * its first sentence (under a label), and the remaining detail is demoted to
- * lighter grey behind "Read more". The "how we help" points lead with a bolded
- * opening phrase. The collapsed text stays in the page at all times.
+ * Editorial "opportunity" section: the positioning statement and photo, the
+ * GRC value section (problem + five strategies — see GrcValueSection), then the
+ * "how we help" numbered list. Copy comes from the content file unchanged.
  */
 
-// Presentation-only labels (not part of the copy).
-const PROBLEM_LABELS = ["The investment", "The gap"];
 // Number of opening words to bold per "how we help" point (the action phrase).
 const HELP_LEAD_WORDS = [4, 5, 9];
-
-// Split a paragraph into [first sentence, remainder] without losing a word.
-function splitLead(text: string): [string, string] {
-  const re = /([.!?])\s+(?=[A-Z(])/g;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(text)) !== null) {
-    const pre = text.slice(0, m.index + 1);
-    if (/\b(?:e\.g|i\.e|etc|vs)\.$/i.test(pre.trimEnd())) continue;
-    return [text.slice(0, m.index + 1).trim(), text.slice(m.index + 1).trim()];
-  }
-  return [text.trim(), ""];
-}
-
-function ProblemCard({ label, body }: { label: string; body: string }) {
-  const [open, setOpen] = useState(false);
-  const [lead, rest] = splitLead(body);
-  return (
-    <div className="border-t border-hairline pt-6 first:border-t-0 first:pt-0">
-      <p className="font-display text-base font-bold tracking-tight text-ink">
-        {label}
-      </p>
-      <p className="mt-3 text-[1.05rem] leading-relaxed text-text">{lead}</p>
-      {rest && (
-        <>
-          {/* The remainder stays in the DOM; we only toggle its visibility. */}
-          <p className={`mt-3 leading-relaxed text-muted ${open ? "block" : "hidden"}`}>
-            {rest}
-          </p>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-ink"
-          >
-            {open ? "Read less" : "Read more"}
-            <ChevronDown
-              className={`h-4 w-4 transition-transform duration-200 ${
-                open ? "rotate-180" : ""
-              }`}
-            />
-          </button>
-        </>
-      )}
-    </div>
-  );
-}
 
 export function EditorialFeature() {
   return (
@@ -102,24 +47,8 @@ export function EditorialFeature() {
           </figure>
         </div>
 
-        {/* What problem are we solving — heading + progressively disclosed cards */}
-        <div className="mt-16 border-t border-hairline pt-14 lg:mt-20 lg:pt-16">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-            <div>
-              <h3 className="text-h3 text-ink">{positioning.problemHeading}</h3>
-            </div>
-            <div className="space-y-6">
-              {positioning.problemBody.map((para, i) => (
-                <ProblemCard key={i} label={PROBLEM_LABELS[i] ?? ""} body={para} />
-              ))}
-            </div>
-          </div>
-
-          {/* Five strategies to maximise GRC value (replaces the stat badge) */}
-          <div className="mt-16 border-t border-hairline pt-14 lg:mt-20 lg:pt-16">
-            <GrcStrategies />
-          </div>
-        </div>
+        {/* What problem are we solving + five strategies */}
+        <GrcValueSection />
 
         {/* How we help — numbered grid; each point leads with a bold phrase */}
         <div className="mt-16 lg:mt-20">

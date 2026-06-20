@@ -51,12 +51,12 @@ export const servicesMenu: MegaMenuGroup[] = [
     label: "Consulting · Digital Service",
     href: "/services#digital",
     items: [
-      { label: "Software Development and Integration", href: "/services/software-development-and-integration" },
       { label: "GRC Product Selection", href: "/services/grc-product-selection" },
-      { label: "SafePaaS GRC Implementation", href: "/services/safepaas-grc-implementation" },
-      { label: "SoD Implementation & Remediation", href: "/services/sod-implementation-remediation" },
-      { label: "Oracle RMC Implementation", href: "/services/oracle-rmc-implementation" },
-      { label: "Oracle Segregation of Duties Remediation", href: "/services/oracle-sod-remediation" },
+      { label: "SOD Remediation", href: "/services/oracle-sod-remediation" },
+      { label: "ROC Implementation", href: "/services/oracle-rmc-implementation" },
+      { label: "Safepass Implementation", href: "/services/safepaas-grc-implementation" },
+      { label: "Oracle Role Design", href: "/services/oracle-role-design" },
+      { label: "Software Development and Integration", href: "/services/software-development-and-integration" },
     ],
   },
   {
@@ -73,12 +73,12 @@ export const servicesMenu: MegaMenuGroup[] = [
 /** Featured services shown with thumbnails in the mega-menu (PwC pattern). */
 export const servicesFeatured: { label: string; href: string; image: string }[] = [
   {
-    label: "Oracle Segregation of Duties Remediation",
+    label: "SOD Remediation",
     href: "/services/oracle-sod-remediation",
     image: "/images/services/hero/oracle-sod-remediation.png",
   },
   {
-    label: "SafePaaS GRC Implementation",
+    label: "Safepass Implementation",
     href: "/services/safepaas-grc-implementation",
     image: "/images/subhero.png",
   },
@@ -95,10 +95,10 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
     links: [
       { label: "All Services", href: "/services" },
       { label: "GRC Product Selection", href: "/services/grc-product-selection" },
-      { label: "SafePaaS GRC Implementation", href: "/services/safepaas-grc-implementation" },
-      { label: "Oracle RMC Implementation", href: "/services/oracle-rmc-implementation" },
-      { label: "Oracle SoD Remediation", href: "/services/oracle-sod-remediation" },
-      { label: "SoD Implementation & Remediation", href: "/services/sod-implementation-remediation" },
+      { label: "Safepass Implementation", href: "/services/safepaas-grc-implementation" },
+      { label: "ROC Implementation", href: "/services/oracle-rmc-implementation" },
+      { label: "SOD Remediation", href: "/services/oracle-sod-remediation" },
+      { label: "Oracle Role Design", href: "/services/oracle-role-design" },
     ],
   },
   {

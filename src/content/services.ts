@@ -12,6 +12,12 @@ export type Capability = {
   description: string;
 };
 
+/** Tiered support packages, rendered as a feature-comparison table. */
+export type ServicePackages = {
+  tiers: string[];
+  rows: { label: string; included: boolean[] }[];
+};
+
 export type Service = {
   slug: string;
   pillar: PillarId;
@@ -27,6 +33,8 @@ export type Service = {
   summary: string;
   /** Optional hero image override; defaults to /images/services/hero/<slug>.png. */
   heroImage?: string;
+  /** Optional tiered package comparison table. */
+  packages?: ServicePackages;
 };
 
 export type Pillar = {
@@ -54,7 +62,100 @@ export const pillars: Pillar[] = [
 ];
 
 export const services: Service[] = [
-  // ── Consulting · Digital Service ───────────────────────────────
+  // ── Consulting · Digital Service ───────────────
+  {
+    slug: "grc-product-selection",
+    pillar: "digital",
+    title: "GRC Product Selection",
+    headline: "Smarter GRC Starts with the Right Choice.",
+    lead: "Choosing the right GRC solution is critical to building a secure, compliant, and resilient organization. We help you evaluate, compare, and select the best-fit product for your unique governance, risk, and compliance needs, ensuring seamless alignment with your business goals, regulatory requirements, and technology environment.",
+    summary:
+      "Independent evaluation and selection of the best-fit GRC platform for your risk, compliance and technology needs.",
+    capabilities: [
+      { title: "Compliance & Regulatory Affairs", description: "Regulatory mapping, policy management, control testing, and automated compliance monitoring aligned with regulations including SEC, FINRA, MiFID II, SOX, AML, Basel III, and GDPR." },
+      { title: "Risk Management", description: "Real-time risk assessments, KRIs, risk scoring methodologies, and integrated risk dashboards covering credit, market, liquidity, reputational, and vendor risk." },
+      { title: "Internal Audit", description: "Selection that emphasises audit planning, fieldwork, findings tracking, issue remediation, and reporting capabilities." },
+      { title: "Information Technology & Cybersecurity", description: "Evaluation of incident tracking, IT risk assessments and vulnerability management integration with NIST, ISO 27001, and CIS framework alignment." },
+      { title: "Legal & Regulatory Reporting", description: "Features supporting case management, policy attestation, e-signatures, and disclosure tracking." },
+      { title: "Operations & Business Units", description: "Platform requirements including intuitive interfaces and automated workflows for onboarding and incident management." },
+      { title: "Executive Management & Board", description: "Platforms that deliver executive-level dashboards, scenario modeling, risk heatmaps, and regulatory exposure summaries." },
+      { title: "Data & Integration Considerations", description: "Integration with core banking software, investment management platforms, CRM, ERP, or data lakes." },
+    ],
+    cta: { heading: "Find the Right GRC Solution for Your Organization", button: "Contact us" },
+  },
+  {
+    slug: "oracle-sod-remediation",
+    pillar: "digital",
+    title: "SOD Remediation",
+    headline: "Clean, Conflict-Free Access Across Your Oracle ERP.",
+    lead: "Remediation services for organisations running Oracle E-Business Suite or Oracle Fusion Cloud ERP. We identify, analyse and resolve conflicting access rights so that no single person can both execute and conceal a fraudulent transaction. By redesigning roles, enforcing the four-eyes principle and putting compensating controls in place, we keep your financial and IT environment secure and audit-ready.",
+    summary:
+      "Advisory and technical remediation that finds and fixes Segregation of Duties conflicts across Oracle E-Business Suite and Oracle Fusion Cloud ERP.",
+    capabilities: [
+      { title: "Conflict Analysis", description: "We use automated access governance tools to map every user's permissions against proven SoD rulebooks, surfacing conflicts such as the same person creating an invoice and approving its payment." },
+      { title: "Role Redesign", description: "We restructure your Oracle authorisation model, stripping out excessive privileges and rebuilding clean, role-based access aligned to the principle of least privilege." },
+      { title: "Compensating Controls", description: "Where full role separation is not practical, we put procedural checks and balances in place, including mandatory secondary approvals, automated log monitoring and exception reporting." },
+      { title: "Compliance Reporting", description: "We provide audit-ready documentation that evidences adherence to frameworks such as SOX and GDPR, ready for your internal and external auditors." },
+      { title: "Oracle EBS & Fusion Cloud Expertise", description: "Hands-on experience across both Oracle E-Business Suite and Oracle Fusion Cloud ERP, so the remediation fits the way your platform actually works." },
+      { title: "Sustainable, Monitored Controls", description: "We leave you with a clean access model and the monitoring to keep it that way, rather than a one-off clean-up that quietly drifts back into conflict." },
+    ],
+    cta: { heading: "Lock Down Your Oracle Access, the Right Way", button: "Contact us" },
+  },
+  {
+    slug: "oracle-rmc-implementation",
+    pillar: "digital",
+    title: "ROC Implementation",
+    headline: "We implement Oracle RMC to help you manage risk, enforce controls, and simplify compliance.",
+    lead: "We provide end-to-end implementation of Oracle Risk Management Cloud (RMC), enabling your organization to strengthen internal controls, monitor risk, and meet compliance goals. Our approach helps automate audit processes, reduce manual work, and give you real-time visibility into risk and control performance across your business systems.",
+    summary:
+      "End-to-end Oracle Risk Management Cloud implementation, automated controls, monitoring and audit readiness.",
+    capabilities: [
+      { title: "Business Requirement Analysis", description: "Understanding your current control environment and compliance needs to configure Oracle RMC appropriately." },
+      { title: "Module Implementation & Configuration", description: "Implementing Advanced Access Controls (AAC), Advanced Financial Controls (AFC), and Financial Reporting Compliance (FRC) modules." },
+      { title: "Risk and Control Framework Setup", description: "Defining key risks, linking them to controls, and building testable frameworks." },
+      { title: "SoD and Access Control Enforcement", description: "Configuring policies to detect unauthorized access and reduce fraud exposure." },
+      { title: "Automated Monitoring & Alerts", description: "Continuous monitoring with real-time alerts and dashboards." },
+      { title: "Reporting & Audit Readiness", description: "Standardized reporting tools meeting internal and external audit requirements." },
+      { title: "Integration with Oracle ERP", description: "Seamless integration with finance, procurement, and HR modules." },
+      { title: "Knowledge Transfer & Support", description: "Training, documentation, and ongoing team support." },
+    ],
+    cta: { heading: "Oracle RMC, Deployed for Results, Let's Get Started", button: "Contact us" },
+  },
+  {
+    slug: "safepaas-grc-implementation",
+    pillar: "digital",
+    title: "Safepass Implementation",
+    headline: "Automate Control. Simplify Compliance. Empower Governance.",
+    lead: "Our SafePaaS GRC implementation delivers a unified, cloud-based solution to help organizations manage risk, enforce controls, and streamline compliance across enterprise systems. From access governance to real-time monitoring and audit automation, we configure SafePaaS to align with your processes, reduce risk exposure, and strengthen internal controls, empowering smarter, safer business decisions.",
+    summary:
+      "Unified, cloud-based SafePaaS GRC, access governance, risk, compliance and process controls configured to your processes.",
+    capabilities: [
+      { title: "Access Governance", description: "Automate user provisioning, enforce SoD, and manage privileged access across enterprise systems like Oracle, SAP, and Microsoft." },
+      { title: "Risk Management", description: "Map enterprise risks to controls, streamline assessments, and drive remediation with full audit traceability." },
+      { title: "Compliance & Audit Management", description: "Automate compliance workflows, track exceptions, and generate documentation to meet global standards like SOX, GDPR, HIPAA, and ISO." },
+      { title: "Process Controls", description: "Detect, prevent, and respond to policy violations across finance, HR, procurement, and IT operations." },
+      { title: "Analytics & Reporting", description: "Gain actionable insights with dynamic dashboards, trend analysis, and real-time KPIs for executives, compliance officers, and auditors." },
+    ],
+    cta: { heading: "Start Your SafePaaS GRC Integration Today", button: "Contact us" },
+  },
+  {
+    slug: "oracle-role-design",
+    pillar: "digital",
+    title: "Oracle Role Design",
+    headline: "Security Roles Built Clean, From the Ground Up.",
+    lead: "We design clean, least-privilege security roles for Oracle E-Business Suite and Oracle Fusion Cloud ERP. By modelling duties carefully and building Segregation of Duties into the design from the start, we give every user exactly the access they need and nothing more, so your environment stays secure, compliant and straightforward to audit.",
+    summary:
+      "Clean, least-privilege Oracle security role models for E-Business Suite and Fusion Cloud, with Segregation of Duties built in by design.",
+    capabilities: [
+      { title: "Role Modelling & Definition", description: "We define a clear, business-aligned role model that maps each job function to the precise privileges its role should hold." },
+      { title: "Least-Privilege Design", description: "Every role is built to the principle of least privilege, giving users only the access their job requires and shrinking your attack surface." },
+      { title: "SoD-Aware From the Start", description: "We build Segregation of Duties into the role model up front, so conflicts are prevented by design rather than fixed later." },
+      { title: "Duty & Privilege Mapping", description: "We map duties, privileges and data access across Oracle modules so finance, procurement and HR access stays clean and well understood." },
+      { title: "Role Rationalisation", description: "We consolidate sprawling, overlapping or excessive roles into a lean, maintainable set that is far easier to govern." },
+      { title: "Documentation & Governance", description: "We hand over clear role documentation and a simple governance approach so the model stays clean as the business changes." },
+    ],
+    cta: { heading: "Design Your Oracle Roles the Right Way", button: "Contact us" },
+  },
   {
     slug: "software-development-and-integration",
     pillar: "digital",
@@ -82,102 +183,7 @@ export const services: Service[] = [
     ],
     cta: { heading: "Bring Your Software Vision to Life", button: "Contact us" },
   },
-  {
-    slug: "grc-product-selection",
-    pillar: "digital",
-    title: "GRC Product Selection",
-    headline: "Smarter GRC Starts with the Right Choice.",
-    lead: "Choosing the right GRC solution is critical to building a secure, compliant, and resilient organization. We help you evaluate, compare, and select the best-fit product for your unique governance, risk, and compliance needs, ensuring seamless alignment with your business goals, regulatory requirements, and technology environment.",
-    summary:
-      "Independent evaluation and selection of the best-fit GRC platform for your risk, compliance and technology needs.",
-    capabilities: [
-      { title: "Compliance & Regulatory Affairs", description: "Regulatory mapping, policy management, control testing, and automated compliance monitoring aligned with regulations including SEC, FINRA, MiFID II, SOX, AML, Basel III, and GDPR." },
-      { title: "Risk Management", description: "Real-time risk assessments, KRIs, risk scoring methodologies, and integrated risk dashboards covering credit, market, liquidity, reputational, and vendor risk." },
-      { title: "Internal Audit", description: "Selection that emphasises audit planning, fieldwork, findings tracking, issue remediation, and reporting capabilities." },
-      { title: "Information Technology & Cybersecurity", description: "Evaluation of incident tracking, IT risk assessments and vulnerability management integration with NIST, ISO 27001, and CIS framework alignment." },
-      { title: "Legal & Regulatory Reporting", description: "Features supporting case management, policy attestation, e-signatures, and disclosure tracking." },
-      { title: "Operations & Business Units", description: "Platform requirements including intuitive interfaces and automated workflows for onboarding and incident management." },
-      { title: "Executive Management & Board", description: "Platforms that deliver executive-level dashboards, scenario modeling, risk heatmaps, and regulatory exposure summaries." },
-      { title: "Data & Integration Considerations", description: "Integration with core banking software, investment management platforms, CRM, ERP, or data lakes." },
-    ],
-    cta: { heading: "Find the Right GRC Solution for Your Organization", button: "Contact us" },
-  },
-  {
-    slug: "safepaas-grc-implementation",
-    pillar: "digital",
-    title: "SafePaaS GRC Implementation",
-    headline: "Automate Control. Simplify Compliance. Empower Governance.",
-    lead: "Our SafePaaS GRC implementation delivers a unified, cloud-based solution to help organizations manage risk, enforce controls, and streamline compliance across enterprise systems. From access governance to real-time monitoring and audit automation, we configure SafePaaS to align with your processes, reduce risk exposure, and strengthen internal controls, empowering smarter, safer business decisions.",
-    summary:
-      "Unified, cloud-based SafePaaS GRC, access governance, risk, compliance and process controls configured to your processes.",
-    capabilities: [
-      { title: "Access Governance", description: "Automate user provisioning, enforce SoD, and manage privileged access across enterprise systems like Oracle, SAP, and Microsoft." },
-      { title: "Risk Management", description: "Map enterprise risks to controls, streamline assessments, and drive remediation with full audit traceability." },
-      { title: "Compliance & Audit Management", description: "Automate compliance workflows, track exceptions, and generate documentation to meet global standards like SOX, GDPR, HIPAA, and ISO." },
-      { title: "Process Controls", description: "Detect, prevent, and respond to policy violations across finance, HR, procurement, and IT operations." },
-      { title: "Analytics & Reporting", description: "Gain actionable insights with dynamic dashboards, trend analysis, and real-time KPIs for executives, compliance officers, and auditors." },
-    ],
-    cta: { heading: "Start Your SafePaaS GRC Integration Today", button: "Contact us" },
-  },
-  {
-    slug: "sod-implementation-remediation",
-    pillar: "digital",
-    title: "SoD Implementation & Remediation",
-    headline: "Strengthen Security. Eliminate Conflicts. Ensure Compliance.",
-    lead: "Our SoD Implementation and Remediation service helps organizations identify, resolve, and prevent access conflicts across critical business systems. By enforcing role-based access and automating control workflows, we reduce the risk of fraud, improve audit readiness, and support sustainable compliance with regulatory standards like SOX, GDPR, and more.",
-    summary:
-      "Identify, resolve and prevent segregation-of-duties conflicts across your critical business systems.",
-    capabilities: [
-      { title: "SoD Risk Identification & Assessment", description: "We provide in-depth SoD analysis using advanced tools to identify access conflicts across ERP, CRM, HR, and financial systems." },
-      { title: "SoD Rule Set Development", description: "We provide customizable rule sets tailored to your industry, applications, and business processes." },
-      { title: "Conflict Remediation Solutions", description: "We provide remediation strategies that resolve access risks without disrupting operations." },
-      { title: "SoD Automation & Monitoring", description: "We provide automation solutions to continuously monitor SoD risks with real-time alerts and dashboards." },
-      { title: "Access Governance Integration", description: "We provide seamless integration of SoD controls with your Identity and Access Management (IAM) systems." },
-      { title: "Reporting & Audit Support", description: "We provide complete, audit-ready reports that simplify external and internal audits." },
-      { title: "Enablement & Knowledge Transfer", description: "We provide training and operational handoff to equip your internal teams." },
-    ],
-    cta: { heading: "Secure Your Enterprise with Effective SoD Controls", button: "Contact us" },
-  },
-  {
-    slug: "oracle-rmc-implementation",
-    pillar: "digital",
-    title: "Oracle RMC Implementation",
-    headline: "We implement Oracle RMC to help you manage risk, enforce controls, and simplify compliance.",
-    lead: "We provide end-to-end implementation of Oracle Risk Management Cloud (RMC), enabling your organization to strengthen internal controls, monitor risk, and meet compliance goals. Our approach helps automate audit processes, reduce manual work, and give you real-time visibility into risk and control performance across your business systems.",
-    summary:
-      "End-to-end Oracle Risk Management Cloud implementation, automated controls, monitoring and audit readiness.",
-    capabilities: [
-      { title: "Business Requirement Analysis", description: "Understanding your current control environment and compliance needs to configure Oracle RMC appropriately." },
-      { title: "Module Implementation & Configuration", description: "Implementing Advanced Access Controls (AAC), Advanced Financial Controls (AFC), and Financial Reporting Compliance (FRC) modules." },
-      { title: "Risk and Control Framework Setup", description: "Defining key risks, linking them to controls, and building testable frameworks." },
-      { title: "SoD and Access Control Enforcement", description: "Configuring policies to detect unauthorized access and reduce fraud exposure." },
-      { title: "Automated Monitoring & Alerts", description: "Continuous monitoring with real-time alerts and dashboards." },
-      { title: "Reporting & Audit Readiness", description: "Standardized reporting tools meeting internal and external audit requirements." },
-      { title: "Integration with Oracle ERP", description: "Seamless integration with finance, procurement, and HR modules." },
-      { title: "Knowledge Transfer & Support", description: "Training, documentation, and ongoing team support." },
-    ],
-    cta: { heading: "Oracle RMC, Deployed for Results, Let's Get Started", button: "Contact us" },
-  },
-
-  // ── Oracle Segregation of Duties Remediation ───────────
-  {
-    slug: "oracle-sod-remediation",
-    pillar: "digital",
-    title: "Oracle Segregation of Duties Remediation",
-    headline: "Clean, Conflict-Free Access Across Your Oracle ERP.",
-    lead: "Remediation services for organisations running Oracle E-Business Suite or Oracle Fusion Cloud ERP. We identify, analyse and resolve conflicting access rights so that no single person can both execute and conceal a fraudulent transaction. By redesigning roles, enforcing the four-eyes principle and putting compensating controls in place, we keep your financial and IT environment secure and audit-ready.",
-    summary:
-      "Advisory and technical remediation that finds and fixes Segregation of Duties conflicts across Oracle E-Business Suite and Oracle Fusion Cloud ERP.",
-    capabilities: [
-      { title: "Conflict Analysis", description: "We use automated access governance tools to map every user's permissions against proven SoD rulebooks, surfacing conflicts such as the same person creating an invoice and approving its payment." },
-      { title: "Role Redesign", description: "We restructure your Oracle authorisation model, stripping out excessive privileges and rebuilding clean, role-based access aligned to the principle of least privilege." },
-      { title: "Compensating Controls", description: "Where full role separation is not practical, we put procedural checks and balances in place, including mandatory secondary approvals, automated log monitoring and exception reporting." },
-      { title: "Compliance Reporting", description: "We provide audit-ready documentation that evidences adherence to frameworks such as SOX and GDPR, ready for your internal and external auditors." },
-      { title: "Oracle EBS & Fusion Cloud Expertise", description: "Hands-on experience across both Oracle E-Business Suite and Oracle Fusion Cloud ERP, so the remediation fits the way your platform actually works." },
-      { title: "Sustainable, Monitored Controls", description: "We leave you with a clean access model and the monitoring to keep it that way, rather than a one-off clean-up that quietly drifts back into conflict." },
-    ],
-    cta: { heading: "Lock Down Your Oracle Access, the Right Way", button: "Contact us" },
-  },
+  // ── Managed Services ─────────────────────
   {
     slug: "application-managed-services",
     pillar: "managed-services",
@@ -196,6 +202,21 @@ export const services: Service[] = [
       { title: "Tiered Support Packages", description: "Bronze, Silver and Gold packages that scale from essential day-to-day support up to fully proactive, fully managed cover." },
     ],
     cta: { heading: "Let Us Take Care of Your GRC Applications", button: "Contact us" },
+    packages: {
+      tiers: ["Bronze", "Silver", "Gold"],
+      rows: [
+        { label: "Day-to-day application support", included: [true, true, true] },
+        { label: "Administrator services", included: [true, true, true] },
+        { label: "Raise vendor support tickets", included: [true, true, true] },
+        { label: "Escalate and manage 'fatal' issues", included: [true, true, true] },
+        { label: "Track product enhancements", included: [true, true, true] },
+        { label: "Monthly vendor support review", included: [false, true, true] },
+        { label: "Analyse weekly product release notes", included: [false, true, true] },
+        { label: "Track Oracle Cloud ERP quarterly patches", included: [false, false, true] },
+        { label: "Quarterly review of Oracle Cloud SoD rules", included: [false, false, true] },
+        { label: "Quarterly review of IT general controls", included: [false, false, true] },
+      ],
+    },
   },
   {
     slug: "controls-execution-services",
