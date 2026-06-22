@@ -57,11 +57,6 @@ export function Footer() {
           <div className="max-w-sm">
             <Image src={logoDark} alt="Beam Global Services" className="h-9 w-auto" />
             <p className="mt-6 text-sm leading-relaxed text-muted">{site.description}</p>
-            <p className="mt-6 text-sm text-muted">
-              <a href={`mailto:${site.email}`} className="link-underline hover:text-ink">
-                {site.email}
-              </a>
-            </p>
           </div>
 
           {footerColumns.map((col) => (

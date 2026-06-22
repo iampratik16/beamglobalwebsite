@@ -76,7 +76,7 @@ export const grcChallenges = {
   groups: [
     {
       title: "Client challenges",
-      image: "/images/insights/client-challenges.png",
+      image: "/images/insights/client-challenges-v3.png",
       imageAlt: "A business leader weighing the cost and value of a GRC investment",
       points: [
         "ROI on GRC product investment, is the product actually providing business benefits?",
@@ -86,7 +86,7 @@ export const grcChallenges = {
     },
     {
       title: "Vendor challenges",
-      image: "/images/insights/vendor-challenges.png",
+      image: "/images/insights/vendor-challenges-v3.png",
       imageAlt: "A software specialist reviewing how a GRC product is being used",
       points: [
         "Customers not using the product effectively, leading to low usage",

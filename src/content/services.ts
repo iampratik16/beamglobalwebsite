@@ -86,7 +86,7 @@ export const services: Service[] = [
   {
     slug: "oracle-sod-remediation",
     pillar: "digital",
-    title: "SOD Remediation",
+    title: "Oracle Segregation of Duties Remediation",
     headline: "Clean, Conflict-Free Access Across Your Oracle ERP.",
     lead: "Remediation services for organisations running Oracle E-Business Suite or Oracle Fusion Cloud ERP. We identify, analyse and resolve conflicting access rights so that no single person can both execute and conceal a fraudulent transaction. By redesigning roles, enforcing the four-eyes principle and putting compensating controls in place, we keep your financial and IT environment secure and audit-ready.",
     summary:
@@ -104,7 +104,7 @@ export const services: Service[] = [
   {
     slug: "oracle-rmc-implementation",
     pillar: "digital",
-    title: "ROC Implementation",
+    title: "Oracle RMC Implementation",
     headline: "We implement Oracle RMC to help you manage risk, enforce controls, and simplify compliance.",
     lead: "We provide end-to-end implementation of Oracle Risk Management Cloud (RMC), enabling your organization to strengthen internal controls, monitor risk, and meet compliance goals. Our approach helps automate audit processes, reduce manual work, and give you real-time visibility into risk and control performance across your business systems.",
     summary:

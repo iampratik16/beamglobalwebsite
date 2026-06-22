@@ -17,6 +17,7 @@ export function Hero() {
   const [index, setIndex] = useState(0);
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const toggleSound = () => {
     const video = videoRef.current;
@@ -45,8 +46,34 @@ export function Hero() {
     }
   }, []);
 
+  // Auto-mute the video once the hero scrolls out of view so its audio doesn't
+  // keep playing further down the page. We only force-mute on exit; we never
+  // auto-unmute — the user stays in control of turning sound back on.
+  useEffect(() => {
+    const section = sectionRef.current;
+    const video = videoRef.current;
+    if (!section || !video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && !video.muted) {
+          video.muted = true;
+          setMuted(true);
+        }
+      },
+      // Fire as soon as the hero is mostly out of frame.
+      { threshold: 0.2 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative mt-[89px] flex items-center overflow-hidden bg-ink text-paper md:min-h-[calc(100vh-89px)]">
+    <section
+      ref={sectionRef}
+      className="relative mt-[89px] flex items-center overflow-hidden bg-ink text-paper md:min-h-[calc(100vh-89px)]"
+    >
       <video
         ref={videoRef}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-90"

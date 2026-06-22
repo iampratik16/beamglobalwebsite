@@ -24,15 +24,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { pillars, servicesByPillar } from "@/content/services";
-import { blogPostsByDate } from "@/content/blog";
-
-// Home "What's new" uses the original insight artwork (by post slug).
-const homeInsightImages: Record<string, string> = {
-  "venture-debt-the-rising-star-in-startup-financing-amid-indias-liquidity-crunch":
-    "/images/home/venturedebt.png",
-  "5-cyber-security-startups-to-watch-out-for": "/images/home/cyber.png",
-  "what-makes-your-customers-say-yes-to-your-product-or-service": "/images/home/growth.png",
-};
+import { caseStudiesByDate } from "@/content/case-studies";
 
 // Lucide icon per service slug for the Services overview cards.
 const serviceIcons: Record<string, LucideIcon> = {
@@ -48,7 +40,7 @@ const serviceIcons: Record<string, LucideIcon> = {
 };
 
 export default function HomePage() {
-  const latest = blogPostsByDate.slice(0, 3);
+  const latestCases = caseStudiesByDate.slice(0, 3);
 
   return (
     <>
@@ -142,34 +134,33 @@ export default function HomePage() {
       {/* Clients / track record */}
       <ClientLogos />
 
-      {/* Insights */}
+      {/* Case studies */}
       <section className="section-y bg-paper-alt">
         <Container>
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeader
-              eyebrow="Insights Hub"
-              title="What's new"
-              lead="Perspectives on governance, growth and the road ahead."
+              eyebrow="Case Studies"
+              title="Client success stories"
+              lead="Real outcomes from our work across GRC, Oracle role design and controls automation."
             />
             <Link
-              href="/insights"
+              href="/case-studies"
               className="inline-flex items-center gap-2 font-semibold text-accent hover:text-accent-ink"
             >
-              All insights
+              All case studies
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
           <Reveal className="mt-12">
             <CardGrid>
-              {latest.map((post) => (
+              {latestCases.map((cs) => (
                 <Card
-                  key={post.slug}
-                  href={`/blog/${post.slug}`}
-                  eyebrow={post.category}
-                  title={post.title}
-                  excerpt={post.excerpt}
-                  seed={post.slug}
-                  image={homeInsightImages[post.slug] ?? post.image}
+                  key={cs.slug}
+                  href={`/case-studies/${cs.slug}`}
+                  eyebrow={cs.facts.client}
+                  title={cs.cardTitle}
+                  excerpt={cs.excerpt}
+                  image={cs.cardImage}
                 />
               ))}
             </CardGrid>
