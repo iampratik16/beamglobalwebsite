@@ -5,9 +5,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { CapabilityTabs } from "@/components/services/CapabilityTabs";
 import { PackagesTable } from "@/components/services/PackagesTable";
+import { Card } from "@/components/ui/Card";
+import { CardGrid } from "@/components/ui/CardGrid";
 import { ArrowRight } from "@/components/ui/icons";
 import Link from "next/link";
 import { pillars, servicesByPillar, type Service } from "@/content/services";
+import { caseStudiesForService } from "@/content/case-studies";
 
 /**
  * Interior service page. Driven entirely by a Service record, one template
@@ -18,6 +21,7 @@ export function ServiceTemplate({ service }: { service: Service }) {
   const related = servicesByPillar(service.pillar)
     .filter((s) => s.slug !== service.slug)
     .slice(0, 4);
+  const studies = caseStudiesForService(service.slug);
 
   return (
     <>
@@ -108,6 +112,35 @@ export function ServiceTemplate({ service }: { service: Service }) {
                   <ArrowRight className="h-5 w-5 shrink-0 text-accent transition-transform group-hover:translate-x-1" />
                 </Link>
               ))}
+            </Reveal>
+          </Container>
+        </section>
+      )}
+
+      {/* Case studies that evidence this service */}
+      {studies.length > 0 && (
+        <section className="section-y border-t border-hairline bg-paper">
+          <Container>
+            <Reveal>
+              <Eyebrow>Proof</Eyebrow>
+              <h2 className="text-h3 mt-3 text-ink">See it in practice</h2>
+              <p className="mt-5 max-w-2xl text-lead">
+                Real client outcomes we have delivered with this service.
+              </p>
+            </Reveal>
+            <Reveal className="mt-10">
+              <CardGrid cols={3}>
+                {studies.map((cs) => (
+                  <Card
+                    key={cs.slug}
+                    href={`/case-studies/${cs.slug}`}
+                    eyebrow={cs.facts.client}
+                    title={cs.cardTitle}
+                    excerpt={cs.excerpt}
+                    image={cs.cardImage}
+                  />
+                ))}
+              </CardGrid>
             </Reveal>
           </Container>
         </section>

@@ -41,17 +41,6 @@ export default function ContactPage() {
 
               <dl className="mt-10 space-y-8">
                 <div className="border-t border-hairline pt-5">
-                  <dt className="text-eyebrow text-accent">Email</dt>
-                  <dd className="mt-2">
-                    <a
-                      href={`mailto:${site.email}`}
-                      className="link-underline text-lg font-medium text-ink"
-                    >
-                      {site.email}
-                    </a>
-                  </dd>
-                </div>
-                <div className="border-t border-hairline pt-5">
                   <dt className="text-eyebrow text-accent">Offices</dt>
                   <dd className="mt-2 text-lg font-medium text-ink">
                     {site.offices.join(" · ")}

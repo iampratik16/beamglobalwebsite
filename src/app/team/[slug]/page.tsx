@@ -6,7 +6,6 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CTABand } from "@/components/ui/CTABand";
 import { Mail, MapPin, Linkedin } from "@/components/ui/icons";
 import { pageMetadata } from "@/lib/seo";
-import { site } from "@/content/site";
 import { teamSlugs, getTeamMember } from "@/content/team";
 
 const ORG = "Beam Global Services";
@@ -24,7 +23,7 @@ export async function generateMetadata({
   const member = getTeamMember(slug);
   if (!member) return {};
   return pageMetadata({
-    title: `${member.name} — ${member.role}, ${ORG}`,
+    title: `${member.name}, ${member.role}, ${ORG}`,
     description: member.summary,
     path: `/team/${member.slug}`,
   });
@@ -33,7 +32,7 @@ export async function generateMetadata({
 function ContactLink() {
   return (
     <a
-      href={`mailto:${site.email}`}
+      href="/contact"
       className="inline-flex items-center gap-2.5 font-medium text-ink transition-colors hover:text-accent"
     >
       <Mail className="h-5 w-5" />

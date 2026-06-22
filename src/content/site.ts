@@ -11,9 +11,8 @@ export const site = {
   url: "https://beamglobalservices.com",
   description:
     "Beam Global Services has the singular goal of helping clients get the most out of their investments in Governance, Risk & Compliance (GRC) products by taking care of all application support needs and providing expert guidance on maximising ROI.",
-  email: "support@beamglobalservices.com",
   // NOTE: live site shows a demo phone/postal address (template placeholders).
-  // We surface the verified email and office cities; swap in real details here.
+  // We surface office cities only; swap in real contact details here.
   phone: "", // TODO: add verified phone number
   offices: ["London", "Delhi", "Bengaluru"],
   regions: ["Global", "India"],
@@ -38,7 +37,7 @@ export type MegaMenuGroup = {
 export const primaryNav: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Insights Hub", href: "/insights" },
-  { label: "Case Studies", href: "/blog" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "About Us", href: "/about" },
 ];
 
@@ -52,8 +51,8 @@ export const servicesMenu: MegaMenuGroup[] = [
     href: "/services#digital",
     items: [
       { label: "GRC Product Selection", href: "/services/grc-product-selection" },
-      { label: "SOD Remediation", href: "/services/oracle-sod-remediation" },
-      { label: "ROC Implementation", href: "/services/oracle-rmc-implementation" },
+      { label: "Oracle Segregation of Duties Remediation", href: "/services/oracle-sod-remediation" },
+      { label: "Oracle RMC Implementation", href: "/services/oracle-rmc-implementation" },
       { label: "Safepass Implementation", href: "/services/safepaas-grc-implementation" },
       { label: "Oracle Role Design", href: "/services/oracle-role-design" },
       { label: "Software Development and Integration", href: "/services/software-development-and-integration" },
@@ -73,7 +72,7 @@ export const servicesMenu: MegaMenuGroup[] = [
 /** Featured services shown with thumbnails in the mega-menu (PwC pattern). */
 export const servicesFeatured: { label: string; href: string; image: string }[] = [
   {
-    label: "SOD Remediation",
+    label: "Oracle Segregation of Duties Remediation",
     href: "/services/oracle-sod-remediation",
     image: "/images/services/hero/oracle-sod-remediation.png",
   },
@@ -92,13 +91,11 @@ export const servicesFeatured: { label: string; href: string; image: string }[] 
 export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
     title: "Services",
+    // Derived from servicesMenu so the footer order and completeness always
+    // match the header mega-menu — no service is ever omitted or out of order.
     links: [
       { label: "All Services", href: "/services" },
-      { label: "GRC Product Selection", href: "/services/grc-product-selection" },
-      { label: "Safepass Implementation", href: "/services/safepaas-grc-implementation" },
-      { label: "ROC Implementation", href: "/services/oracle-rmc-implementation" },
-      { label: "SOD Remediation", href: "/services/oracle-sod-remediation" },
-      { label: "Oracle Role Design", href: "/services/oracle-role-design" },
+      ...servicesMenu.flatMap((group) => group.items),
     ],
   },
   {
@@ -106,7 +103,7 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Insights Hub", href: "/insights" },
-      { label: "Case Studies", href: "/blog" },
+      { label: "Case Studies", href: "/case-studies" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],

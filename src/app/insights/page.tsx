@@ -12,7 +12,7 @@ import { grcExplainer, grcChallenges } from "@/content/insights";
 export const metadata: Metadata = pageMetadata({
   title: "What is GRC?",
   description:
-    "A plain-English guide to Governance, Risk & Compliance — what the three letters mean, why organisations invest in it, and where GRC products get stuck.",
+    "A plain-English guide to Governance, Risk & Compliance, what the three letters mean, why organisations invest in it, and where GRC products get stuck.",
   path: "/insights",
 });
 
@@ -31,17 +31,30 @@ export default function InsightsPage() {
       {/* What is GRC — plain-English intro */}
       <section className="section-y bg-paper">
         <Container>
-          <Reveal className="max-w-3xl">
-            <Eyebrow>Start here</Eyebrow>
-            <h2 className="text-h2 mt-4 text-ink">
-              Governance, Risk &amp; Compliance, explained
-            </h2>
-            <div className="mt-8 space-y-6 text-[1.075rem] leading-relaxed text-text">
-              {grcExplainer.intro.map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
-            </div>
-          </Reveal>
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <Reveal>
+              <Eyebrow>Start here</Eyebrow>
+              <h2 className="text-h2 mt-4 text-ink">
+                Governance, Risk &amp; Compliance, explained
+              </h2>
+              <div className="mt-8 space-y-6 text-[1.075rem] leading-relaxed text-text">
+                {grcExplainer.intro.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="relative aspect-[4/5] overflow-hidden rounded-lg ring-1 ring-hairline">
+                <Image
+                  src="/images/insights/grc-explained-v2.png"
+                  alt="A business team reviewing governance, risk and compliance reports together"
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -94,9 +107,9 @@ export default function InsightsPage() {
                       key={point}
                       className="border-t border-hairline py-5 first:border-t-0 first:pt-0"
                     >
-                      <span className="font-semibold text-ink">{lead}</span>
+                      <span className="font-semibold text-ink">{lead}:</span>
                       {tail && (
-                        <span className="leading-relaxed text-muted"> — {tail}</span>
+                        <span className="leading-relaxed text-muted"> {tail}</span>
                       )}
                     </li>
                   );

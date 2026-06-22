@@ -37,8 +37,8 @@ export default function AboutPage() {
               <h2 className="text-h2 mt-4 text-ink">{about.whoWeAre.title}</h2>
               <div className="relative mt-8 aspect-[4/3] overflow-hidden border border-hairline">
                 <Image
-                  src="/images/teamww.png"
-                  alt="The Beam Global Services team"
+                  src="/images/about/who-we-are-consultants.png"
+                  alt="Beam Global Services consultants reviewing GRC analytics dashboards"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
