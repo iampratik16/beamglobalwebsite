@@ -82,7 +82,7 @@ export default async function TeamMemberPage({
           <div className="grid grid-cols-1 overflow-hidden lg:grid-cols-[0.62fr_1fr]">
             {/* Photo: a single cover-filled frame. On desktop the cell stretches
                 to the height of the text panel beside it (CSS grid stretch), so
-                the two are always equal height — like the PwC reference card.
+                the two are always equal height, like the PwC reference card.
                 `object-position` (member.focal) keeps the face framed so the
                 head is never cropped. A portrait ratio is used on mobile, where
                 the cell stacks above the text and has no sibling to match. */}

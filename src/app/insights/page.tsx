@@ -28,7 +28,7 @@ export default function InsightsPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Insights Hub" }]}
       />
 
-      {/* What is GRC — plain-English intro */}
+      {/* What is GRC, plain-English intro */}
       <section className="section-y bg-paper">
         <Container>
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">

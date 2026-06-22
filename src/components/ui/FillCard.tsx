@@ -1,6 +1,6 @@
 /**
  * Numbered editorial card for capabilities, core values and culture pillars.
- * Hairline border, gold rule — no animated fills or decorative watermarks.
+ * Hairline border, gold rule, no animated fills or decorative watermarks.
  */
 export function FillCard({
   index,

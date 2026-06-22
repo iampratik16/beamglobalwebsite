@@ -21,7 +21,7 @@ export type TeamMember = {
   summary: string;
   /** Full biography as paragraphs. */
   bio: string[];
-  /** "At a glance" — areas of focus and education. */
+  /** "At a glance", areas of focus and education. */
   areasOfFocus: string[];
   education: string[];
   /** Optional LinkedIn profile URL. */
@@ -36,7 +36,7 @@ export const team: TeamMember[] = [
     location: "London",
     country: "United Kingdom",
     photo: "/images/team/navinder-kaplish.jpg",
-    // Tall 2:3 portrait, head sits high — pull the crop up so there is clear
+    // Tall 2:3 portrait, head sits high, pull the crop up so there is clear
     // headroom above the hair and the top of the head is never cut.
     focal: "50% 10%",
     linkedin: "https://www.linkedin.com/in/navkaplish/",
@@ -63,7 +63,7 @@ export const team: TeamMember[] = [
     location: "London",
     country: "United Kingdom",
     photo: "/images/team/preethi-hari-hd.jpg",
-    // AI-upscaled from a 300px original, with added headroom — centre framing.
+    // AI-upscaled from a 300px original, with added headroom, centre framing.
     focal: "50% 28%",
     linkedin: "https://www.linkedin.com/in/preethihari/",
     summary:
@@ -89,7 +89,7 @@ export const team: TeamMember[] = [
     location: "Bengaluru",
     country: "India",
     photo: "/images/team/shreyas-ananth.jpg",
-    // Near-square headshot — keep eyes in the upper third.
+    // Near-square headshot, keep eyes in the upper third.
     focal: "50% 25%",
     linkedin: "https://www.linkedin.com/in/shreyas-ananth-23b0b62b/",
     summary:

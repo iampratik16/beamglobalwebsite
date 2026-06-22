@@ -8,7 +8,8 @@ export const site = {
   name: "Beam Global Services",
   shortName: "Beam Global",
   // Production/canonical domain, drives metadataBase, sitemap and OG URLs.
-  url: "https://beamglobalservices.com",
+  // www is the primary host (apex 308-redirects to www at the Vercel layer).
+  url: "https://www.beamglobalservices.com",
   description:
     "Beam Global Services has the singular goal of helping clients get the most out of their investments in Governance, Risk & Compliance (GRC) products by taking care of all application support needs and providing expert guidance on maximising ROI.",
   // NOTE: live site shows a demo phone/postal address (template placeholders).
@@ -31,7 +32,7 @@ export type MegaMenuGroup = {
 };
 
 /**
- * Primary top-level navigation. Contact is intentionally omitted here — the
+ * Primary top-level navigation. Contact is intentionally omitted here, the
  * "Get in touch" button (which links to /contact) serves that purpose.
  */
 export const primaryNav: NavLink[] = [

@@ -5,7 +5,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 
 /**
- * Shared hero for interior pages — white band with editorial type beneath
+ * Shared hero for interior pages, white band with editorial type beneath
  * the header. Optional full-width banner image below the copy block.
  */
 export function PageHero({

@@ -8,7 +8,7 @@ import { positioning } from "@/content/home";
 
 /**
  * Editorial "opportunity" section: the positioning statement and photo, the
- * GRC value section (problem + five strategies — see GrcValueSection), then the
+ * GRC value section (problem + five strategies, see GrcValueSection), then the
  * "how we help" numbered list. Copy comes from the content file unchanged.
  */
 
@@ -50,7 +50,7 @@ export function EditorialFeature() {
         {/* What problem are we solving + five strategies */}
         <GrcValueSection />
 
-        {/* How we help — numbered grid; each point leads with a bold phrase */}
+        {/* How we help, numbered grid; each point leads with a bold phrase */}
         <div className="mt-16 lg:mt-20">
           <p className="text-lg font-semibold text-ink">{positioning.helpIntro}</p>
           <ol className="mt-10 grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-3">

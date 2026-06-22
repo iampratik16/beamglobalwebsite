@@ -8,7 +8,7 @@ import { VolumeOn, VolumeOff } from "@/components/ui/icons";
 import { homeHero } from "@/content/home";
 
 /**
- * Homepage hero — full-bleed video with a simple ink overlay, rotating
+ * Homepage hero, full-bleed video with a simple ink overlay, rotating
  * headline on the left. Rotation runs only after mount so SSR renders the
  * first headline deterministically.
  */

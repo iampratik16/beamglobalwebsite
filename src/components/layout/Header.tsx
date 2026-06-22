@@ -74,7 +74,7 @@ export function Header() {
           regardless of the logo/button widths. Mobile falls back to a simple
           logo + hamburger row. */}
       <div className="container-page flex h-[var(--header-h,88px)] items-center justify-between gap-6 py-3 lg:grid lg:grid-cols-[1fr_auto_1fr]">
-        {/* Logo — left */}
+        {/* Logo, left */}
         <Link
           href="/"
           aria-label="Beam Global Services, home"
@@ -88,7 +88,7 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop nav — centred */}
+        {/* Desktop nav, centred */}
         <nav aria-label="Primary" className="hidden items-center justify-center gap-8 lg:flex">
           {/* Services with mega-menu */}
           <div className="relative" onMouseEnter={openMega} onMouseLeave={scheduleClose}>
@@ -123,7 +123,7 @@ export function Header() {
             ))}
         </nav>
 
-        {/* Right cluster — Get in touch (desktop) + mobile toggle */}
+        {/* Right cluster, Get in touch (desktop) + mobile toggle */}
         <div className="flex items-center justify-end gap-4 lg:justify-self-end">
           <Link
             href="/contact"
@@ -170,7 +170,7 @@ export function Header() {
             {/* PwC-style: link columns on the left, a divided Featured column
                 with large landscape thumbnails on the right. */}
             <div className="flex gap-12">
-              {/* Service link groups — one column per group */}
+              {/* Service link groups, one column per group */}
               <div
                 className="grid flex-1 gap-x-8 gap-y-2"
                 style={{
@@ -202,7 +202,7 @@ export function Header() {
                 ))}
               </div>
 
-              {/* Featured — right column, large landscape thumbnails */}
+              {/* Featured, right column, large landscape thumbnails */}
               <div className="w-[34%] shrink-0 border-l border-hairline pl-10">
                 <p className="text-eyebrow mb-5 text-muted">Featured</p>
                 <ul className="space-y-5">
@@ -232,7 +232,7 @@ export function Header() {
       )}
     </header>
 
-    {/* Mobile drawer — rendered OUTSIDE the backdrop-blur header so its
+    {/* Mobile drawer, rendered OUTSIDE the backdrop-blur header so its
         fixed positioning covers the full viewport, not just the header box. */}
     {mobileOpen && <MobileDrawer onClose={() => setMobileOpen(false)} />}
     </>

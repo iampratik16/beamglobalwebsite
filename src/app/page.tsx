@@ -65,7 +65,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Services overview — left header + right grid of icon rows */}
+      {/* Services overview, left header + right grid of icon rows */}
       <section className="section-y border-t border-hairline bg-paper-alt">
         <Container>
           {pillars.map((pillar, pi) => (

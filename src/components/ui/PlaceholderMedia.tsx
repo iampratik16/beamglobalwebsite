@@ -1,6 +1,6 @@
 /**
  * Deterministic tonal placeholder media. Flat solid fills seeded from a
- * string — stable across renders, no hydration mismatch.
+ * string, stable across renders, no hydration mismatch.
  *
  * TODO: swap for real next/image artwork when brand photography is supplied.
  */
